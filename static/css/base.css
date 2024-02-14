@@ -1,12 +1,29 @@
+html {
+    height: 100;
+}
+
+.hero-container {
+    background: url('/media/hero-image.webp') no-repeat center center fixed;
+    background-size: cover;
+    width: 100vw;
+    min-height: 100vh;
+    /* height: calc(100vh - 164px); */
+}
+
 footer {
-    position: absolute;
+    /* position: absolute;
     bottom: 0;
-    top: auto;
+    top: auto; */
     width: 100%;
 }
 
 a {
     color: black;
+}
+
+a:hover {
+    color: rgba(0, 0, 0, 0.55);
+    text-decoration: none;
 }
 
 header .navbar {
@@ -18,6 +35,5 @@ header .navbar {
 }
 
 .nav-link:hover {
-    color: black;
-    text-decoration: underline;
+    color: rgba(0, 0, 0, 0.55);
 }
