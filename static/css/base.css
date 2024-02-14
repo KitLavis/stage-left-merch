@@ -2,7 +2,7 @@ html {
     height: 100;
 }
 
-.hero-container {
+body {
     background: url('/media/hero-image.webp') no-repeat center center fixed;
     background-size: cover;
     width: 100vw;
@@ -10,11 +10,23 @@ html {
     /* height: calc(100vh - 164px); */
 }
 
+.hero-text-container {
+    width: 100vw;
+    min-height: 100vh;
+}
+
+.header-title {
+    background-color: rgba(0, 0, 0, 0.85);
+    color: white;
+}
+
+.header-two {
+    background-color: rgba(255, 255, 255, 0.75);
+}
+
 footer {
-    /* position: absolute;
-    bottom: 0;
-    top: auto; */
     width: 100%;
+    background-color: rgba(255, 255, 255, 0.85);
 }
 
 a {
@@ -36,4 +48,20 @@ header .navbar {
 
 .nav-link:hover {
     color: rgba(0, 0, 0, 0.55);
+}
+
+.support {
+    color: white;
+}
+
+.fs-150 {
+    font-size: 150%;
+}
+
+.fs-300 {
+    font-size: 300%;
+}
+
+.btn-dark {
+    background-color: rgba(0, 0, 0, 0.75);
 }
