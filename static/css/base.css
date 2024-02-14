@@ -9,6 +9,10 @@ a {
     color: black;
 }
 
+header .navbar {
+    width: 100%;
+}
+
 .nav-link {
     color: black;
 }
