@@ -62,6 +62,24 @@ header .navbar {
     font-size: 300%;
 }
 
+.fs-1em {
+    font-size: 1em;
+}
+
 .btn-dark {
     background-color: rgba(0, 0, 0, 0.75);
+}
+
+.hero-text-container > .row {
+    width: 100vw;
+}
+
+.navbar-collapse {
+    z-index: 99999999;
+}
+
+@media only screen and (max-width: 480px) {
+    .support {
+        font-size: 1.5em;
+    }
 }
