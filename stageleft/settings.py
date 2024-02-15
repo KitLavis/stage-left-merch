@@ -13,6 +13,9 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 from pathlib import Path
 import os
 import dj_database_url
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 if os.path.isfile('env.py'):
     import env
 
@@ -164,3 +167,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 CSRF_TRUSTED_ORIGINS = ['https://8000-kitlavis-stageleftmerch-dfadd5f4vsn.ws-eu108.gitpod.io']
+
+cloudinary.config( 
+  CLOUD_NAME = "duxza3pht", 
+  API_KEY = os.environ.get("API_KEY"),
+  API_SECRET = os.environ.get("API_SECRET")
+)
