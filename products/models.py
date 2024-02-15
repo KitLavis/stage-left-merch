@@ -2,6 +2,8 @@ import datetime
 from django.db import models
 from cloudinary.models import CloudinaryField
 
+STATUS = ((0, "Draft"), (1, "Published"))
+
 
 class Artist(models.Model):
     name = models.CharField(max_length=250, null=True, blank=True, unique=True)
@@ -37,6 +39,7 @@ class Product(models.Model):
     price = models.DecimalField(max_digits=6, decimal_places=2)
     featured_image = CloudinaryField('image', default='placeholder')
     created_on = models.DateTimeField(auto_now_add=True)
+    status = models.IntegerField(choices=STATUS, default=0)
 
     def __str__(self):
         return self.name

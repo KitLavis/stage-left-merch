@@ -169,7 +169,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 CSRF_TRUSTED_ORIGINS = ['https://8000-kitlavis-stageleftmerch-dfadd5f4vsn.ws-eu108.gitpod.io']
 
 cloudinary.config( 
-  CLOUD_NAME = "duxza3pht", 
-  API_KEY = os.environ.get("API_KEY"),
-  API_SECRET = os.environ.get("API_SECRET")
+  cloud_name = "duxza3pht", 
+  api_key = os.environ.get("API_KEY"),
+  api_secret = os.environ.get("API_SECRET")
 )
