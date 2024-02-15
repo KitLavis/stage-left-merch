@@ -4,9 +4,26 @@
 {% block content %}
 <div class="hero-text-container">
     <div class="row">
-        <div class="col-auto offset-1 offset-md-2">
-            
-        </div>
+        {% for product in products %}
+        <div class="col-12 col-sm-8 col-md-6 col-lg-4">
+            <div class="card">
+              <img class="card-img" src="{{ product.featured_image.url }}" alt="{{ product.name }}">
+              <!-- <div class="card-img-overlay d-flex justify-content-end">
+                <a href="#" class="card-link text-danger like">
+                  <i class="fas fa-heart"></i>
+                </a>
+              </div> -->
+              <div class="card-body">
+                <h4 class="card-title">{{ product.name }}</h4>
+                <h6 class="card-subtitle mb-2 text-muted">ID: {{ product.sku }}</h6>
+                <div class="buy d-flex justify-content-between align-items-center">
+                  <div class="price text-success"><h5 class="mt-4">{{ product.price }}</h5></div>
+                   <a href="#" class="btn btn-danger mt-3"><i class="fas fa-shopping-cart"></i>More Info</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
     </div>
 </div>
 {% endblock %}
