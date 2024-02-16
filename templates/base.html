@@ -105,7 +105,9 @@
                     </a>
                     <div class="dropdown-menu border-0" aria-labelledby="artists-link">
                       <!-- Add all artists -->
-                      <a href="{% url 'products' %}?artist=klan-mclean" class="dropdown-item">Klan McLean</a>
+                      {% for artist in all_artists %}
+                      <a href="{% url 'products' %}?artist={{ artist.name }}" class="dropdown-item">{{ artist.friendly_name }}</a>
+                      {% endfor %}
                     </div>
                   </li>
                 </ul>
