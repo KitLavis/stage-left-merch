@@ -12,8 +12,13 @@ def all_products(request):
     if 's-query' in request.GET:
             query = request.GET['s-query']
             if not query:
-                messages.error(request, "Please enter a search criteria")
-                return redirect(reverse('products'))
+                messages.add_message(
+                request,
+                messages.ERROR,
+                'Please enter a search criteria'
+                )
+
+            return redirect(reverse('products'))
 
             queries = Q(name__icontains=query) | Q(description__icontains=query)
             products = products.filter(queries)
