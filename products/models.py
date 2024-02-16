@@ -10,6 +10,7 @@ class Artist(models.Model):
     name = models.SlugField(max_length=250, unique=True)
     hometown = models.CharField(max_length=250, null=True, blank=True)
     established = models.IntegerField()
+    bio = models.TextField(null=True, blank=True)
 
     def __str__(self):
         return self.name

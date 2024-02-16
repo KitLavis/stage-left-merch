@@ -65,7 +65,7 @@
               <div class="col-md-8">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="{% url 'products' %}" aria-label="View all products">All Products</a>
+                    <a class="logo-font font-weight-bold nav-link text-black mr-5 active" aria-current="page" href="{% url 'products' %}" aria-label="View all products">All Products</a>
                   </li>
                   <li class="nav-item dropdown">
                     <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="clothing-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -104,7 +104,6 @@
                       Artists
                     </a>
                     <div class="dropdown-menu border-0" aria-labelledby="artists-link">
-                      <!-- Add all artists -->
                       {% for artist in all_artists %}
                       <a href="{% url 'products' %}?artist={{ artist.name }}" class="dropdown-item">{{ artist.friendly_name }}</a>
                       {% endfor %}
@@ -126,7 +125,7 @@
                     {% endif %}
                   </div>
                 </span>
-                <a href="#">
+                <a href="{% url 'basket' %}">
                   <i class="fa-solid fa-basket-shopping"></i>
                 </a>
               </div>
@@ -155,7 +154,7 @@
     {% block content %}
     {% endblock %}
 
-    <footer class="footer p-3">
+    <footer class="footer mt-3 p-3">
       <div class="row">
         <div class="col-6 col-md-2 mb-3">
           <h5>Section</h5>
