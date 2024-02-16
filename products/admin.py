@@ -22,7 +22,7 @@ class ProductAdmin(admin.ModelAdmin):
 @admin.register(Artist)
 class ArtistAdmin(admin.ModelAdmin):
 
-    prepopulated_fields = {'slug': ('name',)}
+    prepopulated_fields = {'name': ('friendly_name',)}
 
     list_display = (
         'name',

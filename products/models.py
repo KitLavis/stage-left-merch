@@ -6,8 +6,8 @@ STATUS = ((0, "Draft"), (1, "Published"))
 
 
 class Artist(models.Model):
-    name = models.CharField(max_length=250, null=True, blank=True, unique=True)
-    slug = models.SlugField(max_length=250, unique=True)
+    friendly_name = models.CharField(max_length=250, null=True, blank=True, unique=True)
+    name = models.SlugField(max_length=250, unique=True)
     hometown = models.CharField(max_length=250, null=True, blank=True)
     established = models.IntegerField()
 

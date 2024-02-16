@@ -67,6 +67,47 @@
                   <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="{% url 'products' %}" aria-label="View all products">All Products</a>
                   </li>
+                  <li class="nav-item dropdown">
+                    <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="clothing-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Clothing
+                    </a>
+                    <div class="dropdown-menu border-0" aria-labelledby="clothing-link">
+                      <a href="{% url 'products' %}?category=tees,hoodies,hats" class="dropdown-item">All Clothing</a>
+                      <a href="{% url 'products' %}?category=tees" class="dropdown-item">T-Shirts</a>
+                      <a href="{% url 'products' %}?category=hoodies" class="dropdown-item">Hoodies</a>
+                      <a href="{% url 'products' %}?category=hats" class="dropdown-item">Hats</a>
+                    </div>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="music-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Music
+                    </a>
+                    <div class="dropdown-menu border-0" aria-labelledby="music-link">
+                      <a href="{% url 'products' %}?category=vinyl,tapes,cds" class="dropdown-item">All Formats</a>
+                      <a href="{% url 'products' %}?category=vinyl" class="dropdown-item">Vinyl</a>
+                      <a href="{% url 'products' %}?category=tapes" class="dropdown-item">Tapes</a>
+                      <a href="{% url 'products' %}?category=cds" class="dropdown-item">CDs</a>
+                    </div>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="misc-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Miscellaneous
+                    </a>
+                    <div class="dropdown-menu border-0" aria-labelledby="music-link">
+                      <a href="{% url 'products' %}?category=bags,mugs" class="dropdown-item">All misc. items</a>
+                      <a href="{% url 'products' %}?category=bags" class="dropdown-item">Bags</a>
+                      <a href="{% url 'products' %}?category=mugs" class="dropdown-item">Mugs</a>
+                    </div>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="artists-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Artists
+                    </a>
+                    <div class="dropdown-menu border-0" aria-labelledby="artists-link">
+                      <!-- Add all artists -->
+                      <a href="{% url 'products' %}?artist=klan-mclean" class="dropdown-item">Klan McLean</a>
+                    </div>
+                  </li>
                 </ul>
               </div>
               <div class="col-md-2">
@@ -93,7 +134,7 @@
       </div>
     </header>
 
-    <!-- Displays messages to give the user feedback -->
+    <!-- Displays feedback messages -->
     <div class="container">
       <div class="row">
         <div class="col-md-8 offset-md-2">
