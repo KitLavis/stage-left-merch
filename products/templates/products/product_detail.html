@@ -3,20 +3,27 @@
 
 {% block content %}
 <div class="container-fluid products-container">
-    <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="..." alt="Card image cap">
-        <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item">Cras justo odio</li>
-            <li class="list-group-item">Dapibus ac facilisis in</li>
-            <li class="list-group-item">Vestibulum at eros</li>
-        </ul>
-        <div class="card-body">
-            <a href="#" class="card-link">Card link</a>
-            <a href="#" class="card-link">Another link</a>
+    <div class="card my-3">
+        <div class="row">
+            <div class="col-4">
+                {% if 'placeholder' in product.featured_image.url %}
+                <img class="card-img-top" src="{% static 'images/default.jpg' %}" alt="Card image cap">
+                {% else %}
+                <img class="card-img-top" src="{{ product.featured_image.url }}" alt="Card image cap">
+                {% endif %}
+            </div>
+            <div class="col-8">
+                <div class="card-body">
+                    <h5 class="card-title">{{ product.name }}</h5>
+                    <p class="card-text">{{ product.description }}</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Price: £{{ product.price }}</li>
+                </ul>
+                <div class="card-body">
+                    <a href="#" class="card-link">Add to Basket</a>
+                </div>
+            </div>
         </div>
     </div>
 </div>
