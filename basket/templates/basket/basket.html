@@ -2,10 +2,29 @@
 {% load static %}
 
 {% block content %}
-<div class="hero-text-container">
+<div class="overlay"></div>
+<div class="container my-3 basket-container rounded">
     <div class="row">
-        <div class="col-auto offset-1 offset-md-2">
-            
+        <div class="col">
+            <hr>
+            <h2 class="logo-font mb-4">Your Basket</h2>
+            <hr>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            {% if basket_items %}
+                <div class="table-responsive rounded"></div>
+            {% else %}
+                <p class="lead mb-5">is currently empty.</p>
+                <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 btn-lg pb-2">
+                    <span class="icon">
+                        <i class="fas fa-chevron-left"></i>
+                    </span>
+                    <span class="text-uppercase">Continue shopping</span>
+                </a>
+            {% endif %}
         </div>
     </div>
 </div>

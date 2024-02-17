@@ -79,7 +79,9 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                # Custom context processors
                 'context_processors.access_all_artists',
+                'basket.contexts.basket_items',
             ],
         },
     },
@@ -181,3 +183,6 @@ cloudinary.config(
   api_key = os.environ.get("API_KEY"),
   api_secret = os.environ.get("API_SECRET")
 )
+
+FREE_POSTAGE_THRESHOLD = 20
+STANDARD_POSTAGE_PERCENTAGE = 10
