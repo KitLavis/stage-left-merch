@@ -81,7 +81,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 # Custom context processors
                 'context_processors.access_all_artists',
-                'basket.contexts.basket_items',
+                'basket.contexts.basket_contents',
             ],
         },
     },
