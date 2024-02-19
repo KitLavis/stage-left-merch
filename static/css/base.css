@@ -78,6 +78,10 @@ header .navbar {
     z-index: 99999999;
 }
 
+.update-link, .remove-item {
+    cursor: pointer;
+}
+
 /* ------------------------------------------------------ all_products */
 
 .products-container {

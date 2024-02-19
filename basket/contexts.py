@@ -11,7 +11,7 @@ def basket_contents(request):
     basket = request.session.get('basket', {})
 
     for product_id, product_data in basket.items():
-        if isinstance(item_data, int):
+        if isinstance(product_data, int):
             product = get_object_or_404(Product, pk=product_id)
             total += product_data * product.price
             product_count += product_data
@@ -27,7 +27,7 @@ def basket_contents(request):
                 product_count += quantity
                 basket_items.append({
                     'product_id': product_id,
-                    'quantity': product_data,
+                    'quantity': quantity,
                     'product': product,
                     'size': size,
                 })
