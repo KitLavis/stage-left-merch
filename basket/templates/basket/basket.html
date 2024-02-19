@@ -41,17 +41,15 @@
                                         <p class="my-0">£{{ item.product.price }}</p>
                                     </td>
                                     <td class="py-3 w-25">
-                                        <form class="form update-form" method="POST" action="">
+                                        <form class="form update-form" method="POST" action="{% url 'modify_basket' item.product_id %}">
                                             {% csrf_token %}
-                                            <div class="form-group">
-                                                <input class="form-control form-control-sm qty_input" type="number"
-                                                    name="quantity" value="{{ item.quantity }}" min="1" max="99"
-                                                    data-item_id="{{ item.product_id }}"
-                                                    id="id_qty_{{ item.product_id }}">
-                                                {% if item.product.has_sizes %}
-                                                    <input type="hidden" name="product_size" value="{{ item.size }}">
-                                                {% endif %}
-                                            </div>
+                                            <input class="form-control form-control-sm qty_input" type="number"
+                                                name="quantity" value="{{ item.quantity }}" min="1" max="99"
+                                                data-item_id="{{ item.product_id }}"
+                                                id="id_qty_{{ item.product_id }}">
+                                            {% if item.product.has_sizes %}
+                                            <input type="hidden" name="product_size" value="{{ item.size }}">
+                                            {% endif %}
                                         </form>
                                         <a class="update-link text-info"><small>Update</small></a>
                                         <a class="remove-item text-danger float-right" id="remove_{{ item.product_id }}" data-size="{{ item.size }}"><small>Remove</small></a>
@@ -63,7 +61,7 @@
                             {% endfor %}
                             <tr>
                                 <td colspan="5" class="pt-5 text-right">
-                                    <h6><strong>Bag Total: £{{ total|floatformat:2 }}</strong></h6>
+                                    <h6><strong>Basket Total: £{{ total|floatformat:2 }}</strong></h6>
                                     <h6>Postage: £{{ postage|floatformat:2 }}</h6>
                                     <h4 class="mt-4"><strong>Grand Total: £{{ grand_total|floatformat:2 }}</strong></h4>
                                     {% if free_postage_delta > 0 %}
@@ -106,11 +104,12 @@
 {% endblock %}
 {% block postloadjs %}
 <script type="text/javascript">
-    // Update quantity on click
+
     $('.update-link').click(function(e) {
+        e.preventDefault(); // Prevent default link behavior
         var form = $(this).prev('.update-form');
         form.submit();
-    })
+    });
 
     // Remove item and reload on click
     $('.remove-item').click(function(e) {
