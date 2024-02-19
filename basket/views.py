@@ -1,4 +1,5 @@
-from django.shortcuts import render, redirect, get_object_or_404, reverse
+from django.shortcuts import render, redirect, get_object_or_404, reverse, HttpResponse
+from django.contrib import messages
 
 
 def shopping_basket(request):
@@ -31,6 +32,11 @@ def add_to_basket(request, product_id):
             basket[product_id] = quantity
 
     request.session['basket'] = basket
+    messages.add_message(
+            request,
+            messages.SUCCESS,
+            'The item was added to your basket'
+            )
     return redirect(redirect_url)
 
 
@@ -56,4 +62,42 @@ def modify_basket(request, product_id):
             basket.pop(product_id)
 
     request.session['basket'] = basket
+    messages.add_message(
+            request,
+            messages.SUCCESS,
+            'Basket updated succesfully'
+            )
     return redirect(reverse('shopping_basket'))
+
+
+def remove_from_basket(request, product_id):
+    """Remove the item from the basket """
+
+    try:
+        size = None
+        if 'product_size' in request.POST:
+            size = request.POST['product_size']
+        basket = request.session.get('basket', {})
+
+        if size:
+            del basket[product_id]['items_by_size'][size]
+            if not basket[product_id]['items_by_size']:
+                basket.pop(product_id)
+        else:
+            basket.pop(product_id)
+
+        request.session['basket'] = basket
+        messages.add_message(
+            request,
+            messages.SUCCESS,
+            'The item has been removed from your basket'
+            )
+        return HttpResponse(status=200)
+
+    except Exception as e:
+        messages.add_message(
+            request,
+            messages.ERROR,
+            'Something went wrong. Please try again'
+            )
+        return HttpResponse(status=500)
