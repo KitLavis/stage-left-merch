@@ -32,3 +32,28 @@ def add_to_basket(request, product_id):
 
     request.session['basket'] = basket
     return redirect(redirect_url)
+
+
+def modify_basket(request, product_id):
+
+    quantity = int(request.POST.get('quantity'))
+    size = None
+    if 'product_size' in request.POST:
+        size = request.POST['product_size']
+    basket = request.session.get('basket', {})
+
+    if size:
+        if quantity > 0:
+            basket[product_id]['items_by_size'][size] = quantity
+        else:
+            del basket[product_id]['items_by_size'][size]
+            if not basket[product_id]['items_by_size']:
+                basket.pop(product_id)
+    else:
+        if quantity > 0:
+            basket[product_id] = quantity
+        else:
+            basket.pop(product_id)
+
+    request.session['basket'] = basket
+    return redirect(reverse('shopping_basket'))
