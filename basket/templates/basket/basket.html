@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load basket_tools %}
 
 {% block content %}
 <div class="overlay"></div>
@@ -55,7 +56,7 @@
                                         <a class="remove-item text-danger float-right" id="remove_{{ item.product_id }}" data-product-size="{{ item.size }}"><small>Remove</small></a>
                                     </td>
                                     <td class="py-3">
-                                        <p class="my-0">£{{ item.product.price }}</p>
+                                        <p class="my-0">£{{ item.product.price | calculate_subtotal:item.quantity }}</p>
                                     </td>
                                 </tr>
                             {% endfor %}
