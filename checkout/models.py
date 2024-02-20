@@ -14,6 +14,7 @@ class Order(models.Model):
     house_name = models.CharField(max_length=25, blank=True, null=True)
     street_line1 = models.CharField(max_length=75, blank=False, null=False)
     street_line2 = models.CharField(max_length=75, blank=False, null=False)
+    town_city = models.CharField(max_length=40, null=False, blank=False)
     county = models.CharField(max_length=75, blank=False, null=False)
     postcode = models.CharField(max_length=20, blank=False, null=False)
     date = models.DateTimeField(auto_now_add=True)
