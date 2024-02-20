@@ -2,6 +2,7 @@ import random
 import string
 
 
+# https://www.learningaboutelectronics.com/Articles/How-to-generate-a-random-unique-order-id-with-Python-in-Django.php
 def random_string_generator(size=10, chars=string.ascii_lowercase + string.digits):
     return ''.join(random.choice(chars) for _ in range(size))
 
