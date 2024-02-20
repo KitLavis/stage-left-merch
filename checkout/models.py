@@ -1,6 +1,9 @@
+import uuid
 from django.db import models
-from django.db.models.signals import pre_save
-from .utils import unique_order_ref_generator
+from django.db.models import Sum
+from django.conf import settings
+
+from products.models import Product
 
 
 class Order(models.Model):
@@ -19,14 +22,15 @@ class Order(models.Model):
     order_total = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)
     grand_total = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)
 
+    def _generate_order_ref(self):
+
+        return uuid.uuid4().hex.upper()
+    
+    def save(self, *args, **kwargs):
+
+        if not self.order_ref:
+            self.order_ref = self._generate_order_ref()
+        super().save(*args, **kwargs)
+
     def __str__(self):
         return self.order_ref
-
-
-# https://www.learningaboutelectronics.com/Articles/How-to-generate-a-random-unique-order-id-with-Python-in-Django.php
-def pre_save_create_order_ref(sender, instance, *args, **kwargs):
-    if not instance.order_ref:
-        instance.order_ref= unique_order_ref_generator(instance)
-
-
-pre_save.connect(pre_save_create_order_ref, sender=Order)
