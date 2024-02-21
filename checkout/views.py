@@ -11,7 +11,7 @@ def checkout(request):
             messages.ERROR,
             'There is nothing in your basket!'
             )
-    return redirect(reverse('products'))
+        return redirect(reverse('products'))
 
     order_form = OrderForm()
     template = 'checkout/checkout.html'
