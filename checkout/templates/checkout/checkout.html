@@ -9,7 +9,7 @@
     <div class="row">
         <div class="col-12 col-md-6 order-md-2 mb-4">
             <h4 class="d-flex justify-content-between align-items-center mb-3">
-              <span class="text-muted">Your basket</span>
+              <span class="text-muted">Order Summary</span>
             </h4>
             <ul class="list-group mb-3">
                 {% for item in basket_items %}
@@ -17,7 +17,7 @@
                 <div>
                   <h6 class="my-0">{{ item.product.name }}</h6>
                   {% if item.product.has_sizes %}
-                  <small class="text-muted">{{ item.size|upper }}</small>
+                  <small class="text-muted">Size: {{ item.size|upper }} | Quantity: {{ item.quantity }}</small>
                   {% endif %}
                 </div>
                 <span class="text-muted">£{{ item.product.price|floatformat:2 }}</span>
@@ -40,6 +40,9 @@
             </div>
         </div>
         <div class="col-12 col-md-6">
+            <h4 class="d-flex justify-content-between align-items-center mb-3">
+                <span class="text-muted">Checkout</span>
+              </h4>
             <p>Fill out the form to complete your order</p>
             <form action="{% url 'checkout' %}" method="POST" id="payment-form">
                 {% csrf_token %}
@@ -83,6 +86,17 @@
                     <div class="mb-3" id="card-element"></div>
                     <!-- Display form errors-->
                     <div class="mb-3 text-danger" id="card-errors" role="alert"></div>
+                </div>
+                <div class="submit-button text-right mt-5 mb-2">                    
+                    <a href="{% url 'shopping_basket' %}" class="btn rounded-0">
+                        <span class="font-weight-bold">Modify basket</span>
+                    </a>
+                    <button id="submit-button" class="btn rounded-0">
+                        <span class="font-weight-bold">Complete Order</span>
+                    </button>
+                    <p class="small text-danger my-0">
+                        <span>Your card will be charged <strong>£{{ grand_total|floatformat:2 }}</strong></span>
+                    </p>
                 </div>
             </form>
         </div>
