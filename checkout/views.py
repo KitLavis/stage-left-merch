@@ -99,7 +99,7 @@ def checkout(request):
     return render(request, template, context)
 
 
-def checkout_success(request, order_number):
+def checkout_success(request, order_ref):
     """
     Handle successful checkouts
     """

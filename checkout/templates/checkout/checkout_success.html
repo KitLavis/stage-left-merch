@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="overlay"></div>
+<div class="container my-3 basket-container rounded">
+    <div>
+        <h4 class="d-flex justify-content-between align-items-center mb-3">
+            <span class="text-muted">Thank you!</span>
+        </h4>
+        <h6 class="my-0">Your order reference is {{ order.order_ref }}. Please keep a record of this information.</h6>
+        <br>
+        <h6 class="my-0">A confirmation containing your order details was sent to {{ order.email }}.</h6>
+        <br>
+    </div>
+    <div>
+        <h6 class="my-0">Want to support the scene even further? Why not <a href="#" alt="Sign up link">sign up</a> to our mailing list to keep up to date
+            on killer new products from your favourite up and coming artists.
+        </h6>
+    </div>
+</div>
+{% endblock %}
