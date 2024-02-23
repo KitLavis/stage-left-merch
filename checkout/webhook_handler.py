@@ -1,4 +1,5 @@
 from django.http import HttpResponse
+import stripe
 
 
 class StripeWH_Handler:
@@ -7,7 +8,7 @@ class StripeWH_Handler:
     def __init__(self, request):
         self.request = request
 
-    def handle_generic_event(self, event):
+    def handle_event(self, event):
         """
         Handle a generic event
         """

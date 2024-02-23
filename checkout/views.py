@@ -29,8 +29,8 @@ def cache_checkout_data(request):
 
 
 def checkout(request):
-    spk = settings.STRIPE_PUBLIC_KEY
-    ssk = settings.STRIPE_SECRET_KEY
+    stripe_public_key = settings.STRIPE_PUBLIC_KEY
+    stripe_secret_key = settings.STRIPE_SECRET_KEY
 
     if request.method == 'POST':
         basket = request.session.get('basket', {})
@@ -101,7 +101,7 @@ def checkout(request):
         current_basket = basket_contents(request)
         total = current_basket['grand_total']
         stripe_total = round(total * 100)
-        stripe.api_key = ssk
+        stripe.api_key = stripe_secret_key
         intent = stripe.PaymentIntent.create(
             amount=stripe_total,
             currency=settings.STRIPE_CURRENCY,
@@ -112,7 +112,7 @@ def checkout(request):
     template = 'checkout/checkout.html'
     context = {
         'order_form': order_form,
-        'stripe_public_key': spk,
+        'stripe_public_key': stripe_public_key,
         'client_secret': intent.client_secret,
     }
 
