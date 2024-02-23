@@ -50,51 +50,66 @@ form.addEventListener('submit', function(ev) {
     $('#submit-button').attr('disabled', true);
     $('#payment-form').fadeToggle(100);
     $('#loading-overlay').fadeToggle(100);
-    stripe.confirmCardPayment(clientSecret, {
-        payment_method: {
-            card: card,
-            billing_details: {
-                name: $.trim(form.first_name.value), $.trim(form.last_name.value),
+
+    var saveInfo = Boolean($('#id-save-info').attr('checked'));
+    // From using {% csrf_token %} in the form
+    var csrfToken = $('input[name="csrfmiddlewaretoken"]').val();
+    var postData = {
+        'csrfmiddlewaretoken': csrfToken,
+        'client_secret': clientSecret,
+        'save_info': saveInfo,
+    };
+    var url = '/checkout/cache_checkout_data/';
+
+    $.post(url, postData).done(function () {
+        stripe.confirmCardPayment(clientSecret, {
+            payment_method: {
+                card: card,
+                billing_details: {
+                    name: $.trim(form.first_name.value, ' ', form.last_name),
+                    phone: $.trim(form.mobile_number.value),
+                    email: $.trim(form.email.value),
+                    address:{
+                        line1: $.trim(form.street_line1.value),
+                        line2: $.trim(form.street_line2.value),
+                        city: $.trim(form.town_city.value),
+                        country: "United Kingdom",
+                        state: $.trim(form.county.value),
+                    }
+                }
+            },
+            shipping: {
+                name: $.trim(form.first_name.value, ' ', form.last_name),
                 phone: $.trim(form.mobile_number.value),
-                email: $.trim(form.email.value),
-                address:{
+                address: {
                     line1: $.trim(form.street_line1.value),
                     line2: $.trim(form.street_line2.value),
-                    city: $.trim(form.town_city.value),
-                    country: "United Kingdom",
+                    city: $.trim(form.town_ity.value),
+                    country: "United Kingom",
+                    postal_code: $.trim(form.postcode.value),
                     state: $.trim(form.county.value),
                 }
+            },
+        }).then(function(result) {
+            if (result.error) {
+                var errorDiv = document.getElementById('card-errors');
+                var html = `
+                    <span class="icon" role="alert">
+                    <i class="fas fa-times"></i>
+                    </span>
+                    <span>${result.error.message}</span>`;
+                $(errorDiv).html(html);
+                $('#payment-form').fadeToggle(100);
+                $('#loading-overlay').fadeToggle(100);
+                card.update({'disabled': false});
+                $('#submit-button').attr('disabled', false);
+            } else {
+                if (result.paymentIntent.status === 'succeeded') {
+                    form.submit();
+                }
             }
-        },
-        shipping: {
-            name: $.trim(form.first_name.value), $.trim(form.last_name.value),
-            phone: $.trim(form.mobile_number.value),
-            address: {
-                line1: $.trim(form.street_line1.value),
-                line2: $.trim(form.street_line2.value),
-                city: $.trim(form.town_ity.value),
-                country: "United Kingom",
-                postal_code: $.trim(form.postcode.value),
-                state: $.trim(form.county.value),
-            }
-        },
-    }).then(function(result) {
-        if (result.error) {
-            var errorDiv = document.getElementById('card-errors');
-            var html = `
-                <span class="icon" role="alert">
-                <i class="fas fa-times"></i>
-                </span>
-                <span>${result.error.message}</span>`;
-            $(errorDiv).html(html);
-            $('#payment-form').fadeToggle(100);
-            $('#loading-overlay').fadeToggle(100);
-            card.update({'disabled': false});
-            $('#submit-button').attr('disabled', false);
-        } else {
-            if (result.paymentIntent.status === 'succeeded') {
-                form.submit();
-            }
-        }
-    });
+        });
+    }).fail(function () {
+        location.reload();
+    })
 });
