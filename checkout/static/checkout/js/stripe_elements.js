@@ -66,26 +66,26 @@ form.addEventListener('submit', function(ev) {
             payment_method: {
                 card: card,
                 billing_details: {
-                    name: $.trim(form.first_name.value, ' ', form.last_name),
+                    name: $.trim(form.last_name.value),
                     phone: $.trim(form.mobile_number.value),
                     email: $.trim(form.email.value),
                     address:{
                         line1: $.trim(form.street_line1.value),
                         line2: $.trim(form.street_line2.value),
                         city: $.trim(form.town_city.value),
-                        country: "UK",
+                        country: $.trim(form.country.value),
                         state: $.trim(form.county.value),
                     }
                 }
             },
             shipping: {
-                name: $.trim(form.first_name.value, ' ', form.last_name),
+                name: $.trim(form.last_name),
                 phone: $.trim(form.mobile_number.value),
                 address: {
                     line1: $.trim(form.street_line1.value),
                     line2: $.trim(form.street_line2.value),
                     city: $.trim(form.town_city.value),
-                    country: "UK",
+                    country: $.trim(form.country.value),
                     postal_code: $.trim(form.postcode.value),
                     state: $.trim(form.county.value),
                 }
