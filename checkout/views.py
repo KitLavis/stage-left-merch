@@ -4,16 +4,15 @@ from django.contrib import messages
 from django.conf import settings
 from django.http import HttpResponse
 
-from .forms import OrderForm
-from .models import Order, OrderLineItem
+import stripe
+import json
+
 from products.models import Product
 from basket.contexts import basket_contents
 from user.models import UserProfile
 from user.forms import ProfileForm
-
-import stripe
-import json
-
+from .forms import OrderForm
+from .models import Order, OrderLineItem
 
 @require_POST
 def cache_checkout_data(request):
@@ -26,6 +25,7 @@ def cache_checkout_data(request):
             'username': request.user,
         })
         return HttpResponse(status=200)
+
     except Exception as e:
         messages.error(request, 'Sorry, your payment could not be \
             processed. Please try again later.')
@@ -89,6 +89,7 @@ def checkout(request):
 
             request.session['save_info'] = 'save-info' in request.POST
             return redirect(reverse('checkout_success', args=[order.order_ref]))
+
         else:
             messages.add_message(
                 request,
