@@ -120,6 +120,7 @@
                   </a>
                   <div class="dropdown-menu" aria-labelledby="user-options">
                     {% if request.user.is_authenticated %}
+                    <a href="{% url 'user' %}" class="dropdown-item">Account Management</a>
                     <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
                     {% else %}
                     <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
