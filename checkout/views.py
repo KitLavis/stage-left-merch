@@ -3,10 +3,14 @@ from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.conf import settings
 from django.http import HttpResponse
+
 from .forms import OrderForm
 from .models import Order, OrderLineItem
 from products.models import Product
 from basket.contexts import basket_contents
+from user.models import UserProfile
+from user.forms import ProfileForm
+
 import stripe
 import json
 
@@ -52,7 +56,7 @@ def checkout(request):
             order = order_form.save(commit=False)
             pid = request.POST.get('client_secret').split('_secret')[0]
             order.stripe_pid = pid
-            order.original_basket = json.dumps(bag)
+            order.original_basket = json.dumps(basket)
             order.save()
             for product_id, product_data in basket.items():
                 try:
@@ -81,7 +85,7 @@ def checkout(request):
                         'Please contact us for assistance.'
                     )
                     order.delete()
-                    return redirect(reverse('view_bag'))
+                    return redirect(reverse('view_basket'))
 
             request.session['save_info'] = 'save-info' in request.POST
             return redirect(reverse('checkout_success', args=[order.order_ref]))
@@ -127,8 +131,30 @@ def checkout_success(request, order_ref):
     """
     Handle successful checkouts
     """
+
     save_info = request.session.get('save_info')
     order = get_object_or_404(Order, order_ref=order_ref)
+
+    if request.user.is_authenticated:
+        profile = UserProfile.objects.get(user=request.user)
+        # Attach the user's profile to the order
+        order.user_profile = profile
+        order.save()
+
+    if save_info:
+            profile_data = {
+                'default_mobile_number': order.mobile_number,
+                'default_house_name': order.house_name,
+                'default_street_line1': order.street_line1,
+                'default_street_line2': order.street_line2,
+                'default_town_city': order.town_city,
+                'default_county': order.county,
+                'default_postcode': order.postcode,
+            }
+            profile_form = ProfileForm(profile_data, instance=profile)
+            if profile_form.is_valid():
+                profile_form.save()
+
     messages.add_message(
         request,
         messages.SUCCESS,

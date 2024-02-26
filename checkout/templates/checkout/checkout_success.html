@@ -18,9 +18,15 @@
         <br>
     </div>
     <div>
+        {% if from_profile %}
+        <a href="{% url 'user' %}" class="btn rounded-0 my-2">
+            <span class="text-uppercase">Back to Profile</span>
+        </a>
+        {% else %}
         <h6 class="my-0">Want to support the scene even further? Why not <a href="#" alt="Sign up link">sign up</a> to our mailing list to keep up to date
             on killer new products from your favourite up and coming artists.
         </h6>
+        {% endif %}
     </div>
 </div>
 {% endblock %}
