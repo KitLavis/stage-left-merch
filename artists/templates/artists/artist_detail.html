@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container-fluid products-container">
+    <div class="card my-3">
+        <div class="row">
+            <div class="col-4">
+                {% if 'placeholder' in artist.image.url %}
+                <img class="card-img-top" src="{% static 'images/default.jpg' %}" alt="Image is yet to be uploaded">
+                {% else %}
+                <img class="card-img-top" src="{{ artist.image.url }}" alt="{{ artist.friendly_name }}">
+                {% endif %}
+            </div>
+            <div class="col-8">
+                <div class="card-body">
+                    <h5 class="card-title">{{ arist.friendly_name }}</h5>
+                    <p class="card-text">{{ artist.description }}</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">est. {{ artist.established }}</li>
+                </ul>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">{{ artist.hometown }}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

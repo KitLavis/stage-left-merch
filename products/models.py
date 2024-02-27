@@ -8,6 +8,7 @@ STATUS = ((0, "Draft"), (1, "Published"))
 class Artist(models.Model):
     friendly_name = models.CharField(max_length=250, null=True, blank=True, unique=True)
     name = models.SlugField(max_length=250, unique=True)
+    image = CloudinaryField('image', default='placeholder')
     hometown = models.CharField(max_length=250, null=True, blank=True)
     established = models.IntegerField()
     bio = models.TextField(null=True, blank=True)
