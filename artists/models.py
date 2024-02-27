@@ -13,5 +13,8 @@ class Testimonial(models.Model):
         default=5)
     review = models.TextField()
 
+    class Meta:
+        get_latest_by = "artist"
+
     def __str__(self):
-        return self.artist
+        return self.artist.friendly_name

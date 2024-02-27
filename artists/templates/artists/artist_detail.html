@@ -7,7 +7,7 @@
         <div class="row">
             <div class="col-4">
                 {% if 'placeholder' in artist.image.url %}
-                <img class="card-img-top" src="{% static 'images/default.jpg' %}" alt="Image is yet to be uploaded">
+                <img class="card-img-top" src="{{ MEDIA.URL }}default_image.webp" alt="Image is yet to be uploaded">
                 {% else %}
                 <img class="card-img-top" src="{{ artist.image.url }}" alt="{{ artist.friendly_name }}">
                 {% endif %}
