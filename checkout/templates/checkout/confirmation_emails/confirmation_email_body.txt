@@ -1,0 +1,18 @@
+Hi there {{ order.first_name }} {{ order.first_name }},
+
+Thanks a lot for ordering from us and supporting the scene! Details of your order are as follows:
+
+Reference Number: {{ order.order_ref }}
+Date of order: {{ order.date }}
+
+Total: ${{ order.order_total }}
+Delivery: ${{ order.delivery_cost }}
+Grand Total: ${{ order.grand_total }}
+
+Your order will be posted to {{ order.stree_line1 }}, {{ order.postcode }} asap.
+
+If you have any questions regarding your order, drop us a line at {{ contact_email }}.
+
+All the best,
+
+The StageLeft team.

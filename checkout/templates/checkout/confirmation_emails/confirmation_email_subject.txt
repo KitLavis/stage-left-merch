@@ -1,0 +1,1 @@
+StageLeft | Order confirmation for reference: {{ order.order_ref }}
