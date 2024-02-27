@@ -96,6 +96,10 @@ header .navbar {
     background-color: rgba(255, 255, 255, 0.85);
 }
 
+.white-background-85 {
+    background-color: rgba(255, 255, 255, 0.85);
+}
+
 /* ------------------------------------------------------ basket */
 
 .basket-container {
