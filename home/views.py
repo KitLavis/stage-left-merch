@@ -1,7 +1,8 @@
-from django.shortcuts import render, redirect, get_object_or_404
-from .forms import ContactForm
+from django.shortcuts import render, redirect, get_object_or_404, reverse
 from django.http import HttpResponse
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
+from .forms import ContactForm
 from .models import Contact
 
 
@@ -55,7 +56,17 @@ def contact_success(request):
     return render(request, 'home/contact_success.html')
 
 
+@login_required
 def customer_messages(request):
+
+    if not request.user.is_superuser:
+        messages.add_message(
+                    request,
+                    messages.ERROR,
+                    'Only admin level users have access to that area'
+                )
+        return redirect(reverse('home'))
+
 
     all_messages = Contact.objects.all()
 
@@ -66,7 +77,17 @@ def customer_messages(request):
 
     return render(request, template, context)
 
+
+@login_required
 def message_detail(request, message_ref):
+
+    if not request.user.is_superuser:
+        messages.add_message(
+                    request,
+                    messages.ERROR,
+                    'Only admin level users have access to that area'
+                )
+        return redirect(reverse('home'))
 
     queryset = Contact.objects.all()
     m = get_object_or_404(queryset, message_ref=message_ref)
