@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="overlay"></div>
+<div class="container my-3 basket-container rounded">
+    <div class="col-12 col-lg-6">
+        <p class="text-muted">Messages</p>
+        <div class="order-history table-responsive">
+            <table class="table table-sm table-borderless">
+                <thead>
+                    <tr>
+                        <th>Reference</th>
+                        <th>Full Name</th>
+                        <th>Band/Artist Name</th>
+                        <th>Subject</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for m in all_messages %}
+                        <tr>
+                            <td>
+                                <a href="{% url 'message_detail' m.message_ref %}" title="{{ m.message_ref }}">
+                                    {{ m.message_ref }}
+                                </a>
+                            </td>
+                            <td>{{ m.full_name }}</td>
+                            <td>{{ m.band_artist_name }}</td>
+                            <td>{{ m.subject}}</td>
+                            <td>{{ m.sent_on }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

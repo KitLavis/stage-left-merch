@@ -1,7 +1,8 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .forms import ContactForm
 from django.http import HttpResponse
 from django.contrib import messages
+from .models import Contact
 
 
 def index(request):
@@ -52,3 +53,26 @@ def contact(request):
 def contact_success(request):
 
     return render(request, 'home/contact_success.html')
+
+
+def customer_messages(request):
+
+    all_messages = Contact.objects.all()
+
+    template = 'home/customer_messages.html'
+    context = {
+        'all_messages': all_messages,
+    }
+
+    return render(request, template, context)
+
+def message_detail(request, message_ref):
+
+    queryset = Contact.objects.all()
+    m = get_object_or_404(queryset, message_ref=message_ref)
+    template = 'home/message_detail.html'
+    context = {
+        'm': m,
+    }
+
+    return render(request, template , context)
