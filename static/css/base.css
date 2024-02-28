@@ -38,6 +38,13 @@ a:hover {
     text-decoration: none;
 }
 
+.header-title > .col > a {
+    color: white;
+}
+.header-title > .col > a:hover {
+    color: white;
+}
+
 header .navbar {
     width: 100%;
 }

@@ -49,7 +49,7 @@
       <div class="container-fluid text-center">
         <div class="row header-title py-3">
           <div class="col">
-            <h1>StageLeft.</h1>
+            <a href="{% url 'home' %}" alt="Click to return to the homepage" class="home-link"><h1>StageLeft.</h1></a>
           </div>
         </div>
         <div class="row header-two">
@@ -106,6 +106,7 @@
                       Artists
                     </a>
                     <div class="dropdown-menu border-0" aria-labelledby="artists-link">
+                      <a href="{% url 'artists' %}" class="dropdown-item">All Artists</a>
                       {% for artist in all_artists %}
                       <a href="{% url 'products' %}?artist={{ artist.name }}" class="dropdown-item">{{ artist.friendly_name }}</a>
                       {% endfor %}
