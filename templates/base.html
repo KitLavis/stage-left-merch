@@ -172,19 +172,19 @@
       <div class="row">
         <div class="col-6 col-md-2 my-3">
           <ul class="nav flex-column">
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">All Products</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Music</a></li>
+            <li class="nav-item mb-2"><a href="{% url 'products' %}" class="nav-link p-0 text-muted" aria-label="View all products">All Products</a></li>
+            <li class="nav-item mb-2"><a href="{% url 'products' %}?category=vinyl,tapes,cds" class="nav-link p-0 text-muted" aria-label="View all music on sale">Music</a></li>
           </ul>
         </div>
         <div class="col-6 col-md-2 my-3">
           <ul class="nav flex-column">
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Artists</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Testimonials</a></li>
+            <li class="nav-item mb-2"><a href="{% url 'artists' %}" class="nav-link p-0 text-muted" aria-label="View all the artists we work with">Artists</a></li>
+            <li class="nav-item mb-2"><a href="{% url 'testimonials' %}" class="nav-link p-0 text-muted" aria-label="View testimonials from our collaborators">Testimonials</a></li>
         </div>
         <div class="col-6 col-md-2 my-3">
           <ul class="nav flex-column">
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Contact</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Privacy Policy</a></li>
+            <li class="nav-item mb-2"><a href="{% url 'contact' %}" class="nav-link p-0 text-muted" aria-label="Get in contact">Contact</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted" aria-label="View our privacy policy">Privacy Policy</a></li>
           </ul>
         </div>
         <div class="col-md-5 offset-md-1 my-3">
