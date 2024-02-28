@@ -2,12 +2,12 @@
 {% load static %}
 
 {% block content %}
-<div class="container-fluid testimonials-container">
+<div class="container-fluid testimonials-container justify-content-center">
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
-            <div class="carousel-item active">
-                <div class="row">
-                    <div class="col-auto">
+            <div class="carousel-item active mt-5">
+                <div class="row justify-content-center">
+                    <div class="col-auto mt-3">
                         <span class="testimonial-rating">
                             {% if latest_testimonial.rating == 5 %}
                             <i class="fa-solid fa-star"></i>
@@ -15,25 +15,39 @@
                             <i class="fa-solid fa-star"></i>
                             <i class="fa-solid fa-star"></i>
                             <i class="fa-solid fa-star"></i>
+                            {% elif latest_testimonial.rating == 4 %}
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            {% elif latest_testimonial.rating == 3 %}
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            {% elif latest_testimonial.rating == 2 %}
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            {% elif latest_testimonial.rating == 1 %}
+                            <i class="fa-solid fa-star"></i>
                             {% endif %}
                         </span>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-auto">
+                <div class="row justify-content-center">
+                    <div class="col-auto mt-3">
                         <p>{{ latest_testimonial.review }}</p>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row justify-content-center">
                     <div class="col-auto">
-                        <p>{{ latest_testimonial.artist.friendly_name }}</p>
+                        <strong><p>{{ latest_testimonial.artist.friendly_name }}</p></strong>
                     </div>
                 </div>
             </div>
           {% for testimonial in testimonials %}
-          <div class="carousel-item">
-            <div class="row">
-                <div class="col-auto">
+          <div class="carousel-item mt-5">
+            <div class="row justify-content-center">
+                <div class="col-auto mt-3">
                     <span class="testimonial-rating">
                         {% if testimonial.rating == 5 %}
                         <i class="fa-solid fa-star"></i>
@@ -41,18 +55,32 @@
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
+                        {% elif testimonial.rating == 4 %}
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        {% elif testimonial.rating == 3 %}
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        {% elif testimonial.rating == 2 %}
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        {% elif testimonial.rating == 1 %}
+                        <i class="fa-solid fa-star"></i>
                         {% endif %}
                     </span>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-auto">
+            <div class="row justify-content-center">
+                <div class="col-auto mt-3">
                     <p>{{ testimonial.review }}</p>
                 </div>
             </div>
-            <div class="row">
+            <div class="row justify-content-center">
                 <div class="col-auto">
-                    <p>{{ testimonial.artist.friendly_name }}</p>
+                    <strong><p>{{ testimonial.artist.friendly_name }}</p></strong>
                 </div>
             </div>
           </div>

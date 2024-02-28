@@ -1,5 +1,6 @@
 html {
-    height: 100;
+    height: 100vh;
+    width: 100vw;
 }
 
 body {
@@ -25,7 +26,7 @@ body {
 }
 
 footer {
-    width: 100%;
+    width: 100vw;
     background-color: rgba(255, 255, 255, 0.85);
 }
 
@@ -46,7 +47,7 @@ a:hover {
 }
 
 header .navbar {
-    width: 100%;
+    width: 100vw;
 }
 
 .nav-link {
@@ -123,6 +124,23 @@ header .navbar {
 
 .allauth-container {
     background-color: rgba(255, 255, 255, 0.85);
+}
+
+/* ------------------------------------------------------ Testimonials */
+
+.testimonials-container {
+    min-height: 50vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.75);
+}
+
+.carousel-item {
+    color: white;
+}
+
+.fa-star {
+    color: #d4af37;
+    font-size: 150%;
 }
 
 /* ------------------------------------------------------ Media queries */
