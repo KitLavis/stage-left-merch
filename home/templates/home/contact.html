@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <div class="overlay"></div>
+    <div class="container my-3 basket-container rounded">
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <h4 class="d-flex justify-content-between align-items-center mb-3">
+                    <span class="text-muted">Contact</span>
+                </h4>
+                <p>Fill out the form to get in contact</p>
+                <form action="{% url 'contact' %}" method="POST" id="contact-form">
+                    {% csrf_token %}
+                    <fieldset class="name-fields rounded">
+                        <div class="form-row mb-3">
+                            <div class="form-group col-md-6">
+                                {{ contact_form.full_name|as_crispy_field }}
+                            </div>
+                            <div class="form-group col-md-6">
+                                {{ contact_form.band_artist_name|as_crispy_field }}
+                            </div>
+                        </div>
+                    </fieldset>
+                    <fieldset class="contact-info mb-3 w-100 rounded">
+                        {{ contact_form.email|as_crispy_field }}
+                    </fieldset>
+                    <fieldset class="message-info rounded">
+                        {{ contact_form.subject|as_crispy_field }}
+                        {{ contact_form.message | as_crispy_field }}
+                    </fieldset>
+                    <div class="submit-button text-right mt-5 mb-2"> 
+                        <button id="submit-button" class="btn rounded-0">
+                            <span class="font-weight-bold">Submit</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
