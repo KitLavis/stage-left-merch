@@ -8,11 +8,6 @@
         <div class="col-12 col-sm-8 col-md-6 col-lg-4 mb-3">
             <div class="card product-card">
               <img class="card-img" src="{{ product.featured_image.url }}" alt="{{ product.name }}">
-              <!-- <div class="card-img-overlay d-flex justify-content-end">
-                <a href="#" class="card-link text-danger like">
-                  <i class="fas fa-heart"></i>
-                </a>
-              </div> -->
               <div class="card-body">
                 <h4 class="card-title">{{ product.name }}</h4>
                 <h6 class="card-subtitle mb-2 text-muted">ID: {{ product.sku }}</h6>
@@ -24,8 +19,11 @@
             </div>
           </div>
         {% endfor %}
-        <!-- Pagination -->
-        <div class="container justify-content-center">
+    </div>
+    <!-- Pagination -->
+    <div class="row justify-content-center paginator-row my-3">
+      <div class="col-4 white-background-85">
+        <div class="paginator-container text-center">
           {% if p_products.has_previous %}
           <a href="?page=1">&laquo First</a>
           <a href="?page={{ p_products.previous_page_number }}">Previous</a>
@@ -35,6 +33,7 @@
           <a href="?page={{ p_products.next_page_number }}">Next</a>
           <a href="?page={{ p_products.paginator.num_pages }}">Last &raquo;</a>
           {% endif %}
+        </div>
       </div>
     </div>
 </div>
