@@ -4,7 +4,7 @@
 {% block content %}
 <div class="container-fluid products-container mt-3">
     <div class="row products-row">
-        {% for product in products %}
+        {% for product in p_products %}
         <div class="col-12 col-sm-8 col-md-6 col-lg-4 mb-3">
             <div class="card product-card">
               <img class="card-img" src="{{ product.featured_image.url }}" alt="{{ product.name }}">
@@ -24,6 +24,18 @@
             </div>
           </div>
         {% endfor %}
+        <!-- Pagination -->
+        <div class="container justify-content-center">
+          {% if p_products.has_previous %}
+          <a href="?page=1">&laquo First</a>
+          <a href="?page={{ p_products.previous_page_number }}">Previous</a>
+          {% endif %}
+          Page {{ p_products.number }} of {{ p_products.paginator.num_pages }}
+          {% if p_products.has_next %}
+          <a href="?page={{ p_products.next_page_number }}">Next</a>
+          <a href="?page={{ p_products.paginator.num_pages }}">Last &raquo;</a>
+          {% endif %}
+      </div>
     </div>
 </div>
 {% endblock %}

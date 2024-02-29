@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.core.paginator import Paginator
 from django.contrib import messages
 from django.db.models import Q
 from .models import Product, Category, Artist
@@ -34,9 +35,14 @@ def all_products(request):
 
         queries = Q(name__icontains=query) | Q(description__icontains=query)
         products = products.filter(queries)
+    
+    p = Paginator(products, 12)
+    page = request.GET.get("page")
+    p_products = p.get_page(page)
 
     context = {
         'products': products,
+        'p_products': p_products,
         'search_term': query,
     }
 
