@@ -143,6 +143,13 @@ header .navbar {
     font-size: 150%;
 }
 
+#mc_embed_signup {
+    background: #fff; false;
+    clear: left;
+    font: 14px Helvetica, Arial, sans-serif;
+    width: 600px;
+}
+
 /* ------------------------------------------------------ Media queries */
 
 @media only screen and (max-width: 480px) {
