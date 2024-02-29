@@ -43,3 +43,8 @@ def order_history(request, order_ref):
     }
 
     return render(request, template, context)
+
+
+@login_required
+def change_email(request):
+    return render(request, '../templates/allauth/account/email_change.html')
