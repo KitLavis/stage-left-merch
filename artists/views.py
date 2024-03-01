@@ -3,6 +3,8 @@ from django.contrib import messages
 from .models import Testimonial
 from .forms import TestimonialForm
 from products.models import Artist
+from user.models import UserProfile
+from django.contrib.auth.models import User
 
 
 def all_artists(request):
@@ -43,6 +45,7 @@ def all_testimonials(request):
 
 
 def add_testimonial(request):
+
     if request.method == 'POST':
         form = TestimonialForm(request.POST)
         if form.is_valid():

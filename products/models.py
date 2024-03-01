@@ -1,6 +1,7 @@
 import datetime
 from django.db import models
 from cloudinary.models import CloudinaryField
+from django.contrib.auth.models import User
 
 STATUS = ((0, "Draft"), (1, "Published"))
 
@@ -8,6 +9,7 @@ STATUS = ((0, "Draft"), (1, "Published"))
 class Artist(models.Model):
     friendly_name = models.CharField(max_length=250, null=True, blank=True, unique=True)
     name = models.SlugField(max_length=250, unique=True)
+    user = models.OneToOneField(User, null=True, blank=True, on_delete=models.PROTECT)
     image = CloudinaryField('image', default='placeholder')
     hometown = models.CharField(max_length=250, null=True, blank=True)
     established = models.IntegerField()

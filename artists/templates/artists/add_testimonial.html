@@ -11,13 +11,19 @@
         </div>
         <div class="row">
             <div class="col-12 col-md-6">
+                {% if user.artist %}
                 <form method="POST" action="{% url 'add_testimonial' %}" class="form mb-2" enctype="multipart/form-data">
                     {% csrf_token %}
-                    {{ form | crispy }}
+                    {{ form.artist | as_crispy_field }}
+                    {{ form.rating | as_crispy_field }}
+                    {{ form.review | as_crispy_field }}
                     <div class="text-right">
-                        <button class="btn btn-black rounded-0" type="submit">Add Testimonial</button>
+                        <button class="btn rounded-0" type="submit">Add Testimonial</button>
                     </div>
                 </form>
+                {% else %}
+                <p>Sorry, this is only available to our collaborators</p>
+                {% endif %}
             </div>            
         </div>
     </div>
