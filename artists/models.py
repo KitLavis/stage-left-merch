@@ -7,7 +7,7 @@ class Testimonial(models.Model):
     artist = models.ForeignKey(Artist, on_delete=models.PROTECT)
     rating = models.PositiveIntegerField(
         validators=[
-            MaxValueValidator(100),
+            MaxValueValidator(5),
             MinValueValidator(1)
         ],
         default=5)
