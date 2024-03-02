@@ -1,10 +1,9 @@
 from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.contrib import messages
+from django.contrib.auth.models import User
 from .models import Testimonial
 from .forms import TestimonialForm
 from products.models import Artist
-from user.models import UserProfile
-from django.contrib.auth.models import User
 
 
 def all_artists(request):
@@ -32,7 +31,7 @@ def artist_detail(request, slug):
 
 def all_testimonials(request):
 
-    queryset = Testimonial.objects.all()
+    queryset = Testimonial.objects.filter(status=1)
     latest_testimonial = queryset.latest()
     testimonials = queryset.exclude(id=latest_testimonial.id)
 

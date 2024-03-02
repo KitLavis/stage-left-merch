@@ -4,6 +4,8 @@ from products.models import Artist
 from django.contrib.auth.models import User
 
 
+STATUS = ((0, 'Draft'), (1, 'Published'),)
+
 class Testimonial(models.Model):
     artist = models.ForeignKey(Artist, on_delete=models.PROTECT)
     rating = models.PositiveIntegerField(
@@ -13,6 +15,7 @@ class Testimonial(models.Model):
         ],
         default=5)
     review = models.TextField()
+    status = models.IntegerField(choices=STATUS, default=0)
 
     class Meta:
         get_latest_by = "artist"
