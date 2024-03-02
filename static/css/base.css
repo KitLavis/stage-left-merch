@@ -11,32 +11,25 @@ body {
     /* height: calc(100vh - 164px); */
 }
 
+/* ------------------------------------------------------ Header */
+
 .hero-text-container {
     width: 100vw;
     min-height: 100vh;
 }
 
+header > .container-fluid {
+    padding: 0;
+}
+
 .header-title {
     background-color: rgba(0, 0, 0, 0.85);
     color: white;
+    margin-right: 0;
 }
 
-.header-two {
+.secondary-header {
     background-color: rgba(255, 255, 255, 0.75);
-}
-
-footer {
-    width: 100vw;
-    background-color: rgba(255, 255, 255, 0.85);
-}
-
-a {
-    color: black;
-}
-
-a:hover {
-    color: rgba(0, 0, 0, 0.55);
-    text-decoration: none;
 }
 
 .header-title > .col > a {
@@ -44,6 +37,14 @@ a:hover {
 }
 .header-title > .col > a:hover {
     color: white;
+}
+
+.hero-text-container > .row {
+    width: 100vw;
+}
+
+.navbar-collapse {
+    z-index: 99999999;
 }
 
 header .navbar {
@@ -56,6 +57,41 @@ header .navbar {
 
 .nav-link:hover {
     color: rgba(0, 0, 0, 0.55);
+}
+
+/* ------------------------------------------------------ Footer */
+
+footer {
+    width: 100vw;
+    background-color: rgba(255, 255, 255, 0.85);
+}
+
+.footer-row {
+    width: 100vw;
+    padding-right: 0;
+    margin-right: 0;
+}
+
+.footer-row > div {
+    padding-right: 0;
+}
+
+#mc_embed_signup {
+    background: #fff; false;
+    clear: left;
+    font: 14px Helvetica, Arial, sans-serif;
+    width: auto;
+}
+
+/* ------------------------------------------------------ General */
+
+a {
+    color: black;
+}
+
+a:hover {
+    color: rgba(0, 0, 0, 0.55);
+    text-decoration: none;
 }
 
 .support {
@@ -76,14 +112,6 @@ header .navbar {
 
 .btn-dark {
     background-color: rgba(0, 0, 0, 0.75);
-}
-
-.hero-text-container > .row {
-    width: 100vw;
-}
-
-.navbar-collapse {
-    z-index: 99999999;
 }
 
 .update-link, .remove-item {
@@ -145,13 +173,6 @@ header .navbar {
 .fa-star {
     color: #d4af37;
     font-size: 150%;
-}
-
-#mc_embed_signup {
-    background: #fff; false;
-    clear: left;
-    font: 14px Helvetica, Arial, sans-serif;
-    width: 600px;
 }
 
 /* ------------------------------------------------------ Media queries */

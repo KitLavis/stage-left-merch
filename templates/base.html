@@ -24,6 +24,11 @@
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <!-- Mailchimp -->
   <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
+  <style type="text/css">
+    #mc_embed_signup{background:#fff; false;clear:left; font:14px Helvetica,Arial,sans-serif; width: 100%;}
+    /* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
+       We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+</style>
   <!-- Custom CSS -->
   <link rel="stylesheet" href="{% static 'css/base.css' %}">
   {% endblock %}
@@ -58,26 +63,20 @@
   <header>
     <div class="container-fluid text-center">
       <div class="row header-title py-3">
-        <div class="col">
+        <div class="col pr-0">
           <a href="{% url 'home' %}" alt="Click to return to the homepage" class="home-link">
             <h1>StageLeft.</h1>
           </a>
         </div>
       </div>
-      <div class="row header-two">
-        <nav class="navbar navbar-expand-lg">
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle"
-            aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
-            <span><i class="fa-solid fa-bars"></i></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarToggle">
-            <div class="col-md-2">
-              <form class="d-flex" method="GET" action="{% url 'products' %}">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="s-query">
-                <button class="btn btn-outline-success" type="submit">Search</button>
-              </form>
-            </div>
-            <div class="col-md-8">
+      <nav class="navbar navbar-expand-lg secondary-header">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle"
+          aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+          <span><i class="fa-solid fa-bars"></i></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarToggle">
+          <div class="row">
+            <div class="col-lg-12 col-xl-8">
               <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
                   <a class="logo-font font-weight-bold nav-link text-black mr-5 active" aria-current="page"
@@ -137,7 +136,7 @@
                 </li>
               </ul>
             </div>
-            <div class="col-md-2">
+            <div class="col-lg-6 col-xl-2">
               <span class="user-dropdown">
                 <a href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <i class="fa-regular fa-user"></i>
@@ -166,9 +165,15 @@
                 {% endif %}
               </p>
             </div>
+            <div class='col-lg-6 col-xl-2 order-xl-first'>
+              <form class="d-flex" method="GET" action="{% url 'products' %}">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="s-query">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+              </form>
+            </div>
           </div>
-        </nav>
-      </div>
+        </div>
+      </nav>
     </div>
   </header>
 
@@ -191,9 +196,9 @@
   {% block content %}
   {% endblock %}
 
-  <footer class="footer pl-3">
-    <div class="row">
-      <div class="col-6 col-md-2 my-3">
+  <footer class="footer">
+    <div class="row footer-row">
+      <div class="col-4 my-3">
         <ul class="nav flex-column">
           <li class="nav-item mb-2"><a href="{% url 'products' %}" class="nav-link p-0 text-muted"
               aria-label="View all products">All Products</a></li>
@@ -201,14 +206,14 @@
               class="nav-link p-0 text-muted" aria-label="View all music on sale">Music</a></li>
         </ul>
       </div>
-      <div class="col-6 col-md-2 my-3">
+      <div class="col-4 my-3">
         <ul class="nav flex-column">
           <li class="nav-item mb-2"><a href="{% url 'artists' %}" class="nav-link p-0 text-muted"
               aria-label="View all the artists we work with">Artists</a></li>
           <li class="nav-item mb-2"><a href="{% url 'testimonials' %}" class="nav-link p-0 text-muted"
               aria-label="View testimonials from our collaborators">Testimonials</a></li>
       </div>
-      <div class="col-6 col-md-2 my-3">
+      <div class="col-4 my-3">
         <ul class="nav flex-column">
           <li class="nav-item mb-2"><a href="{% url 'contact' %}" class="nav-link p-0 text-muted"
               aria-label="Get in contact">Contact</a></li>
@@ -216,7 +221,9 @@
               aria-label="View our privacy policy">Privacy Policy</a></li>
         </ul>
       </div>
-      <div class="col-md-5 offset-md-1 my-3">
+    </div>
+    <div class="row footer-row">
+      <div class="col-12 col-lg-8">
         <div id="mc_embed_shell">
           <div id="mc_embed_signup">
             <form
@@ -254,17 +261,9 @@
           </div>
         </div>
       </div>
-    </div>
-    <div class="d-flex flex-column flex-sm-row justify-content-between pt-4 border-top">
-      <p>&copy; StageLeft Merchandise 2024</p>
-      <ul class="list-unstyled d-flex">
-        <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24">
-              <use xlink:href="#twitter" /></svg></a></li>
-        <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24">
-              <use xlink:href="#instagram" /></svg></a></li>
-        <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24">
-              <use xlink:href="#facebook" /></svg></a></li>
-      </ul>
+      <div class="col-12 col-lg-4 pr-0">
+        <p>&copy; StageLeft Merchandise 2024</p>
+      </div>
     </div>
   </footer>
 
