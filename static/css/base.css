@@ -84,8 +84,11 @@ footer {
     padding-right: 0;
 }
 
+
+/* ------------------------------------------------------ Mailchimp */
+
 #mc_embed_signup {
-    background: #fff; false;
+    background: none;
     clear: left;
     font: 14px Helvetica, Arial, sans-serif;
     width: auto;
@@ -119,7 +122,12 @@ a:hover {
 }
 
 .btn-dark {
-    background-color: rgba(0, 0, 0, 0.75);
+    background-color: rgba(0, 0, 0, 0.85);
+    color: white;
+}
+
+.btn-dark > a {
+    color: white;
 }
 
 .update-link, .remove-item {
@@ -187,5 +195,11 @@ a:hover {
 @media only screen and (max-width: 480px) {
     .support {
         font-size: 1.5em;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .search-container {
+        /* margin-right: 1em; */
     }
 }

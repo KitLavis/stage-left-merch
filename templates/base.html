@@ -74,13 +74,13 @@
           aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
           <span><i class="fa-solid fa-bars"></i></span>
         </button>
-        <div class="collapse navbar-collapse justify-content-center" id="navbarToggle">
+        <div class="collapse navbar-collapse justify-content-around" id="navbarToggle">
           <div class="row">
-            <div class="col-lg-12 col-xl-8">
+            <div class="col-lg-12 col-xl-8 px-">
               <ul class="navbar-nav me-auto mb-2 mb-lg-0 justify-content-center">
                 <li class="nav-item">
                   <a class="logo-font font-weight-bold nav-link text-black active" aria-current="page"
-                    href="{% url 'products' %}" aria-label="View all products">All Products</a>
+                    href="{% url 'products' %}" aria-label="View all products">All</a>
                 </li>
                 <li class="nav-item dropdown">
                   <a class="logo-font font-weight-bold nav-link text-black" href="#" id="clothing-link"
@@ -136,7 +136,7 @@
                 </li>
               </ul>
             </div>
-            <div class="col-lg-6 col-xl-2">
+            <div class="col-lg-3 col-xl-2 offset-lg-3 offset-xl-0">
               <span class="user-dropdown">
                 <a href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <i class="fa-regular fa-user"></i>
@@ -165,10 +165,10 @@
                 {% endif %}
               </p>
             </div>
-            <div class='col-lg-6 col-xl-2 order-xl-first'>
+            <div class='col-lg-3 col-xl-2 order-xl-first search-container'>
               <form class="d-flex" method="GET" action="{% url 'products' %}">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="s-query">
-                <button class="btn btn-outline-success" type="submit">Search</button>
+                <button class="btn btn-dark" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
               </form>
             </div>
           </div>
@@ -197,7 +197,7 @@
   {% endblock %}
 
   <footer class="footer">
-    <div class="row footer-row">
+    <div class="row footer-row text-center">
       <div class="col-4 my-3">
         <ul class="nav flex-column">
           <li class="nav-item mb-2"><a href="{% url 'products' %}" class="nav-link p-0 text-muted"
@@ -223,7 +223,7 @@
       </div>
     </div>
     <div class="row footer-row">
-      <div class="col-12 col-lg-8">
+      <div class="col-12 col-md-10 col-lg-6 offset-lg-1 order-lg-last">
         <div id="mc_embed_shell">
           <div id="mc_embed_signup">
             <form
@@ -261,7 +261,7 @@
           </div>
         </div>
       </div>
-      <div class="col-12 col-lg-4 pr-0">
+      <div class="col-12 col-lg-3 offset-lg-1 pr-0 align-self-end">
         <p>&copy; StageLeft Merchandise 2024</p>
       </div>
     </div>
