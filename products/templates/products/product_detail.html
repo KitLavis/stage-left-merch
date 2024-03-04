@@ -3,7 +3,7 @@
 
 {% block content %}
 <div class="container-fluid products-container">
-    <div class="card my-3">
+    <div class="card product-card my-3">
         <div class="row">
             <div class="col-4">
                 {% if 'placeholder' in product.featured_image.url %}
@@ -44,10 +44,10 @@
                                 </div>
                             </div>
                             <div class="col{% if s %}-12 mt-2{% endif %}">
-                                <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 mt-5">
+                                <a href="{% url 'products' %}" class="btn rounded-0 mt-5">
                                     <span class="text-uppercase">Keep Shopping</span>
                                 </a>
-                                <input type="submit" class="btn btn-black rounded-0 text-uppercase mt-5" value="Add to Bag">
+                                <input type="submit" class="btn btn-dark rounded text-uppercase mt-5" value="Add to Bag">
                             </div>
                             <input type="hidden" name="redirect_url" value="{{ request.path }}">
                             {% endwith %}
