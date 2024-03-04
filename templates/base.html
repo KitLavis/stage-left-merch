@@ -61,7 +61,7 @@
 <body>
   <!-- header -->
   <header>
-    <div class="container-fluid text-center">
+    <div class="container-fluid text-center justify-content-center">
       <div class="row header-title py-3">
         <div class="col pr-0">
           <a href="{% url 'home' %}" alt="Click to return to the homepage" class="home-link">
@@ -74,16 +74,16 @@
           aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
           <span><i class="fa-solid fa-bars"></i></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarToggle">
+        <div class="collapse navbar-collapse justify-content-center" id="navbarToggle">
           <div class="row">
             <div class="col-lg-12 col-xl-8">
-              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0 justify-content-center">
                 <li class="nav-item">
-                  <a class="logo-font font-weight-bold nav-link text-black mr-5 active" aria-current="page"
+                  <a class="logo-font font-weight-bold nav-link text-black active" aria-current="page"
                     href="{% url 'products' %}" aria-label="View all products">All Products</a>
                 </li>
                 <li class="nav-item dropdown">
-                  <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="clothing-link"
+                  <a class="logo-font font-weight-bold nav-link text-black" href="#" id="clothing-link"
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Clothing
                   </a>
@@ -95,7 +95,7 @@
                   </div>
                 </li>
                 <li class="nav-item dropdown">
-                  <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="music-link"
+                  <a class="logo-font font-weight-bold nav-link text-black" href="#" id="music-link"
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Music
                   </a>
@@ -107,7 +107,7 @@
                   </div>
                 </li>
                 <li class="nav-item dropdown">
-                  <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="misc-link"
+                  <a class="logo-font font-weight-bold nav-link text-black" href="#" id="misc-link"
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Miscellaneous
                   </a>
@@ -118,7 +118,7 @@
                   </div>
                 </li>
                 <li class="nav-item dropdown">
-                  <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="artists-link"
+                  <a class="logo-font font-weight-bold nav-link text-black" href="#" id="artists-link"
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Artists
                   </a>
@@ -131,7 +131,7 @@
                   </div>
                 </li>
                 <li class="nav-item">
-                  <a class="logo-font font-weight-bold nav-link text-black mr-5" aria-current="page"
+                  <a class="logo-font font-weight-bold nav-link text-black" aria-current="page"
                     href="{% url 'testimonials' %}" aria-label="View testimonials">Testimonials</a>
                 </li>
               </ul>

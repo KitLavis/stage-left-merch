@@ -10,6 +10,7 @@ body {
     box-sizing: border-box;
     min-height: 100vh;
     overflow-x: hidden;
+    overflow-y: scroll;
 }
 
 .row {
@@ -50,16 +51,8 @@ a > h1 {
     margin-block-end: 0;
 }
 
-.hero-text-container > .row {
-    width: 100%;
-}
-
 .navbar-collapse {
     z-index: 99999999;
-}
-
-header .navbar {
-    width: 100%;
 }
 
 .nav-link {
@@ -70,6 +63,10 @@ header .navbar {
     color: rgba(0, 0, 0, 0.55);
 }
 
+.nav-item > a {
+    margin: 0 1.5em;
+}
+
 /* ------------------------------------------------------ Footer */
 
 footer {
@@ -78,7 +75,7 @@ footer {
 }
 
 .footer-row {
-    width: 100%;
+    /* width: 100%; */
     padding-right: 0;
     margin-right: 0;
 }
@@ -136,7 +133,7 @@ a:hover {
 }
 
 .products-container > .row {
-    width: 100%;
+    /* width: 100%; */
 }
 
 .card.product-card {
@@ -144,7 +141,7 @@ a:hover {
 }
 
 .paginator-container {
-    width: 100%;
+    /* width: 100%; */
 }
 
 .white-background-85 {
@@ -160,7 +157,7 @@ a:hover {
 /* ------------------------------------------------------ Checkout */
 
 .other-details {
-    width: 100%;
+    /* width: 100%; */
 }
 
 /* ------------------------------------------------------ Checkout */
@@ -173,7 +170,6 @@ a:hover {
 
 .testimonials-container {
     min-height: 50vh;
-    width: 100vw;
     background-color: rgba(0, 0, 0, 0.75);
 }
 
