@@ -39,6 +39,10 @@ header > .container-fluid {
     padding: 8px 0px;
 }
 
+.secondary-header .nav-item {
+    margin: 0 1.5em;
+}
+
 .header-title > .col > a {
     color: white;
 }
@@ -61,10 +65,6 @@ a > h1 {
 
 .nav-link:hover {
     color: rgba(0, 0, 0, 0.55);
-}
-
-.nav-item > a {
-    margin: 0 1.5em;
 }
 
 /* ------------------------------------------------------ Footer */
@@ -152,6 +152,10 @@ a:hover {
     background-color: rgba(0, 0, 0, 0.85);
     color: white;
     width: 68px;
+}
+
+.card-img {
+    border-radius: 0.5rem;
 }
 
 /* ------------------------------------------------------ basket */

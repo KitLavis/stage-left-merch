@@ -5,14 +5,14 @@
 <div class="container-fluid products-container">
     <div class="card product-card my-3">
         <div class="row">
-            <div class="col-4">
+            <div class="col-12 col-md-4 align-self-center">
                 {% if 'placeholder' in product.featured_image.url %}
-                <img class="card-img-top" src="{% static 'images/default.jpg' %}" alt="Card image cap">
+                <img class="card-img" src="{% static 'images/default.jpg' %}" alt="Card image cap">
                 {% else %}
-                <img class="card-img-top" src="{{ product.featured_image.url }}" alt="Card image cap">
+                <img class="card-img" src="{{ product.featured_image.url }}" alt="Card image cap">
                 {% endif %}
             </div>
-            <div class="col-8">
+            <div class="col-12 col-md-8">
                 <div class="card-body">
                     <h5 class="card-title">{{ product.name }}</h5>
                     <p class="card-text">{{ product.description }}</p>
@@ -43,13 +43,17 @@
                                     value="1" min="1" max="99" id="id_qty_{{ product.id }}">
                                 </div>
                             </div>
-                            <div class="col{% if s %}-12 mt-2{% endif %}">
-                                <a href="{% url 'products' %}" class="btn rounded-0 mt-5">
-                                    <span class="text-uppercase">Keep Shopping</span>
-                                </a>
-                                <input type="submit" class="btn btn-dark rounded text-uppercase mt-5" value="Add to Bag">
+                            <div class="row">
+                                <div class="col-12 col-md-6 mb-3">
+                                    <a href="{% url 'products' %}" class="btn rounded">
+                                        <span class="text-uppercase">Keep Shopping</span>
+                                    </a>
+                                </div>
+                                <div class="col-12 col-md-6 mb-3">
+                                    <button type="submit" class="btn btn-dark rounded text-uppercase">Add to Bag</button>
+                                </div>
+                                <input type="hidden" name="redirect_url" value="{{ request.path }}">
                             </div>
-                            <input type="hidden" name="redirect_url" value="{{ request.path }}">
                             {% endwith %}
                     </div>
                 </form>
