@@ -140,20 +140,18 @@ a:hover {
     width: 85vw;
 }
 
-.products-container > .row {
-    /* width: 100%; */
-}
-
 .card.product-card {
     background-color: rgba(255, 255, 255, 0.85);
 }
 
-.paginator-container {
-    /* width: 100%; */
-}
-
 .white-background-85 {
     background-color: rgba(255, 255, 255, 0.85);
+}
+
+.page-numbers {
+    background-color: rgba(0, 0, 0, 0.85);
+    color: white;
+    width: 68px;
 }
 
 /* ------------------------------------------------------ basket */
