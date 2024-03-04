@@ -1,20 +1,25 @@
 html {
     height: 100vh;
     width: 100vw;
+    overflow-x: hidden;
 }
 
 body {
     background: url('/media/hero-image.webp') no-repeat center center fixed;
     background-size: cover;
-    width: 100vw;
+    box-sizing: border-box;
     min-height: 100vh;
-    /* height: calc(100vh - 164px); */
+    overflow-x: hidden;
+}
+
+.row {
+    margin-left: 0;
+    margin-right: 0;
 }
 
 /* ------------------------------------------------------ Header */
 
 .hero-text-container {
-    width: 100vw;
     min-height: 100vh;
 }
 
@@ -25,11 +30,12 @@ header > .container-fluid {
 .header-title {
     background-color: rgba(0, 0, 0, 0.85);
     color: white;
-    margin-right: 0;
+    margin: 0;
 }
 
 .secondary-header {
     background-color: rgba(255, 255, 255, 0.75);
+    padding: 8px 0px;
 }
 
 .header-title > .col > a {
@@ -39,8 +45,13 @@ header > .container-fluid {
     color: white;
 }
 
+a > h1 {
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
 .hero-text-container > .row {
-    width: 100vw;
+    width: 100%;
 }
 
 .navbar-collapse {
@@ -48,7 +59,7 @@ header > .container-fluid {
 }
 
 header .navbar {
-    width: 100vw;
+    width: 100%;
 }
 
 .nav-link {
@@ -62,12 +73,12 @@ header .navbar {
 /* ------------------------------------------------------ Footer */
 
 footer {
-    width: 100vw;
+    width: 100%;
     background-color: rgba(255, 255, 255, 0.85);
 }
 
 .footer-row {
-    width: 100vw;
+    width: 100%;
     padding-right: 0;
     margin-right: 0;
 }
