@@ -13,7 +13,7 @@ class Order(models.Model):
     first_name = models.CharField(max_length=25, null=False, blank=False)
     last_name = models.CharField(max_length=25, null=False, blank=False)
     email = models.EmailField(max_length=250, null=False, blank=False)
-    mobile_number = models.CharField(max_length=25, blank=True, null=True)
+    mobile_number = models.CharField(max_length=25, blank=False, null=False)
     house_name = models.CharField(max_length=25, blank=True, null=True)
     street_line1 = models.CharField(max_length=75, blank=False, null=False)
     street_line2 = models.CharField(max_length=75, blank=False, null=False)

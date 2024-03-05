@@ -79,7 +79,7 @@ form.addEventListener('submit', function(ev) {
                 }
             },
             shipping: {
-                name: $.trim(form.last_name),
+                name: $.trim(form.last_name.value),
                 phone: $.trim(form.mobile_number.value),
                 address: {
                     line1: $.trim(form.street_line1.value),
@@ -105,8 +105,9 @@ form.addEventListener('submit', function(ev) {
                 $('#submit-button').attr('disabled', false);
             } else {
                 if (result.paymentIntent.status === 'succeeded') {
-                    // form.submit();
+                    form.submit();
                 }
+
             }
         });
     }).fail(function () {

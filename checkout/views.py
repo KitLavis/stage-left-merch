@@ -90,13 +90,12 @@ def checkout(request):
             request.session['save_info'] = 'save-info' in request.POST
             return redirect(reverse('checkout_success', args=[order.order_ref]))
 
-        else:
-            messages.add_message(
-                request,
-                messages.ERROR,
-                'There has been an error with some of the information in your form. '
-                'Please double check and resubmit'
-            )
+        messages.add_message(
+            request,
+            messages.ERROR,
+            'There has been an error with some of the information in your form. '
+            'Please double check and resubmit'
+        )
     else:
         basket = request.session.get('basket', {})
         if not basket:

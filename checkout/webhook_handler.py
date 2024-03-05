@@ -3,11 +3,12 @@ from django.core.mail import send_mail
 from django.template.loader import render_to_string
 from django.conf import settings
 
-from .models import Order, OrderLineItem
+import stripe
+
 from products.models import Product
 from user.models import UserProfile
+from .models import Order, OrderLineItem
 
-import stripe
 import json
 import time
 
