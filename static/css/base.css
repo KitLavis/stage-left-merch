@@ -70,7 +70,7 @@ a > h1 {
 /* ------------------------------------------------------ Footer */
 
 footer {
-    width: 100%;
+    width: 100vw;
     background-color: rgba(255, 255, 255, 0.85);
 }
 
@@ -162,6 +162,19 @@ a:hover {
 
 .basket-container {
     background-color: rgba(255, 255, 255, 0.85);
+}
+
+.table-borderless > tbody > tr > td,
+.table-borderless > tbody > tr > th,
+.table-borderless > tfoot > tr > td,
+.table-borderless > tfoot > tr > th,
+.table-borderless > thead > tr > td,
+.table-borderless > thead > tr > th {
+    border: none;
+}
+
+td > img {
+    width: 150px;
 }
 
 /* ------------------------------------------------------ Checkout */
