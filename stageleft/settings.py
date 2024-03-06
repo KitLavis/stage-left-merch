@@ -27,9 +27,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-po+v^q0oh@g!dew1$d2!0i=b*cshx^y=mozj8pyzj#8#)1yh6d'
-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
@@ -190,7 +187,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 CSRF_TRUSTED_ORIGINS = ['https://8000-kitlavis-stageleftmerch-dfadd5f4vsn.ws-eu108.gitpod.io']
 
 cloudinary.config( 
-  cloud_name = "duxza3pht", 
+  cloud_name = "duxza3pht",
   api_key = os.environ.get("API_KEY"),
   api_secret = os.environ.get("API_SECRET")
 )
