@@ -7,7 +7,7 @@
         <div class="row">
             <div class="col-12 col-md-4 align-self-center">
                 {% if 'placeholder' in product.featured_image.url %}
-                <img class="card-img" src="{% static 'images/default.jpg' %}" alt="Card image cap">
+                <img class="card-img" src="/media/images/default_image.webp" alt="Card image cap">
                 {% else %}
                 <img class="card-img" src="{{ product.featured_image.url }}" alt="Card image cap">
                 {% endif %}
