@@ -3,22 +3,28 @@
 
 {% block content %}
     <div class="overlay"></div>
-    <div class="container">
+    <div class="container my-3 white-background-85 rounded">
         <div class="row">
-            <div class="col-12 col-md-6">
-                <h2 class="text-muted">Add a Testimonial</h2>
+            <div class="col-12 col-sm-8 offset-sm-2 my-3">
+                <h4>Add a Testimonial</h4>
             </div>
         </div>
         <div class="row">
-            <div class="col-12 col-md-6">
+            <div class="col-12 col-sm-8 offset-sm-2">
                 {% if user.artist %}
                 <form method="POST" action="{% url 'add_testimonial' %}" class="form mb-2" enctype="multipart/form-data">
                     {% csrf_token %}
                     {{ form.artist | as_crispy_field }}
+                    <p class="small text-danger">
+                        <span>Your testimonial requires approval, so please only try to add a testimonial for your band/artist.</span>
+                    </p>
                     {{ form.rating | as_crispy_field }}
+                    <p class="small">
+                        <span>Rating out of 5 (1 being worst, 5 being best)</span>
+                    </p>
                     {{ form.review | as_crispy_field }}
-                    <div class="text-right">
-                        <button class="btn rounded-0" type="submit">Add Testimonial</button>
+                    <div class="text-right my-3">
+                        <button class="btn btn-dark rounded" type="submit">Add Testimonial</button>
                     </div>
                 </form>
                 {% else %}
