@@ -17,13 +17,14 @@ import dj_database_url
 import cloudinary
 import cloudinary.uploader
 import cloudinary.api
-import cloudinary_storage
+import django_cloudinary_storage
 if os.path.isfile('env.py'):
     import env
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
@@ -31,7 +32,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['8000-kitlavis-stageleftmerch-dfadd5f4vsn.ws-eu108.gitpod.io', '.herokuapp.com']
+ALLOWED_HOSTS = [
+    '8000-kitlavis-stageleftmerch-dfadd5f4vsn.ws-eu108.gitpod.io',
+    '.herokuapp.com',
+    ]
 
 # Application definition
 
@@ -185,8 +189,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-SECRET_KEY = os.environ.get("SECRET_KEY")
 
 CSRF_TRUSTED_ORIGINS = [
     'https://8000-kitlavis-stageleftmerch-dfadd5f4vsn.ws-eu108.gitpod.io',
