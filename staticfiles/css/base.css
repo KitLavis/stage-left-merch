@@ -5,7 +5,7 @@ html {
 }
 
 body {
-    background: url('/static/images/hero-image.webp') no-repeat center center fixed;
+    background: url('static/images/hero-image.webp') no-repeat center center fixed;
     background-size: cover;
     box-sizing: border-box;
     min-height: 100vh;
@@ -236,11 +236,5 @@ td > img {
 @media only screen and (max-width: 480px) {
     .support {
         font-size: 1.5em;
-    }
-}
-
-@media only screen and (min-width: 992px) {
-    .search-container {
-        /* margin-right: 1em; */
     }
 }
