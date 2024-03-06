@@ -14,10 +14,10 @@ from pathlib import Path
 from django.contrib.messages import constants as messages
 import os
 import dj_database_url
-import cloudinary
-import cloudinary_storage
-import cloudinary.uploader
-import cloudinary.api
+# import cloudinary
+# import cloudinary_storage
+# import cloudinary.uploader
+# import cloudinary.api
 if os.path.isfile('env.py'):
     import env
 
@@ -203,10 +203,6 @@ CSRF_TRUSTED_ORIGINS = [
 #   api_secret = os.environ.get("API_SECRET")
 # )
 
-cloudinary.config(
-    cloud_name= "duxza3pht",
-    api_key = os.environ.get("API_KEY"),
-)
 FREE_POSTAGE_THRESHOLD = 20
 STANDARD_POSTAGE_PERCENTAGE = 10
 
