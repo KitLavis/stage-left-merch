@@ -30,7 +30,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['8000-kitlavis-stageleftmerch-dfadd5f4vsn.ws-eu108.gitpod.io', '.herokuapp.com']
+ALLOWED_HOSTS = [
+    '8000-kitlavis-stageleftmerch-dfadd5f4vsn.ws-eu108.gitpod.io',
+    '.herokuapp.com'
+    ]
 
 # Application definition
 
@@ -184,9 +187,12 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
-CSRF_TRUSTED_ORIGINS = ['https://8000-kitlavis-stageleftmerch-dfadd5f4vsn.ws-eu108.gitpod.io']
+CSRF_TRUSTED_ORIGINS = [
+    'https://8000-kitlavis-stageleftmerch-dfadd5f4vsn.ws-eu108.gitpod.io',
+    'https://stage-left-merch-6e2378b5745e.herokuapp.com/'
+    ]
 
-cloudinary.config( 
+cloudinary.config(
   cloud_name = "duxza3pht",
   api_key = os.environ.get("API_KEY"),
   api_secret = os.environ.get("API_SECRET")
