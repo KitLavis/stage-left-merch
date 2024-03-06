@@ -31,11 +31,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = [
-    '8000-kitlavis-stageleftmerch-dfadd5f4vsn.ws-eu108.gitpod.io',
-    '.herokuapp.com',
-    '8000-kitlavis-stageleftmerch-dfadd5f4vsn.ws-eu108.gitpod.io/',
-    ]
+ALLOWED_HOSTS = ['8000-kitlavis-stageleftmerch-dfadd5f4vsn.ws-eu108.gitpod.io', '.herokuapp.com']
 
 # Application definition
 
