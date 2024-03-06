@@ -17,6 +17,7 @@ import dj_database_url
 import cloudinary
 import cloudinary.uploader
 import cloudinary.api
+import cloudinary_storage
 if os.path.isfile('env.py'):
     import env
 
@@ -48,6 +49,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'cloudinary_storage',
     'cloudinary',
     'crispy_forms',
     'artists',
