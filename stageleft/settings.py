@@ -31,7 +31,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['8000-kitlavis-stageleftmerch-dfadd5f4vsn.ws-eu108.gitpod.io', '.herokuapp.com',]
+ALLOWED_HOSTS = [
+    '8000-kitlavis-stageleftmerch-dfadd5f4vsn.ws-eu108.gitpod.io',
+    '.herokuapp.com',
+    '8000-kitlavis-stageleftmerch-dfadd5f4vsn.ws-eu108.gitpod.io/',
+    ]
 
 # Application definition
 
@@ -174,7 +178,7 @@ MESSAGE_TAGS = {
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
-STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR),"static")
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
