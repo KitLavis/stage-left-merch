@@ -2,27 +2,23 @@
 {% load static %}
 
 {% block content %}
-<div class="container-fluid products-container">
-    <div class="card my-3">
+<div class="container-fluid products-container white-background-85 my-3 rounded">
+    <div class="card-no-bg my-3 rounded">
         <div class="row">
-            <div class="col-4">
+            <div class="col-12 col-sm-4">
                 {% if 'placeholder' in artist.image.url %}
-                <img class="card-img-top" src="{{ MEDIA.URL }}default_image.webp" alt="Image is yet to be uploaded">
+                <img class="card-img-top" src="/media/images/default_image.webp" alt="Image is yet to be uploaded">
                 {% else %}
                 <img class="card-img-top" src="{{ artist.image.url }}" alt="{{ artist.friendly_name }}">
                 {% endif %}
             </div>
-            <div class="col-8">
+            <div class="col-12 col-sm-8">
                 <div class="card-body">
-                    <h5 class="card-title">{{ arist.friendly_name }}</h5>
-                    <p class="card-text">{{ artist.description }}</p>
+                    <h5>{{ artist.friendly_name }}</h5>
+                    <p class="text-muted">est. {{ artist.established }} | {{ artist.hometown }}</p>
+                    <p>{{ artist.description }}</p>
+                    <button class="btn btn-dark mt-3"><a href="{% url 'products' %}?artist={{ artist.name }}">Products</a></button>
                 </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">est. {{ artist.established }}</li>
-                </ul>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">{{ artist.hometown }}</li>
-                </ul>
             </div>
         </div>
     </div>
