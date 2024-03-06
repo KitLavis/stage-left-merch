@@ -48,8 +48,8 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'cloudinary_storage',
     'django.contrib.staticfiles',
+    'cloudinary_storage',
     'cloudinary',
     'crispy_forms',
     'artists',
@@ -63,6 +63,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'allauth.account.middleware.AccountMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -177,8 +178,7 @@ MESSAGE_TAGS = {
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
-STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_URL = '/media/'
@@ -197,12 +197,16 @@ CSRF_TRUSTED_ORIGINS = [
     'https://stage-left-merch-6e2378b5745e.herokuapp.com/'
     ]
 
-cloudinary.config(
-  cloud_name = "duxza3pht",
-  api_key = os.environ.get("API_KEY"),
-  api_secret = os.environ.get("API_SECRET")
-)
+# cloudinary.config(
+#   cloud_name = "duxza3pht",
+#   api_key = os.environ.get("API_KEY"),
+#   api_secret = os.environ.get("API_SECRET")
+# )
 
+cloudinary.config(
+    cloud_name= "duxza3pht",
+    api_key = os.environ.get("API_KEY"),
+)
 FREE_POSTAGE_THRESHOLD = 20
 STANDARD_POSTAGE_PERCENTAGE = 10
 
