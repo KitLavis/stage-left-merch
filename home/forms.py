@@ -27,5 +27,5 @@ class ContactForm(forms.ModelForm):
             else:
                 placeholder = placeholders[field]
             self.fields[field].widget.attrs['placeholder'] = placeholder
-            self.fields[field].widget.attrs['class'] = 'contact-form-element'
+            self.fields[field].widget.attrs['class'] = 'form-style'
             self.fields[field].label = False
