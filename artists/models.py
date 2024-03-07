@@ -33,7 +33,7 @@ class Testimonial(models.Model):
     date_added = models.DateTimeField(auto_now_add=True)
 
     class Meta:
-        get_latest_by = "artist"
+        get_latest_by = "date_added"
 
     def __str__(self):
         return self.artist.friendly_name

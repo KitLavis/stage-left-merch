@@ -56,7 +56,7 @@
                                 <tr>
                                     <td>
                                         <a href="{% url 'order_history' order.order_ref %}"
-                                        title="{{ order.order_number }}">
+                                        title="{{ order.order_number }}" aria-label="Click for order details">
                                             {{ order.order_ref|truncatechars:6 }}
                                         </a>
                                     </td>
