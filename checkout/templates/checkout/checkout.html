@@ -9,7 +9,7 @@
 
 {% block content %}
     <div class="overlay"></div>
-    <div class="container my-3 basket-container rounded">
+    <div class="container my-3 white-background-85 rounded">
         <div class="row">
             <!-- https://getbootstrap.com/docs/4.5/examples/checkout/ -->
             <div class="col-12 col-md-6 order-md-2 my-3">
@@ -20,8 +20,9 @@
                     <div>
                     <h6 class="my-0">{{ item.product.name }}</h6>
                     {% if item.product.has_sizes %}
-                    <small class="text-muted">Size: {{ item.size|upper }} | Quantity: {{ item.quantity }}</small>
+                    <small class="text-muted">Size: {{ item.size|upper }} | </small>
                     {% endif %}
+                    <small class="text-muted">Qty: {{ item.quantity }}</small>
                     </div>
                     <span class="text-muted">£{{ item.product.price|floatformat:2 }}</span>
                 </li>

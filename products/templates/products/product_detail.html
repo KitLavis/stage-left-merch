@@ -1,9 +1,13 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'products/css/products.css' %}">
+{% endblock %}
+
 {% block content %}
 <div class="container-fluid products-container">
-    <div class="card product-card my-3">
+    <div class="card white-background-85 my-3">
         <div class="row">
             <div class="col-12 col-md-4 align-self-center">
                 {% if 'placeholder' in product.featured_image.url %}

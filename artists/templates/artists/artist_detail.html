@@ -1,8 +1,12 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'artists/css/artists.css' %}">
+{% endblock %}
+
 {% block content %}
-<div class="container-fluid products-container white-background-85 my-3 rounded">
+<div class="container-fluid artists-container white-background-85 my-3 rounded">
     <div class="card-no-bg my-3 rounded">
         <div class="row">
             <div class="col-12 col-sm-4">

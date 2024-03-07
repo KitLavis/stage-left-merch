@@ -1,0 +1,18 @@
+.testimonials-container {
+    min-height: 50vh;
+    background-color: rgba(0, 0, 0, 0.75);
+}
+
+
+.carousel-item {
+    color: white;
+}
+
+.fa-star {
+    color: #d4af37;
+    font-size: 1rem;
+}
+
+.artists-container {
+    width: 85vw;
+}

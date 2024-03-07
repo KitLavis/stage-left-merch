@@ -138,76 +138,16 @@ a:hover {
     cursor: pointer;
 }
 
-/* ------------------------------------------------------ all_products */
-
-.products-container {
-    width: 85vw;
-}
-
-.card.product-card {
-    background-color: rgba(255, 255, 255, 0.85);
-}
-
 .white-background-85 {
     background-color: rgba(255, 255, 255, 0.85);
 }
+
+/* ------------------------------------------------------ Paginator */
 
 .page-numbers {
     background-color: rgba(0, 0, 0, 0.85);
     color: white;
     width: 68px;
-}
-
-.card-img {
-    border-radius: 0.5rem;
-}
-
-/* ------------------------------------------------------ basket */
-
-.basket-container {
-    background-color: rgba(255, 255, 255, 0.85);
-}
-
-.table-borderless > tbody > tr > td,
-.table-borderless > tbody > tr > th,
-.table-borderless > tfoot > tr > td,
-.table-borderless > tfoot > tr > th,
-.table-borderless > thead > tr > td,
-.table-borderless > thead > tr > th {
-    border: none;
-}
-
-td > img {
-    width: 150px;
-}
-
-/* ------------------------------------------------------ Checkout */
-
-.stripe-style-input {
-    width: 100%;
-    margin-top: 0.5em;
-}
-
-/* ------------------------------------------------------ Checkout */
-
-.allauth-container {
-    background-color: rgba(255, 255, 255, 0.85);
-}
-
-/* ------------------------------------------------------ Testimonials */
-
-.testimonials-container {
-    min-height: 50vh;
-    background-color: rgba(0, 0, 0, 0.75);
-}
-
-.carousel-item {
-    color: white;
-}
-
-.fa-star {
-    color: #d4af37;
-    font-size: 1rem;
 }
 
 /* ------------------------------------------------------ forms */
