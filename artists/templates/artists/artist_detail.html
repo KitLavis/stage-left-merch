@@ -9,18 +9,18 @@
 <div class="container-fluid artists-container white-background-85 my-3 rounded">
     <div class="card-no-bg my-3 rounded">
         <div class="row">
-            <div class="col-12 col-sm-4">
+            <div class="col-12">
                 {% if 'placeholder' in artist.image.url %}
                 <img class="card-img-top" src="/static/images/default_image.webp" alt="Image is yet to be uploaded">
                 {% else %}
                 <img class="card-img-top" src="{{ artist.image.url }}" alt="{{ artist.friendly_name }}">
                 {% endif %}
             </div>
-            <div class="col-12 col-sm-8">
+            <div class="col-12">
                 <div class="card-body">
                     <h5>{{ artist.friendly_name }}</h5>
                     <p class="text-muted">est. {{ artist.established }} | {{ artist.hometown }}</p>
-                    <p>{{ artist.description }}</p>
+                    <p>{{ artist.bio }}</p>
                     <button class="btn btn-dark mt-3"><a href="{% url 'products' %}?artist={{ artist.name }}" aria-label="Click to view the artist's products">Products</a></button>
                 </div>
             </div>
