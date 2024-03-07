@@ -1,3 +1,4 @@
 User-agent: *
 Disallow: /accounts/
 Disallow: /basket/
+Sitemap: https://stage-left-merch-6e2378b5745e.herokuapp.com/sitemap.xml
