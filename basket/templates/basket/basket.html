@@ -6,7 +6,7 @@
 <div class="container my-3 basket-container rounded">
     <div class="row">
         <div class="col">
-            <h2 class="logo-font text-muted mb-4 mt-3">Your Basket</h2>
+            <h2 class="my-3">Your Basket</h2>
         </div>
     </div>
     <div class="row">
@@ -75,14 +75,14 @@
                         <a href="{% url 'products' %}" class="btn rounded">
                             <span class="text-uppercase">Keep Shopping</span>
                         </a>
-                        <a href="{% url 'checkout' %}" class="btn btn-dark rounded">
+                        <a href="{% url 'checkout' %}" class="btn btn-dark rounded" rel="nofollow">
                             <span class="text-uppercase">Secure Checkout</span>
                         </a>
                     </div>
                 </div>
             </div>
             {% else %}
-            <p class="lead mb-5">is currently empty.</p>
+            <p class="mb-3">is currently empty.</p>
             <a href="{% url 'products' %}" class="btn btn-dark rounded pb-2 mb-3">
                 <span class="text-uppercase">Continue shopping</span>
             </a>
