@@ -30,11 +30,11 @@
                     {% for item in basket_items %}
                         <tr>
                             <td class="p-3 w-25">
-                                <img class="rounded" src="{{ item.product.featured_image.url }}">
+                                <img class="rounded" src="{{ item.product.featured_image.url }}" alt="{{ item.product.name }}">
                             </td>
                             <td class="py-3">
                                 <p class="my-0"><strong>{{ item.product.name }}</strong></p>
-                                <p class="my-0"><strong>Size: </strong>{% if item.product.has_sizes %}{{ item.size|upper }}{% else %}N/A{% endif %}</p>
+                                <p class="my-0"><strong>Size: </strong>{% if item.product.has_sizes %}{{ item.size | upper }}{% else %}N/A{% endif %}</p>
                                 <p class="my-0 small text-muted">SKU: {{ item.product.sku }}</p>
                             </td>
                             <td class="py-3">
@@ -76,7 +76,7 @@
                 </div>
                 <div class="row">
                     <div class="col pt-5 mb-3 text-right">
-                        <a href="{% url 'products' %}" class="btn rounded">
+                        <a href="{% url 'products' %}" class="btn rounded" aria-label="Back to the shop">
                             <span class="text-uppercase">Keep Shopping</span>
                         </a>
                         <a href="{% url 'checkout' %}" class="btn btn-dark rounded" rel="nofollow">
@@ -87,7 +87,7 @@
             </div>
             {% else %}
             <p class="mb-3">is currently empty.</p>
-            <a href="{% url 'products' %}" class="btn btn-dark rounded pb-2 mb-3">
+            <a href="{% url 'products' %}" class="btn btn-dark rounded pb-2 mb-3" aria-label="Back to the shop">
                 <span class="text-uppercase">Continue shopping</span>
             </a>
             {% endif %}

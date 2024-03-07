@@ -13,7 +13,7 @@
             <p><span class="text-muted">Email: </span>{{ m.email }}</p>
             <p><span class="text-muted">Subject: </span>{{ m.subject }}</p>
             <p><span class="text-muted">Message: </span>{{ m.message }}</p>
-            <button class="btn btn-dark rounded my-3"><a href="{% url 'customer_messages' %}">BACK TO ALL</a></button>
+            <button class="btn btn-dark rounded my-3"><a href="{% url 'customer_messages' %}" aria-label="Go back to all messages">BACK TO ALL</a></button>
         </div>
     </div>
 </div>

@@ -21,7 +21,7 @@ class Artist(models.Model):
 
 
 class Testimonial(models.Model):
-    artist = models.ForeignKey(Artist, null=True, blank=True, on_delete=models.PROTECT)
+    artist = models.ForeignKey(Artist, on_delete=models.PROTECT)
     rating = models.PositiveIntegerField(
         validators=[
             MaxValueValidator(5),

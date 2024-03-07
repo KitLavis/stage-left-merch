@@ -5,6 +5,9 @@ Thanks a lot for ordering from us and supporting the scene! Details of your orde
 Reference Number: {{ order.order_ref }}
 Date of order: {{ order.date }}
 
+{% for item in order.lineitems.all %}
+{{ item.product.name }} Qty: {{ item.quantity }} | £{{ item.product.price }}{% endfor %}
+
 Total: £{{ order.order_total }}
 Postage: £{{ order.postage_packaging }}
 Grand Total: £{{ order.grand_total }}

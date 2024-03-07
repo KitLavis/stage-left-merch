@@ -28,6 +28,9 @@ class Order(models.Model):
     original_basket = models.TextField(null=False, blank=False, default='')
     stripe_pid = models.CharField(max_length=254, null=False, blank=False, default='')
 
+    class Meta:
+        ordering = ('-date', )
+
     def _generate_order_ref(self):
 
         return uuid.uuid4().hex.upper()
