@@ -1,9 +1,8 @@
 from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.contrib import messages
 from django.contrib.auth.models import User
-from .models import Testimonial
+from .models import Artist, Testimonial
 from .forms import TestimonialForm
-from products.models import Artist
 
 
 def all_artists(request):

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Product, Category, Artist
+from .models import Product, Category
 
 
 @admin.register(Product)
@@ -17,18 +17,6 @@ class ProductAdmin(admin.ModelAdmin):
     )
 
     ordering = ('sku',)
-
-
-@admin.register(Artist)
-class ArtistAdmin(admin.ModelAdmin):
-
-    prepopulated_fields = {'name': ('friendly_name',)}
-
-    list_display = (
-        'name',
-    )
-
-    ordering = ('name',)
 
 
 admin.site.register(Category)

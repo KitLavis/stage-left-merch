@@ -2,7 +2,8 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.core.paginator import Paginator
 from django.contrib import messages
 from django.db.models import Q
-from .models import Product, Category, Artist
+from .models import Product, Category
+from artists.models import Artist
 
 
 def all_products(request):

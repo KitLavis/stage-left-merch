@@ -2,21 +2,9 @@ import datetime
 from django.db import models
 from cloudinary.models import CloudinaryField
 from django.contrib.auth.models import User
+from artists.models import Artist
 
 STATUS = ((0, "Draft"), (1, "Published"))
-
-
-class Artist(models.Model):
-    friendly_name = models.CharField(max_length=250, null=True, blank=True, unique=True)
-    name = models.SlugField(max_length=250, unique=True)
-    user = models.OneToOneField(User, null=True, blank=True, on_delete=models.PROTECT)
-    image = CloudinaryField('image', default='placeholder')
-    hometown = models.CharField(max_length=250, null=True, blank=True)
-    established = models.IntegerField()
-    bio = models.TextField(null=True, blank=True)
-
-    def __str__(self):
-        return self.name
 
 
 class Category(models.Model):
@@ -35,7 +23,7 @@ class Category(models.Model):
 
 class Product(models.Model):
     category = models.ForeignKey('Category', null=True, blank=True, on_delete=models.SET_NULL)
-    artist = models.ForeignKey('Artist', null=True, blank=True, on_delete=models.SET_NULL)
+    artist = models.ForeignKey(Artist, null=True, blank=True, on_delete=models.SET_NULL)
     sku = models.CharField(max_length=250, null=True, blank=True, unique=True)
     name = models.CharField(max_length=250)
     slug = models.SlugField(max_length=200, unique=True)
