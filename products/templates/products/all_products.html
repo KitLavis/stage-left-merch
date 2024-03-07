@@ -21,6 +21,7 @@
         {% endfor %}
     </div>
     <!-- Pagination -->
+    {% if Paginator.num_pages > 1 %}
     <div class="row paginator-row my-3">
       <div class="col-4 offset-4">
         <div class="paginator-container text-center">
@@ -36,5 +37,6 @@
         </div>
       </div>
     </div>
+    {% endif %}
 </div>
 {% endblock %}
