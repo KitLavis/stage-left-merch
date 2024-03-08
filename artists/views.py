@@ -71,7 +71,7 @@ def edit_testimonial(request, testimonial_id):
         form = TestimonialForm(request.POST, instance=testimonial)
         if form.is_valid():
             form.save()
-            messages.success(request, 'Testimonial updated successfully and awaiting approval!')
+            messages.success(request, 'Testimonial updated successfully!')
             return redirect(reverse('testimonials'))
         else:
             messages.error(request, 'Something went wrong. Please ensure the form is valid.')
@@ -85,3 +85,17 @@ def edit_testimonial(request, testimonial_id):
     }
 
     return render(request, template, context)
+
+
+def delete_testimonial(request, testimonial_id):
+
+    testimonial = get_object_or_404(Testimonial, pk=testimonial_id)
+    testimonial.delete()
+
+    messages.add_message(
+                    request,
+                    messages.SUCCESS,
+                    'Testimonial successfully deleted!'
+                )
+    return redirect(reverse('testimonials'))
+
