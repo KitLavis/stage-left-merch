@@ -21,7 +21,6 @@ class ProductForm(forms.ModelForm):
             'price': 'Price',
             'featured_image': 'Image',
             'slug': 'Slug',
-            'status': '0 = Draft, 1 = Published',
         }
 
         self.fields['name'].widget.attrs['autofocus'] = True

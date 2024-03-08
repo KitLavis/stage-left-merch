@@ -31,7 +31,7 @@ def artist_detail(request, slug):
 
 def all_testimonials(request):
 
-    queryset = Testimonial.objects.filter(status=1)
+    queryset = Testimonial.objects.all()
     latest_testimonial = queryset.latest()
     testimonials = queryset.exclude(id=latest_testimonial.id)
 

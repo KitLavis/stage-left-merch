@@ -4,8 +4,6 @@ from cloudinary.models import CloudinaryField
 from django.contrib.auth.models import User
 from artists.models import Artist
 
-STATUS = ((0, "Draft"), (1, "Published"))
-
 
 class Category(models.Model):
     name = models.CharField(max_length=250)
@@ -32,7 +30,6 @@ class Product(models.Model):
     price = models.DecimalField(max_digits=6, decimal_places=2)
     featured_image = CloudinaryField('image', default='placeholder')
     created_on = models.DateTimeField(auto_now_add=True)
-    status = models.IntegerField(choices=STATUS, default=0)
 
     class Meta:
         get_latest_by = "created_on"

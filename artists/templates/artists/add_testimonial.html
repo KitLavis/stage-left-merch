@@ -19,9 +19,6 @@
                 <form method="POST" action="{% url 'add_testimonial' %}" class="form mb-2" enctype="multipart/form-data">
                     {% csrf_token %}
                     {{ form.artist | as_crispy_field }}
-                    <p class="small text-danger">
-                        <span>Your testimonial requires approval, so please only try to add a testimonial for your band/artist.</span>
-                    </p>
                     {{ form.rating | as_crispy_field }}
                     <p class="small">
                         <span>Rating out of 5 (1 being worst, 5 being best)</span>

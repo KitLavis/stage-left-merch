@@ -10,7 +10,7 @@ from artists.models import Artist
 
 def all_products(request):
 
-    products = Product.objects.filter(status=1).all()
+    products = Product.objects.all()
 
     query = None
     categories = None
@@ -54,7 +54,7 @@ def all_products(request):
 
 def product_detail(request, slug):
 
-    queryset = Product.objects.filter(status=1)
+    queryset = Product.objects.all()
     product = get_object_or_404(queryset, slug=slug)
 
     context = {

@@ -4,9 +4,6 @@ from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 
 
-STATUS = ((0, 'Draft'), (1, 'Published'),)
-
-
 class Artist(models.Model):
     friendly_name = models.CharField(max_length=250, null=True, blank=True, unique=True)
     name = models.SlugField(max_length=250, unique=True)
@@ -29,7 +26,6 @@ class Testimonial(models.Model):
         ],
         default=5)
     review = models.TextField()
-    status = models.IntegerField(choices=STATUS, default=0)
     date_added = models.DateTimeField(auto_now_add=True)
 
     class Meta:

@@ -11,7 +11,11 @@
         {% for product in p_products %}
         <div class="col-12 col-sm-8 col-md-6 col-lg-4 mb-3">
             <div class="card product-card white-background-85">
-              <img class="card-img" src="{{ product.featured_image.url }}" alt="{{ product.name }}">
+              {% if 'placeholder' in product.featured_image.url %}
+                <img class="card-img" src="{% static 'images/default_image.webp' %}" alt="No custom image currently">
+                {% else %}
+                <img class="card-img" src="{{ product.featured_image.url }}" alt="{{ product.name }}">
+              {% endif %}
               <div class="card-body">
                 <h4 class="card-title">{{ product.name }}</h4>
                 <h6 class="card-subtitle mb-2 text-muted">ID: {{ product.sku }}</h6>
@@ -25,22 +29,20 @@
         {% endfor %}
     </div>
     <!-- Pagination -->
-    {% if Paginator.num_pages > 1 %}
     <div class="row paginator-row my-3">
       <div class="col-4 offset-4">
         <div class="paginator-container text-center">
           {% if p_products.has_previous %}
-          <button class="btn-dark"><a href="?page=1">First</a></button>
-          <button class="btn-dark"><a href="?page={{ p_products.previous_page_number }}">Previous</a></button>
+          <button class="btn btn-dark rounded mb-3"><a href="?page=1">First</a></button>
+          <button class="btn btn-dark rounded mb-3"><a href="?page={{ p_products.previous_page_number }}">Previous</a></button>
           {% endif %}
-          <div class="page-numbers d-inline-block rounded">{{ p_products.number }} of {{ p_products.paginator.num_pages }}</div>
+          <div class="page-numbers d-inline-block btn btn-dark rounded mb-3">{{ p_products.number }} of {{ p_products.paginator.num_pages }}</div>
           {% if p_products.has_next %}
-          <button class="btn-dark"><a href="?page={{ p_products.next_page_number }}">Next</a></button>
-          <button class="btn-dark"><a href="?page={{ p_products.paginator.num_pages }}">Last</a></button>
+          <button class="btn btn-dark rounded mb-3"><a href="?page={{ p_products.next_page_number }}">Next</a></button>
+          <button class="btn btn-dark rounded mb-3"><a href="?page={{ p_products.paginator.num_pages }}">Last</a></button>
           {% endif %}
         </div>
       </div>
     </div>
-    {% endif %}
 </div>
 {% endblock %}
