@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'artists/css/artists.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="overlay"></div>
+    <div class="container my-3 white-background-85 rounded">
+        <div class="row">
+            <div class="col-12 col-sm-8 offset-sm-2 my-3">
+                <h4>Edit Testimonial</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-sm-8 offset-sm-2">
+                {% if user.artist %}
+                <form method="POST" action="{% url 'edit_testimonial' testimonial.id %}" class="form mb-2" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form.artist | as_crispy_field }}
+                    <p class="small text-danger">
+                        <span>Your testimonial requires approval, so please only try to add a testimonial for your band/artist.</span>
+                    </p>
+                    {{ form.rating | as_crispy_field }}
+                    <p class="small">
+                        <span>Rating out of 5 (1 being worst, 5 being best)</span>
+                    </p>
+                    {{ form.review | as_crispy_field }}
+                    <div class="text-right my-3">
+                        <a class="btn rounded my-3" href="{% url 'testimonials' %}">Cancel</a>
+                        <button class="btn btn-dark rounded" type="submit">Update Testimonial</button>
+                    </div>
+                </form>
+                {% else %}
+                <p>Sorry, this is only available to our collaborators</p>
+                {% endif %}
+            </div>            
+        </div>
+    </div>
+{% endblock %}

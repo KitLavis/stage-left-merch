@@ -61,3 +61,27 @@ def add_testimonial(request):
     }
 
     return render(request, template, context)
+
+
+def edit_testimonial(request, testimonial_id):
+
+    testimonial = get_object_or_404(Testimonial, pk=testimonial_id)
+
+    if request.method == 'POST':
+        form = TestimonialForm(request.POST, instance=testimonial)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Testimonial updated successfully and awaiting approval!')
+            return redirect(reverse('testimonials'))
+        else:
+            messages.error(request, 'Something went wrong. Please ensure the form is valid.')
+    else:
+        form = TestimonialForm(instance=testimonial)
+
+    template = 'artists/edit_testimonial.html'
+    context = {
+        'form': form,
+        'testimonial': testimonial,
+    }
+
+    return render(request, template, context)
