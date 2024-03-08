@@ -142,7 +142,16 @@ def edit_product(request, slug):
     return render(request, template, context)
 
 
+@login_required
 def delete_product(request, slug):
+
+    if not request.user.is_superuser:
+        messages.add_message(
+                    request,
+                    messages.ERROR,
+                    'Only admin level users have access to that area'
+                )
+        return redirect(reverse('home'))
 
     product = get_object_or_404(Product, slug=slug)
     product.delete()

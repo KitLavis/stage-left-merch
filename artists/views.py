@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.contrib import messages
 from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
 from .models import Artist, Testimonial
 from .forms import TestimonialForm
 
@@ -42,11 +43,19 @@ def all_testimonials(request):
     return render(request, 'artists/testimonials.html', context)
 
 
+@login_required
 def add_testimonial(request):
 
     if request.method == 'POST':
         form = TestimonialForm(request.POST)
         if form.is_valid():
+            if request.user.artist != form.cleaned_data.get('artist'):
+                messages.add_message(
+                        request,
+                        messages.ERROR,
+                        'You can only add a testimonial for your band'
+                    )
+                return redirect(reverse('testimonials'))
             form.save()
             messages.success(request, 'Thank you for your support and continued collaboration')
             return redirect(reverse('testimonials'))
@@ -63,13 +72,30 @@ def add_testimonial(request):
     return render(request, template, context)
 
 
+@login_required
 def edit_testimonial(request, testimonial_id):
 
     testimonial = get_object_or_404(Testimonial, pk=testimonial_id)
 
+    if request.user.artist != testimonial.artist:
+        messages.add_message(
+                    request,
+                    messages.ERROR,
+                    'You can only modify your own testimonial'
+                )
+        return redirect(reverse('testimonials'))
+
     if request.method == 'POST':
         form = TestimonialForm(request.POST, instance=testimonial)
         if form.is_valid():
+            if request.user.artist != testimonial.artist:
+                messages.add_message(
+                            request,
+                            messages.ERROR,
+                            'You can only modify your own testimonial'
+                        )
+                return redirect(reverse('testimonials'))
+
             form.save()
             messages.success(request, 'Testimonial updated successfully!')
             return redirect(reverse('testimonials'))
@@ -87,9 +113,19 @@ def edit_testimonial(request, testimonial_id):
     return render(request, template, context)
 
 
+@login_required
 def delete_testimonial(request, testimonial_id):
 
     testimonial = get_object_or_404(Testimonial, pk=testimonial_id)
+
+    if request.user.artist != testimonial.artist:
+        messages.add_message(
+                    request,
+                    messages.ERROR,
+                    'You can only modify your own testimonial'
+                )
+        return redirect(reverse('testimonials'))
+
     testimonial.delete()
 
     messages.add_message(
@@ -98,4 +134,3 @@ def delete_testimonial(request, testimonial_id):
                     'Testimonial successfully deleted!'
                 )
     return redirect(reverse('testimonials'))
-

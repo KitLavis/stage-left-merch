@@ -49,16 +49,26 @@
                         </strong>
                     </div>
                 </div>
-                {% if user.artist == latest_testimonial.artist %}
-                <div class="col col-sm-4">
-                    <a href="{% url 'edit_testimonial' latest_testimonial.id %}" class="btn btn-dark rounded" aria-label="Click here to edit your testmonial">
-                        <span class="text-uppercase">Edit Testimonial</span>
-                    </a>
+                {% if user.artist and user.artist != testimonial.artist and user.artist != latest_testimonial.artist %}
+                <div class="row justify-content-center text-center">
+                    <div class="col-12 col-sm-8">
+                        <button class="btn btn-dark rounded my-3"><a href="{% url 'add_testimonial' %}"
+                                aria-label="Click to add a testimonial">Add Your Testimonial</a></button>
+                    </div>
                 </div>
-                <div class="col col-sm-4">
-                    <a href="{% url 'delete_testimonial' latest_testimonial.id %}" class="btn btn-danger rounded" aria-label="Click here to delete the testimonial">
-                        <span class="text-uppercase">Delete Testimonial</span>
-                    </a>
+                {% endif %}
+                {% if user.artist == latest_testimonial.artist %}
+                <div class="row justify-content-center text-center">
+                    <div class="col col-sm-4">
+                        <a href="{% url 'edit_testimonial' latest_testimonial.id %}" class="btn btn-dark rounded" aria-label="Click here to edit your testmonial">
+                            <span class="text-uppercase">Edit Testimonial</span>
+                        </a>
+                    </div>
+                    <div class="col col-sm-4">
+                        <a href="{% url 'delete_testimonial' latest_testimonial.id %}" class="btn btn-danger rounded" aria-label="Click here to delete the testimonial">
+                            <span class="text-uppercase">Delete Testimonial</span>
+                        </a>
+                    </div>
                 </div>
                 {% endif %}
             </div>
@@ -117,7 +127,7 @@
                     </div>
                 </div>
                 {% endif %}
-                {% if user.artist != testimonial.artist and user.artist != latest_testimonial.artist %}
+                {% if user.artist and user.artist != testimonial.artist and user.artist != latest_testimonial.artist %}
                 <div class="row justify-content-center text-center">
                     <div class="col-12 col-sm-8">
                         <button class="btn btn-dark rounded my-3"><a href="{% url 'add_testimonial' %}"
