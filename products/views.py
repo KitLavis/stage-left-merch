@@ -117,13 +117,20 @@ def edit_product(request, slug):
         product_form = ProductForm(request.POST, request.FILES, instance=product)
         if product_form.is_valid():
             product_form.save()
-            messages.success(request, 'Successfully updated product')
+            messages.add_message(
+                    request,
+                    messages.SUCCESS,
+                    'Successfully updated product'
+                )
             return redirect(reverse('product_detail', args=[product.slug]))
         else:
-            messages.error(request, 'Something went wrong. Please ensure the form is valid.')
+            messages.add_message(
+                    request,
+                    messages.ERROR,
+                    'Something went wrong. Please ensure the form is valid.'
+                )
     else:
         product_form = ProductForm(instance=product)
-        messages.info(request, f'You are editing {product.name}')
 
     template = 'products/edit_product.html'
     context = {
@@ -133,3 +140,16 @@ def edit_product(request, slug):
     }
 
     return render(request, template, context)
+
+
+def delete_product(request, slug):
+
+    product = get_object_or_404(Product, slug=slug)
+    product.delete()
+
+    messages.add_message(
+                    request,
+                    messages.SUCCESS,
+                    'Product successfully deleted!'
+                )
+    return redirect(reverse('products'))
