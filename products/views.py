@@ -96,3 +96,40 @@ def add_product(request):
     }
 
     return render(request, template, context)
+
+
+@login_required
+def edit_product(request, slug):
+
+    if not request.user.is_superuser:
+        messages.add_message(
+                    request,
+                    messages.ERROR,
+                    'Only admin level users have access to that area'
+                )
+        return redirect(reverse('home'))
+
+    queryset = Product.objects.all()
+    product = get_object_or_404(queryset, slug=slug)
+    latest_product = queryset.latest()
+
+    if request.method == 'POST':
+        product_form = ProductForm(request.POST, request.FILES, instance=product)
+        if product_form.is_valid():
+            product_form.save()
+            messages.success(request, 'Successfully updated product')
+            return redirect(reverse('product_detail', args=[product.slug]))
+        else:
+            messages.error(request, 'Something went wrong. Please ensure the form is valid.')
+    else:
+        product_form = ProductForm(instance=product)
+        messages.info(request, f'You are editing {product.name}')
+
+    template = 'products/edit_product.html'
+    context = {
+        'product_form': product_form,
+        'product': product,
+        'latest_product': latest_product,
+    }
+
+    return render(request, template, context)
