@@ -3,6 +3,7 @@ from django.core.paginator import Paginator
 from django.contrib import messages
 from django.db.models import Q
 from .models import Product, Category
+from .forms import ProductForm
 from artists.models import Artist
 
 
@@ -60,3 +61,24 @@ def product_detail(request, slug):
     }
 
     return render(request, 'products/product_detail.html', context)
+
+
+def add_product(request):
+
+    if request.method == 'POST':
+        product_form = ProductForm(request.POST, request.FILES)
+        if product_form.is_valid():
+            product_form.save()
+            messages.success(request, 'Successfully added product!')
+            return redirect(reverse('add_product'))
+        else:
+            messages.error(request, 'Something went wrong. Please ensure the form is valid.')
+    else:
+        product_form = ProductForm()
+        
+    template = 'products/add_product.html'
+    context = {
+        'product_form': product_form,
+    }
+
+    return render(request, template, context)
