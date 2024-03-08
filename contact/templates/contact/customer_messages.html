@@ -19,17 +19,17 @@
                 </thead>
                 <tbody>
                     {% for m in all_messages %}
-                        <tr>
-                            <td>
-                                <a href="{% url 'message_detail' m.message_ref %}" title="{{ m.message_ref }}">
-                                    {{ m.message_ref|truncatechars:6 }}
-                                </a>
-                            </td>
-                            <td>{{ m.full_name }}</td>
-                            <td>{{ m.band_artist_name }}</td>
-                            <td>{{ m.subject}}</td>
-                            <td>{{ m.sent_on }}</td>
-                        </tr>
+                    <tr>
+                        <td>
+                            <a href="{% url 'message_detail' m.message_ref %}" title="{{ m.message_ref }}">
+                                {{ m.message_ref|truncatechars:6 }}
+                            </a>
+                        </td>
+                        <td>{{ m.full_name }}</td>
+                        <td>{{ m.band_artist_name }}</td>
+                        <td>{{ m.subject}}</td>
+                        <td>{{ m.sent_on }}</td>
+                    </tr>
                     {% endfor %}
                 </tbody>
             </table>

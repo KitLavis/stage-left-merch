@@ -3,46 +3,47 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-    <div class="overlay"></div>
-    <div class="container my-3 white-background-85 rounded">
-        <div class="row">
-            <div class="col-12 col-lg-8 offset-lg-2">
-                <h4 class="d-flex justify-content-between align-items-center my-3">Edit Product</h4>
-                <p class="text-muted">Fill out the form to edit the product</p>
-                <form action="{% url 'edit_product' product.slug %}" method="POST" id="product-form" enctype="multipart/form-data">
-                    {% csrf_token %}
-                    <div class="form-row mb-3">
-                        <div class="form-group col-md-6">
-                            {{ product_form.name|as_crispy_field }}
-                            {{ product_form.category|as_crispy_field }}
-                            <p class="small">
-                                <span>Category</span>
-                            </p>
-                            {{ product_form.artist|as_crispy_field }}
-                            {{ product_form.sku|as_crispy_field }}
-                            <p class="small">
-                                <span>Last SKU: {{ latest_product.sku }}</span>
-                            </p>
-                            {{ product_form.description|as_crispy_field }}
-                            {{ product_form.has_sizes|as_crispy_field }}
-                            <p class="small">
-                                <span>Has sizes</span>
-                            </p>
-                            {{ product_form.price|as_crispy_field }}
-                            {{ product_form.featured_image|as_crispy_field }}
-                            {{ product_form.slug|as_crispy_field }}
-                            <p class="small text-danger">
-                                <span>SKU plus the product name with no special characters and no spaces</span>
-                                <span>e.g. 0047-black-tee</span>
-                            </p>
-                        </div>
+<div class="overlay"></div>
+<div class="container my-3 white-background-85 rounded">
+    <div class="row">
+        <div class="col-12 col-lg-8 offset-lg-2">
+            <h4 class="d-flex justify-content-between align-items-center my-3">Edit Product</h4>
+            <p class="text-muted">Fill out the form to edit the product</p>
+            <form action="{% url 'edit_product' product.slug %}" method="POST" id="product-form"
+                enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="form-row mb-3">
+                    <div class="form-group col-md-6">
+                        {{ product_form.name|as_crispy_field }}
+                        {{ product_form.category|as_crispy_field }}
+                        <p class="small">
+                            <span>Category</span>
+                        </p>
+                        {{ product_form.artist|as_crispy_field }}
+                        {{ product_form.sku|as_crispy_field }}
+                        <p class="small">
+                            <span>Last SKU: {{ latest_product.sku }}</span>
+                        </p>
+                        {{ product_form.description|as_crispy_field }}
+                        {{ product_form.has_sizes|as_crispy_field }}
+                        <p class="small">
+                            <span>Has sizes</span>
+                        </p>
+                        {{ product_form.price|as_crispy_field }}
+                        {{ product_form.featured_image|as_crispy_field }}
+                        {{ product_form.slug|as_crispy_field }}
+                        <p class="small text-danger">
+                            <span>SKU plus the product name with no special characters and no spaces</span>
+                            <span>e.g. 0047-black-tee</span>
+                        </p>
                     </div>
-                    <div class="submit-button text-right mb-3">
-                        <a class="btn rounded my-3" href="{% url 'products' %}">Cancel</a>
-                        <button id="submit-button" class="btn btn-dark rounded my-3">Update Product</button>
-                    </div>
-                </form>
-            </div>
+                </div>
+                <div class="submit-button text-right mb-3">
+                    <a class="btn rounded my-3" href="{% url 'products' %}">Cancel</a>
+                    <button id="submit-button" class="btn btn-dark rounded my-3">Update Product</button>
+                </div>
+            </form>
         </div>
     </div>
+</div>
 {% endblock %}

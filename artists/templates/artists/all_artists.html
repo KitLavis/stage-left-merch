@@ -7,28 +7,30 @@
 
 {% block content %}
 <div class="container-fluid artists-container mb-3">
-    <div class="row artists-row">
-        {% for artist in artists %}
-        <div class="col-12 col-sm-8 col-md-6 col-lg-4 mt-3">
-            <div class="card artist-card">
-              {% if 'placeholder' in artist.image.url %}
-                <img class="card-img" src="{% static 'images/default_image.webp' %}" alt="Placeholder image">
-              {% else %}
-                <img class="card-img" src="{{ artist.image.url }}" alt="{{ artist.friendly_name }}">
-              {% endif %}
-              <div class="card-body">
-                <h4 class="card-title">{{ artist.friendly_name }}</h4>
-                <h6 class="card-subtitle mb-2 text-muted">{{ artist.hometown }} | {{ artist.established }}</h6>
-                <div class="row text-center">
-                  <div class="col-12">
-                    <button class="btn btn-dark mt-3"><a href="{% url 'products' %}?artist={{ artist.name }}" aria-label="Click to view artist's products">Products</a></button>
-                    <button class="btn btn-dark mt-3"><a href="{% url 'artist_detail' artist.name %}" aria-label="Click for more artist info">More Info</a></button>
-                  </div>
-                </div>
-              </div>
+  <div class="row artists-row">
+    {% for artist in artists %}
+    <div class="col-12 col-sm-8 col-md-6 col-lg-4 mt-3">
+      <div class="card artist-card">
+        {% if 'placeholder' in artist.image.url %}
+        <img class="card-img" src="{% static 'images/default_image.webp' %}" alt="Placeholder image">
+        {% else %}
+        <img class="card-img" src="{{ artist.image.url }}" alt="{{ artist.friendly_name }}">
+        {% endif %}
+        <div class="card-body">
+          <h4 class="card-title">{{ artist.friendly_name }}</h4>
+          <h6 class="card-subtitle mb-2 text-muted">{{ artist.hometown }} | {{ artist.established }}</h6>
+          <div class="row text-center">
+            <div class="col-12">
+              <button class="btn btn-dark mt-3"><a href="{% url 'products' %}?artist={{ artist.name }}"
+                  aria-label="Click to view artist's products">Products</a></button>
+              <button class="btn btn-dark mt-3"><a href="{% url 'artist_detail' artist.name %}"
+                  aria-label="Click for more artist info">More Info</a></button>
             </div>
           </div>
-        {% endfor %}
+        </div>
+      </div>
     </div>
+    {% endfor %}
+  </div>
 </div>
 {% endblock %}

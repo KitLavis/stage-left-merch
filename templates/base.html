@@ -24,9 +24,6 @@
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <!-- Mailchimp -->
   <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
-  <style type="text/css">
-    #mc_embed_signup{background:#fff; false;clear:left; font:14px Helvetica,Arial,sans-serif; width: 100%;}
-</style>
   <!-- Custom CSS -->
   <link rel="stylesheet" href="{% static 'css/base.css' %}">
   {% endblock %}
@@ -129,8 +126,7 @@
                   <div class="dropdown-menu border-0" aria-labelledby="artists-link">
                     <a href="{% url 'artists' %}" class="dropdown-item">All Artists</a>
                     {% for artist in all_artists %}
-                    <a href="{% url 'artist_detail' artist.name %}"
-                      class="dropdown-item">{{ artist.friendly_name }}</a>
+                    <a href="{% url 'artist_detail' artist.name %}" class="dropdown-item">{{ artist.friendly_name }}</a>
                     {% endfor %}
                   </div>
                 </li>
@@ -222,8 +218,9 @@
         <ul class="nav flex-column">
           <li class="nav-item mb-2"><a href="{% url 'contact' %}" class="nav-link p-0 text-muted"
               aria-label="Get in contact">Contact</a></li>
-          <li class="nav-item mb-2"><a href="https://www.termsfeed.com/live/d98be78a-9d1e-4fb4-8f95-e16e0f3d5bf9" class="nav-link p-0 text-muted"
-              aria-label="View our privacy policy (opens in a new tab)" target="_blank">Privacy Policy</a></li>
+          <li class="nav-item mb-2"><a href="https://www.termsfeed.com/live/d98be78a-9d1e-4fb4-8f95-e16e0f3d5bf9"
+              class="nav-link p-0 text-muted" aria-label="View our privacy policy (opens in a new tab)"
+              target="_blank">Privacy Policy</a></li>
         </ul>
       </div>
     </div>

@@ -8,12 +8,13 @@
             <h4 class="my-3">Message Details</h4>
             <p><span class="text-muted">Name: </span>{{ m.full_name }}</p>
             {% if m.band_artist_name %}
-                <p><span class="text-muted">Artist: </span>{{ m.band_artist_name }}</p>
+            <p><span class="text-muted">Artist: </span>{{ m.band_artist_name }}</p>
             {% endif %}
             <p><span class="text-muted">Email: </span>{{ m.email }}</p>
             <p><span class="text-muted">Subject: </span>{{ m.subject }}</p>
             <p><span class="text-muted">Message: </span>{{ m.message }}</p>
-            <button class="btn btn-dark rounded my-3"><a href="{% url 'customer_messages' %}" aria-label="Go back to all messages">BACK TO ALL</a></button>
+            <button class="btn btn-dark rounded my-3"><a href="{% url 'customer_messages' %}"
+                    aria-label="Go back to all messages">BACK TO ALL</a></button>
         </div>
     </div>
 </div>

@@ -28,40 +28,44 @@
                         </tr>
                     </thead>
                     {% for item in basket_items %}
-                        <tr>
-                            <td class="p-3 w-25">
-                                {% if 'placeholder' in item.product.featured_image.url %}
-                                <img class="rounded" src="{% static 'images/default_image.webp' %}" alt="Card image cap">
-                                {% else %}
-                                <img class="rounded" src="{{ item.product.featured_image.url }}" alt="{{ item.product.name }}">
+                    <tr>
+                        <td class="p-3 w-25">
+                            {% if 'placeholder' in item.product.featured_image.url %}
+                            <img class="rounded" src="{% static 'images/default_image.webp' %}" alt="Card image cap">
+                            {% else %}
+                            <img class="rounded" src="{{ item.product.featured_image.url }}"
+                                alt="{{ item.product.name }}">
+                            {% endif %}
+                        </td>
+                        <td class="py-3">
+                            <p class="my-0"><strong>{{ item.product.name }}</strong></p>
+                            <p class="my-0"><strong>Size:
+                                </strong>{% if item.product.has_sizes %}{{ item.size | upper }}{% else %}N/A{% endif %}
+                            </p>
+                            <p class="my-0 small text-muted">SKU: {{ item.product.sku }}</p>
+                        </td>
+                        <td class="py-3">
+                            <p class="my-0">£{{ item.product.price }}</p>
+                        </td>
+                        <td class="py-3 w-25">
+                            <form class="form update-form" method="POST"
+                                action="{% url 'modify_basket' item.product_id %}">
+                                {% csrf_token %}
+                                <input class="form-control form-control-sm qty_input" type="number" name="quantity"
+                                    value="{{ item.quantity }}" min="1" max="99" data-item_id="{{ item.product_id }}"
+                                    id="id_qty_{{ item.product_id }}">
+                                {% if item.product.has_sizes %}
+                                <input type="hidden" name="product_size" value="{{ item.size }}">
                                 {% endif %}
-                            </td>
-                            <td class="py-3">
-                                <p class="my-0"><strong>{{ item.product.name }}</strong></p>
-                                <p class="my-0"><strong>Size: </strong>{% if item.product.has_sizes %}{{ item.size | upper }}{% else %}N/A{% endif %}</p>
-                                <p class="my-0 small text-muted">SKU: {{ item.product.sku }}</p>
-                            </td>
-                            <td class="py-3">
-                                <p class="my-0">£{{ item.product.price }}</p>
-                            </td>
-                            <td class="py-3 w-25">
-                                <form class="form update-form" method="POST" action="{% url 'modify_basket' item.product_id %}">
-                                    {% csrf_token %}
-                                    <input class="form-control form-control-sm qty_input" type="number"
-                                        name="quantity" value="{{ item.quantity }}" min="1" max="99"
-                                        data-item_id="{{ item.product_id }}"
-                                        id="id_qty_{{ item.product_id }}">
-                                    {% if item.product.has_sizes %}
-                                    <input type="hidden" name="product_size" value="{{ item.size }}">
-                                    {% endif %}
-                                </form>
-                                <a class="update-link text-info"><small>Update</small></a>
-                                <a class="remove-item text-danger float-right" id="remove_{{ item.product_id }}" data-product-size="{{ item.size }}"><small>Remove</small></a>
-                            </td>
-                            <td class="py-3">
-                                <p class="my-0">£{{ item.product.price | calculate_subtotal:item.quantity }}</p>
-                            </td>
-                        </tr>
+                            </form>
+                            <a class="update-link text-info"><small>Update</small></a>
+                            <a class="remove-item text-danger float-right" id="remove_{{ item.product_id }}"
+                                data-product-size="{{ item.size }}"><small>Remove</small></a>
+                        </td>
+                        <td class="py-3">
+                            <p class="my-0">£{{ item.product.price | calculate_subtotal:item.quantity }}</p>
+                        </td>
+                    </tr>
                     {% endfor %}
                 </table>
             </div>
@@ -71,9 +75,9 @@
                         <h6><strong>Items: £{{ total|floatformat:2 }}</strong></h6>
                         <h6>Postage: £{{ postage|floatformat:2 }}</h6>
                         {% if free_postage_delta > 0 %}
-                            <p class="mb-1 text-danger">
-                                Spend just <strong>£{{ free_postage_delta }}</strong> more for free delivery!
-                            </p>
+                        <p class="mb-1 text-danger">
+                            Spend just <strong>£{{ free_postage_delta }}</strong> more for free delivery!
+                        </p>
                         {% endif %}
                         <h4 class="mt-4"><strong>Total: £{{ grand_total|floatformat:2 }}</strong></h4>
                     </div>
@@ -102,26 +106,27 @@
 
 {% block postloadjs %}
 <script type="text/javascript">
-
-    $('.update-link').click(function(e) {
+    $('.update-link').click(function (e) {
         e.preventDefault(); // Prevent default link behavior
         var form = $(this).prev('.update-form');
         form.submit();
     });
 
     // Remove item and reload on click
-    $('.remove-item').click(function(e) {
+    $('.remove-item').click(function (e) {
         var csrfToken = "{{ csrf_token }}";
         var productId = $(this).attr('id').split('remove_')[1];
         var size = $(this).data('product_size');
         var url = `/basket/remove/${productId}/`;
-        var data = {'csrfmiddlewaretoken': csrfToken, 'product_size': size};
+        var data = {
+            'csrfmiddlewaretoken': csrfToken,
+            'product_size': size
+        };
 
         $.post(url, data)
-         .done(function() {
-             location.reload();
-         });
+            .done(function () {
+                location.reload();
+            });
     })
-
 </script>
 {% endblock %}

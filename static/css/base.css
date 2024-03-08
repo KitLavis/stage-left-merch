@@ -93,9 +93,9 @@ footer {
 
 #mc_embed_signup {
     background: none;
-    clear: left;
-    font: 14px Helvetica, Arial, sans-serif;
-    width: auto;
+      clear: left;
+      font: 14px Helvetica, Arial, sans-serif;
+      width: 100%;
 }
 
 /* ------------------------------------------------------ General */
