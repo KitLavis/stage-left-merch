@@ -65,7 +65,7 @@
     <div class="container-fluid text-center justify-content-center">
       <div class="row header-title py-3">
         <div class="col pr-0">
-          <a href="{% url 'home' %}" alt="Click to return to the homepage" class="home-link">
+          <a href="{% url 'home' %}" aria-label="Click to return to the homepage" class="home-link">
             <h1>StageLeft.</h1>
           </a>
         </div>
@@ -136,8 +136,8 @@
                 </li>
               </ul>
             </div>
-            <div class="col-md-3 col-xl-2 offset-md-3 offset-xl-0">
-              <span class="user-dropdown">
+            <div class="col-md-3 col-xl-2 offset-md-3 offset-xl-0 d-flex justify-content-center">
+              <div class="user-dropdown">
                 <a href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <i class="fa-regular fa-user"></i>
                 </a>
@@ -154,17 +154,19 @@
                   <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
                   {% endif %}
                 </div>
-              </span>
-              <a href="{% url 'shopping_basket' %}">
-                <i class="fa-solid fa-basket-shopping"></i>
-              </a>
-              <p class="my-0">
-                {% if grand_total %}
-                £{{ grand_total|floatformat:2 }}
-                {% else %}
-                £0.00
-                {% endif %}
-              </p>
+              </div>
+              <div class="basket-icon">
+                <a href="{% url 'shopping_basket' %}">
+                  <i class="fa-solid fa-basket-shopping"></i>
+                </a>
+                <p class="my-0">
+                  {% if grand_total %}
+                  £{{ grand_total|floatformat:2 }}
+                  {% else %}
+                  £0.00
+                  {% endif %}
+                </p>
+              </div>
             </div>
             <div class='col-md-3 col-xl-2 order-xl-first search-container'>
               <form class="d-flex" method="GET" action="{% url 'products' %}">
@@ -213,6 +215,7 @@
               aria-label="View all the artists we work with">Artists</a></li>
           <li class="nav-item mb-2"><a href="{% url 'testimonials' %}" class="nav-link p-0 text-muted"
               aria-label="View testimonials from our collaborators">Testimonials</a></li>
+        </ul>
       </div>
       <div class="col-4 my-3">
         <ul class="nav flex-column">
