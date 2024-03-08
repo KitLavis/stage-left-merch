@@ -14,7 +14,7 @@ Grand Total: £{{ order.grand_total }}
 
 Your order will be posted to {{ order.street_line1 }}, {{ order.postcode }} asap.
 
-If you have any questions regarding your order, drop us a line at {{ OUR_EMAIL_ADDRESS }}.
+If you have any questions regarding your order, head to the contact page on the website.
 
 All the best,
 

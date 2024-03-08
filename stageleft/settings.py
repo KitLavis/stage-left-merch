@@ -14,10 +14,8 @@ from pathlib import Path
 from django.contrib.messages import constants as messages
 import os
 import dj_database_url
-# import cloudinary
 import cloudinary_storage
 import cloudinary.uploader
-# import cloudinary.api
 if os.path.isfile('env.py'):
     import env
 
@@ -125,16 +123,6 @@ ACCOUNT_USERNAME_MIN_LENGTH = 4
 LOGIN_URL = '/accounts/login/'
 LOGIN_REDIRECT_URL = '/'
 
-# Database
-# https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
 DATABASES = {
     'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
@@ -196,12 +184,6 @@ CSRF_TRUSTED_ORIGINS = [
     'https://8000-kitlavis-stageleftmerch-dfadd5f4vsn.ws-eu108.gitpod.io',
     'https://stage-left-merch-6e2378b5745e.herokuapp.com/'
     ]
-
-# cloudinary.config(
-#   cloud_name = "duxza3pht",
-#   api_key = os.environ.get("API_KEY"),
-#   api_secret = os.environ.get("API_SECRET")
-# )
 
 FREE_POSTAGE_THRESHOLD = 20
 STANDARD_POSTAGE_PERCENTAGE = 10
