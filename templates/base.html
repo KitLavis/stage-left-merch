@@ -150,6 +150,7 @@
                   <a href="{% url 'user' %}" class="dropdown-item">Account Management</a>
                   {% if user.is_authenticated and user.is_superuser %}
                   <a href="{% url 'customer_messages' %}" class="dropdown-item">View Messages</a>
+                  <a href="{% url 'add_product' %}" class="dropdown-item">Add Product</a>
                   {% endif %}
                   <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
                   {% else %}

@@ -20,7 +20,7 @@ class ProductForm(forms.ModelForm):
             'has_sizes': 'Has Sizes?',
             'price': 'Price',
             'featured_image': 'Image',
-            'slug': 'sku-name-without-special-char',
+            'slug': 'Slug',
             'status': '0 = Draft, 1 = Published',
         }
 

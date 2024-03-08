@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.core.paginator import Paginator
 from django.contrib import messages
 from django.db.models import Q
+from django.contrib.auth.decorators import login_required
 from .models import Product, Category
 from .forms import ProductForm
 from artists.models import Artist
@@ -63,7 +64,19 @@ def product_detail(request, slug):
     return render(request, 'products/product_detail.html', context)
 
 
+@login_required
 def add_product(request):
+
+    if not request.user.is_superuser:
+        messages.add_message(
+                    request,
+                    messages.ERROR,
+                    'Only admin level users have access to that area'
+                )
+        return redirect(reverse('home'))
+
+    products = Product.objects.all()
+    latest_product = products.latest()
 
     if request.method == 'POST':
         product_form = ProductForm(request.POST, request.FILES)
@@ -75,10 +88,11 @@ def add_product(request):
             messages.error(request, 'Something went wrong. Please ensure the form is valid.')
     else:
         product_form = ProductForm()
-        
+
     template = 'products/add_product.html'
     context = {
         'product_form': product_form,
+        'latest_product': latest_product,
     }
 
     return render(request, template, context)
