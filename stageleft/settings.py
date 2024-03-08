@@ -160,6 +160,7 @@ USE_TZ = True
 MESSAGE_TAGS = {
     messages.SUCCESS: 'alert-success',
     messages.ERROR: 'alert-danger',
+    messages.INFO: 'alert-info',
 }
 
 # Static files (CSS, JavaScript, Images)

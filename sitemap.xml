@@ -9,132 +9,177 @@
 
 <url>
   <loc>https://stage-left-merch-6e2378b5745e.herokuapp.com/</loc>
-  <lastmod>2024-03-07T14:48:54+00:00</lastmod>
+  <lastmod>2024-03-08T13:52:23+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
   <loc>https://stage-left-merch-6e2378b5745e.herokuapp.com/products/</loc>
-  <lastmod>2024-03-07T14:48:54+00:00</lastmod>
+  <lastmod>2024-03-08T13:52:23+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://stage-left-merch-6e2378b5745e.herokuapp.com/products/?category=tees,hoodies,hats</loc>
-  <lastmod>2024-03-07T14:48:54+00:00</lastmod>
+  <lastmod>2024-03-08T13:52:23+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://stage-left-merch-6e2378b5745e.herokuapp.com/products/?category=tees</loc>
-  <lastmod>2024-03-07T14:48:54+00:00</lastmod>
+  <lastmod>2024-03-08T13:52:23+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://stage-left-merch-6e2378b5745e.herokuapp.com/products/?category=hoodies</loc>
-  <lastmod>2024-03-07T14:48:54+00:00</lastmod>
+  <lastmod>2024-03-08T13:52:23+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://stage-left-merch-6e2378b5745e.herokuapp.com/products/?category=hats</loc>
-  <lastmod>2024-03-07T14:48:54+00:00</lastmod>
+  <lastmod>2024-03-08T13:52:23+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://stage-left-merch-6e2378b5745e.herokuapp.com/products/?category=vinyl,tapes,cds</loc>
-  <lastmod>2024-03-07T14:48:54+00:00</lastmod>
+  <lastmod>2024-03-08T13:52:23+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://stage-left-merch-6e2378b5745e.herokuapp.com/products/?category=vinyl</loc>
-  <lastmod>2024-03-07T14:48:54+00:00</lastmod>
+  <lastmod>2024-03-08T13:52:23+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://stage-left-merch-6e2378b5745e.herokuapp.com/products/?category=tapes</loc>
-  <lastmod>2024-03-07T14:48:54+00:00</lastmod>
+  <lastmod>2024-03-08T13:52:23+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://stage-left-merch-6e2378b5745e.herokuapp.com/products/?category=cds</loc>
-  <lastmod>2024-03-07T14:48:54+00:00</lastmod>
+  <lastmod>2024-03-08T13:52:23+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://stage-left-merch-6e2378b5745e.herokuapp.com/products/?category=bags,mugs</loc>
-  <lastmod>2024-03-07T14:48:54+00:00</lastmod>
+  <lastmod>2024-03-08T13:52:23+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://stage-left-merch-6e2378b5745e.herokuapp.com/products/?category=bags</loc>
-  <lastmod>2024-03-07T14:48:54+00:00</lastmod>
+  <lastmod>2024-03-08T13:52:23+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://stage-left-merch-6e2378b5745e.herokuapp.com/products/?category=mugs</loc>
-  <lastmod>2024-03-07T14:48:54+00:00</lastmod>
+  <lastmod>2024-03-08T13:52:23+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://stage-left-merch-6e2378b5745e.herokuapp.com/artists/</loc>
-  <lastmod>2024-03-07T14:48:54+00:00</lastmod>
+  <lastmod>2024-03-08T13:52:23+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://stage-left-merch-6e2378b5745e.herokuapp.com/artists/artist-tes/</loc>
-  <lastmod>2024-03-07T14:48:54+00:00</lastmod>
+  <loc>https://stage-left-merch-6e2378b5745e.herokuapp.com/artists/klan-mclean/</loc>
+  <lastmod>2024-03-08T13:52:23+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://stage-left-merch-6e2378b5745e.herokuapp.com/artists/white-parker/</loc>
+  <lastmod>2024-03-08T13:52:23+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://stage-left-merch-6e2378b5745e.herokuapp.com/artists/madarch-uchel/</loc>
+  <lastmod>2024-03-08T13:52:23+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://stage-left-merch-6e2378b5745e.herokuapp.com/artists/testimonials/</loc>
-  <lastmod>2024-03-07T14:48:54+00:00</lastmod>
+  <lastmod>2024-03-08T13:52:23+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://stage-left-merch-6e2378b5745e.herokuapp.com/accounts/signup/</loc>
-  <lastmod>2024-03-07T14:48:54+00:00</lastmod>
+  <lastmod>2024-03-08T13:52:23+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://stage-left-merch-6e2378b5745e.herokuapp.com/accounts/login/</loc>
-  <lastmod>2024-03-07T14:48:54+00:00</lastmod>
+  <lastmod>2024-03-08T13:52:23+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://stage-left-merch-6e2378b5745e.herokuapp.com/basket/</loc>
-  <lastmod>2024-03-07T14:48:54+00:00</lastmod>
+  <lastmod>2024-03-08T13:52:23+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://stage-left-merch-6e2378b5745e.herokuapp.com/contact/</loc>
-  <lastmod>2024-03-07T14:48:54+00:00</lastmod>
+  <lastmod>2024-03-08T13:52:23+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://stage-left-merch-6e2378b5745e.herokuapp.com/products/0001-plain-white-tee/</loc>
-  <lastmod>2024-03-07T14:48:54+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
   <loc>https://stage-left-merch-6e2378b5745e.herokuapp.com/products/0002-plain-white-hoodie/</loc>
-  <lastmod>2024-03-07T14:48:54+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://stage-left-merch-6e2378b5745e.herokuapp.com/products/0003-plain-white-beanie/</loc>
-  <lastmod>2024-03-07T14:48:54+00:00</lastmod>
+  <lastmod>2024-03-08T13:52:23+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://stage-left-merch-6e2378b5745e.herokuapp.com/products/0004-plain-cream-tote/</loc>
-  <lastmod>2024-03-07T14:48:54+00:00</lastmod>
+  <lastmod>2024-03-08T13:52:23+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://stage-left-merch-6e2378b5745e.herokuapp.com/products/?artist=artist-tes</loc>
-  <lastmod>2024-03-07T14:48:54+00:00</lastmod>
+  <loc>https://stage-left-merch-6e2378b5745e.herokuapp.com/products/0005-plain-white-cap/</loc>
+  <lastmod>2024-03-08T13:52:23+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://stage-left-merch-6e2378b5745e.herokuapp.com/products/0006-plain-black-hoodie/</loc>
+  <lastmod>2024-03-08T13:52:23+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://stage-left-merch-6e2378b5745e.herokuapp.com/products/0008-plain-white-enamel-mug/</loc>
+  <lastmod>2024-03-08T13:52:23+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://stage-left-merch-6e2378b5745e.herokuapp.com/products/0009-plain-white-womens-tee/</loc>
+  <lastmod>2024-03-08T13:52:23+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://stage-left-merch-6e2378b5745e.herokuapp.com/products/0007-plain-white-drawstring-bag/</loc>
+  <lastmod>2024-03-08T13:52:23+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://stage-left-merch-6e2378b5745e.herokuapp.com/products/0001-plain-white-tee/</loc>
+  <lastmod>2024-03-08T13:52:23+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://stage-left-merch-6e2378b5745e.herokuapp.com/products/0003-plain-white-beanie/</loc>
+  <lastmod>2024-03-08T13:52:23+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://stage-left-merch-6e2378b5745e.herokuapp.com/products/?artist=klan-mclean</loc>
+  <lastmod>2024-03-08T13:52:23+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://stage-left-merch-6e2378b5745e.herokuapp.com/products/?artist=white-parker</loc>
+  <lastmod>2024-03-08T13:52:23+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://stage-left-merch-6e2378b5745e.herokuapp.com/products/?artist=madarch-uchel</loc>
+  <lastmod>2024-03-08T13:52:23+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://stage-left-merch-6e2378b5745e.herokuapp.com/accounts/password/reset/</loc>
-  <lastmod>2024-03-07T14:48:54+00:00</lastmod>
+  <lastmod>2024-03-08T13:52:23+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 
