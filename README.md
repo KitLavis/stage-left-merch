@@ -57,6 +57,8 @@ Wireframes:
 
 ## Features
 
+Due to the nature of the project there are a large number of features, therefore the following section is split into smaller sections, each representing a seperate Django application.
+
 ### Base Template and Consistent Features
 
 As well as the overriding design aspects, there are two features that remain consistent across all pages. These are the header and footer. The header consists of a top banner with the company name, and a secondary navigation panel where the user can navigate to the specific product or artist pages, and the testimonials section. The right hand side of the bar holds the user profile links, accessable via a dropdown menu attached to the user icon, as well as the basket icon that links to the basket page. Underneath the basket icon the current order total is shown, so the user does not have to navigate to their basket to keep track of their order. On the opposite side of the navigation bar the user can enter a specific keyword in order to search through all the products and filter what is relevant to them. On smaller devices the navigation bar is collapsed into a burger icon so that the page is not over cluttered.
@@ -69,7 +71,33 @@ The footer consists of a number of links that are also present in the navigation
 
 ### Home
 
+The home app consists of two minor aspects: the hero text and the button that links to all products.
+
+![Hero text](docs/hero-text.png)
+
 ### Products
+
+The products app has three main features: product cards, the product detail page and the add/edit products feature.
+
+- All Products (product cards)
+
+The main feature of the all products page is the product cards that hold the basic information for each product, and a link to see further details. When there are more than 12 products present the page paginates.
+
+![Product cards](docs/all-products-page.png)
+
+- Product detail page
+
+The product detail page does what is says on the tin. When the user clicks the 'more info' button on a product card, they are directed to this page, which holds more detailed information about the product, including: product name, a brief description, the sizes available (if applicable), and the price. From here the user can add the product to their basket.
+
+As is shown in the screenshot below, if a superuser is logged in, edit and delete product buttons are shown, the function of these being self-explanitory. If the user is not a superuser these are not present.
+
+![Product detail page](docs/product-detail.png)
+
+- Add/edit product
+
+These two features are of course two seperate features, however they are described together due to their similarities. These two features are only available to superusers, and other user types attempting to access these features are redirected away. The add and edit product pages consist of the product form, which allows the superuser to add or edit and instance of the product model in the backend, from the frontend.
+
+![Add/edit product](docs/edit-product.png)
 
 ### Basket
 
