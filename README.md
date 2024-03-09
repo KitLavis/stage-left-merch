@@ -179,7 +179,30 @@ Once the user has submitted a valid contact form they are redirected to the cont
 
 ![Contact success](docs/checkout-success.png)
 
+### Future Features
+
+A number of features/expanded in the future. These include:
+
+- Artists themselves being able to add products.
+- Expansion of the messaging system to allow for a more complete 'private messaging service' similar to a social media platform.
+- Currently all emails are sent to the terminal, however if/when the project goes live in a real world situation then a real emailing service will be incorporated.
+- A frontend admin panel will be added for superusers to be able to complete all CRUD operations from one place, similar to the Django admin panel.
+
 ## Development and Deployment
+
+As a project of this kind is very involved and has a number of interlinking elements, a lot of thought had to be put into the model relationships. The models and their relationships can be seen in the spreadsheet screenshot below.
+
+![Model relationships](docs/model-relationships.png)
+
+The deployment to Heroku is also a very involved process and goes as follows:
+
+- Set DEBUG to False in settings.py.
+- Make sure all dependencies are stored in the requirements.txt file. This can be done with the command "pip3 freeze --local requirements.txt".
+- Create a Procfile containing the command "web: gunicorn stageleft.wsgi"
+- On Heroku create a new app.
+- In the settings set the config vars e.g. database url, the url for media storage (in our case Cloudinary), stripe keys, django keys, and the port.
+- Add the python buildpack.
+- The project is then ready for deployment. We connected the GitHub repository and used manual deployments so that we could control which versions would be deployed, however there are alternative options available.
 
 ### Tools and Technologies
 
