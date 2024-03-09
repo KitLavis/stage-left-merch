@@ -1,6 +1,8 @@
 # StageLeft Merchandise
 
-StageLeft Mercahndise provides a merchandise management service for bands and artists, taking the responsibility away from them allowing them to concentrate on their music. The business in its entirety is based around a more complex and involved model, however the online side of the venture is a business to consumer (B2C) e-commerce site aimed at exisiting fans of the musicians that StageLeft work with.
+StageLeft Mercahndise is a merchandise management service for bands and artists, taking the responsibility away from them, allowing them to concentrate on their music. The business in its entirety is based around a more complex and involved model, however the online side of the venture is a business to consumer (B2C) e-commerce site aimed at exisiting fans of the musicians that StageLeft work with.
+
+![StageLeft am I responsive image](docs/stage-left-am-i-responsive.png)
 
 [Live deployment link](https://stage-left-merch-6e2378b5745e.herokuapp.com/)
 
@@ -32,6 +34,16 @@ As mentioned in the intorductory paragraph, although the company offers more com
 An important feature of any online business in 2024 is search engine optimisation (SEO), as you can't sell products to people if they don't seem. Therefore a number of items were added to improve StageLeft's "online rating". The simplest and most obvious of these aspects are the keywords in the meta tags within the head element of the base HTML template. As well as these keywords, everything written at the top of a page, within header tags, or within strong tags had thought put in to them so as not to waste the oppurtunity to improve the site's SEO. The final aspect of SEO are the sitemap and robots files. The sitemap.xml file is a list of all the pages of the site that can be accessed without logging in, while the robots.txt file tells search engine crawlers where they can't crawl. Although the robots.txt file tells search engines where not to go, the presence of the file itself gives the page a higher rating as it is acknowledging that search engines can crawl your site in the first place.
 
 ### Design
+
+The design elements were kept as minimal as possible while still portraying the aim of the project, and as can be seen in features section, they are kept consistent throughout the majority of the site. The hero image of an audience watching a live act is used as the base on every page, while the elements overlaying this image use utilise simple black and white backgrounds with the opacity lowered slightly to allow for the underlying image to be seen.
+
+- Hero Image:
+
+![Hero image](static/images/hero-image.webp)
+
+- Colour Swatch:
+
+![Colour swatch with hex values](docs/stage-left-swatch-hex.png)
 
 ## Features
 
