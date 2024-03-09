@@ -37,13 +37,23 @@ An important feature of any online business in 2024 is search engine optimisatio
 
 The design elements were kept as minimal as possible while still portraying the aim of the project, and as can be seen in features section, they are kept consistent throughout the majority of the site. The hero image of an audience watching a live act is used as the base on every page, while the elements overlaying this image use utilise simple black and white backgrounds with the opacity lowered slightly to allow for the underlying image to be seen.
 
-- Hero Image:
+Hero Image:
 
 ![Hero image](static/images/hero-image.webp)
 
-- Colour Swatch:
+Colour Swatch:
 
 ![Colour swatch with hex values](docs/stage-left-swatch-hex.png)
+
+Wireframes:
+
+- All Products:
+
+![All products page wireframe](docs/all-products.png)
+
+- Product Detail:
+
+![Product detail page wireframe](docs/product-detail.png)
 
 ## Features
 
