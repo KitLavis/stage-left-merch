@@ -209,7 +209,7 @@ The deployment to Heroku is also a very involved process and goes as follows:
 - HTML5, CSS3, Javascript and Python are the languages used for the project.
 - Django is the full-stack framework, with a number of apps and extensions added:
     - Allauth for the user account functionality and forms.
-    - Crispy Forms for the comment form.
+    - Crispy Forms for the forms.
     - Paginator for the pagination of the products pages.
 - Bootstrap4 is the CSS framework used mainly to provide responsiveness.
 - Cloudinary is used for media storage.
