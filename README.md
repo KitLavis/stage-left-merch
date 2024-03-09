@@ -181,7 +181,7 @@ Once the user has submitted a valid contact form they are redirected to the cont
 
 ### Future Features
 
-A number of features/expanded in the future. These include:
+A number of features will be added/expanded in the future. These include:
 
 - Artists themselves being able to add products.
 - Expansion of the messaging system to allow for a more complete 'private messaging service' similar to a social media platform.
@@ -206,6 +206,21 @@ The deployment to Heroku is also a very involved process and goes as follows:
 
 ### Tools and Technologies
 
+- HTML5, CSS3, Javascript and Python are the languages used for the project.
+- Django is the full-stack framework, with a number of apps and extensions added:
+    - Allauth for the user account functionality and forms.
+    - Crispy Forms for the comment form.
+    - Paginator for the pagination of the products pages.
+- Bootstrap4 is the CSS framework used mainly to provide responsiveness.
+- Cloudinary is used for media storage.
+- Whitenoise is used for the serving of static files
+- GitHub is used for version control and agile project planning.
+- GitPod is the online IDE used.
+- ElephantSQL is the database provider.
+- The project is deployed using Heroku.
+- Stripe is used to handle payments.
+- Gunicorn is the python web server gateway.
+
 ## Testing and Validation
 
 ### Code Validation
@@ -214,9 +229,16 @@ The deployment to Heroku is also a very involved process and goes as follows:
 
 ## Challenges and Bugs
 
-- Cloudinary media files
-- Database foregin key
-- Checkout duplicate orders
+A number of challenges and bugs arose during development. These include:
+
+- Cloudinary media storage
+    - We encountered an issue with the cloudinary uploader. Media files added via the Django, be that through the admin panel or from a form on the frontend, would upload to cloudinary with no issue. However, the media files stored in the development environment would not. This issue is ongoing. Our temporary fix was to move the two images from the media folder to the static folder, as from there they are accessable on the deployed site.
+
+- Database Migration
+    - Initially the artist model was created in the products app at an earlier stage of development, so it had to later be moved to the new artists app. Once everything was moved over there was an issue during migration, which led to new instances of the artist model not being stored in the database. As there was not much information stored in the database at the time, the quickest and easiest solution was to reset the databse on ElephantSQL, delete all previous migrations from the development environment and remigrate all the finished models.
+
+- Duplicate Orders
+    - The final large issue faced was that when checkout was complete, two order instances were stored in the database. This was because when no mobile phone number was given, it would be saved in shipping details as Null and in billing details as an empty string. This detail not matching meant that when the webhook checked to see if an exact match already existed in the database it didn't, so a second order was created via the webhook handler. This was solved by making the mobile phone number a required field.
 
 ## Credits
 
