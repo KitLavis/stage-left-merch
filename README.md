@@ -225,15 +225,35 @@ The deployment to Heroku is also a very involved process and goes as follows:
 
 ### Code Validation
 
-- HTML
+#### HTML
 
-Each custom HTML template was put through the W3C HTML validator. After some minor adjustments all came back with zero errors, and 
+Each custom HTML template was put through the W3C HTML validator. After some minor adjustments all came back with zero errors.
 
-- CSS
+- [Home](http://jigsaw.w3.org/css-validator/validator?lang=en&profile=css3svg&uri=https%3A%2F%2Fstage-left-merch-6e2378b5745e.herokuapp.com%2F&usermedium=all&vextwarning=&warning=1)
+- [Product Pages](http://jigsaw.w3.org/css-validator/validator?lang=en&profile=css3svg&uri=https%3A%2F%2Fstage-left-merch-6e2378b5745e.herokuapp.com%2Fproducts%2F&usermedium=all&vextwarning=&warning=1)
+- [Product Detail Page](http://jigsaw.w3.org/css-validator/validator?lang=en&profile=css3svg&uri=https%3A%2F%2Fstage-left-merch-6e2378b5745e.herokuapp.com%2Fproducts%2F0002-plain-white-hoodie%2F&usermedium=all&vextwarning=&warning=1)
+- [Add Product](http://jigsaw.w3.org/css-validator/validator?lang=en&profile=css3svg&uri=https%3A%2F%2Fstage-left-merch-6e2378b5745e.herokuapp.com%2Fproducts%2Fadd%2F&usermedium=all&vextwarning=&warning=1)
+- [Edit Product](http://jigsaw.w3.org/css-validator/validator?lang=en&profile=css3svg&uri=https%3A%2F%2Fstage-left-merch-6e2378b5745e.herokuapp.com%2Fproducts%2Fedit%2F0004-plain-cream-tote%2F&usermedium=all&vextwarning=&warning=1)
+- [Basket](http://jigsaw.w3.org/css-validator/validator?lang=en&profile=css3svg&uri=https%3A%2F%2Fstage-left-merch-6e2378b5745e.herokuapp.com%2Fbasket%2F&usermedium=all&vextwarning=&warning=1)
+- [Checkout](http://jigsaw.w3.org/css-validator/validator?lang=en&profile=css3svg&uri=https%3A%2F%2Fstage-left-merch-6e2378b5745e.herokuapp.com%2Fcheckout%2F&usermedium=all&vextwarning=&warning=1)
+- [Checkout Success](http://jigsaw.w3.org/css-validator/validator?lang=en&profile=css3svg&uri=https%3A%2F%2Fstage-left-merch-6e2378b5745e.herokuapp.com%2Fcheckout%2Fcheckout_success%2FDA6254B6545646ED8DC1D3C9BF42C548&usermedium=all&vextwarning=&warning=1)
+- [Artists](http://jigsaw.w3.org/css-validator/validator?lang=en&profile=css3svg&uri=https%3A%2F%2Fstage-left-merch-6e2378b5745e.herokuapp.com%2Fartists%2F&usermedium=all&vextwarning=&warning=1)
+- [Artist Detail](http://jigsaw.w3.org/css-validator/validator?lang=en&profile=css3svg&uri=https%3A%2F%2Fstage-left-merch-6e2378b5745e.herokuapp.com%2Fartists%2Fwhite-parker%2F&usermedium=all&vextwarning=&warning=1)
+- [Testimonials](http://jigsaw.w3.org/css-validator/validator?lang=en&profile=css3svg&uri=https%3A%2F%2Fstage-left-merch-6e2378b5745e.herokuapp.com%2Fartists%2Ftestimonials%2F&usermedium=all&vextwarning=&warning=1)
+- [Edit Testimonial](http://jigsaw.w3.org/css-validator/validator?lang=en&profile=css3svg&uri=https%3A%2F%2Fstage-left-merch-6e2378b5745e.herokuapp.com%2Fartists%2Ftestimonials%2Fedit%2F11%2F&usermedium=all&vextwarning=&warning=1)
+- [Add Testimonial](http://jigsaw.w3.org/css-validator/validator?lang=en&profile=css3svg&uri=https%3A%2F%2Fstage-left-merch-6e2378b5745e.herokuapp.com%2Fartists%2Ftestimonials%2Fadd%2F&usermedium=all&vextwarning=&warning=1)
+- [User Profile Page](http://jigsaw.w3.org/css-validator/validator?lang=en&profile=css3svg&uri=https%3A%2F%2Fstage-left-merch-6e2378b5745e.herokuapp.com%2Fuser%2F&usermedium=all&vextwarning=&warning=1)
+- [All Messages Page](http://jigsaw.w3.org/css-validator/validator?lang=en&profile=css3svg&uri=https%3A%2F%2Fstage-left-merch-6e2378b5745e.herokuapp.com%2Fcontact%2Fmessages%2F&usermedium=all&vextwarning=&warning=1)
+- [Message Detail](http://jigsaw.w3.org/css-validator/validator?lang=en&profile=css3svg&uri=https%3A%2F%2Fstage-left-merch-6e2378b5745e.herokuapp.com%2Fcontact%2Fmessages%2F491887E08ABB4CDBBE8F960727A0E307&usermedium=all&vextwarning=&warning=1)
+- [Contact Page](http://jigsaw.w3.org/css-validator/validator?lang=en&profile=css3svg&uri=https%3A%2F%2Fstage-left-merch-6e2378b5745e.herokuapp.com%2Fcontact%2F&usermedium=all&vextwarning=&warning=1)
+- [Contact Succes](http://jigsaw.w3.org/css-validator/validator?lang=en&profile=css3svg&uri=https%3A%2F%2Fstage-left-merch-6e2378b5745e.herokuapp.com%2Fcontact%2Fcontact_success%2F&usermedium=all&vextwarning=&warning=1)
 
-- JavaScript
 
-- Python
+#### CSS
+
+#### JavaScript
+
+#### Python
 
 ### Manual Testing
 
