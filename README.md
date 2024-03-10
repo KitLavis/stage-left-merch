@@ -264,9 +264,13 @@ The JavaScript was validated using the [JSHint](https://jshint.com/) validation 
 
 #### Python
 
-
+All the Python code was formatted using the Black Python Formatter and then passed through the Code Institute's [Python Linter](https://pep8ci.herokuapp.com/). The only remaining issues are a small number of lines that are unavoidably a few characters too long.
 
 ### Manual Testing
+
+Unfortunately due to time constraints automated tests are not currently implemented, however an extensive manual test script can be found at ![testing.md](testing.md)
+
+The script is loosely based on Kristyna Wach's test script for [Fantastic News](https://github.com/Cushione/fantastic-news/tree/main).
 
 ## Challenges and Bugs
 
