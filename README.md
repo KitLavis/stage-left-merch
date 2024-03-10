@@ -225,6 +225,16 @@ The deployment to Heroku is also a very involved process and goes as follows:
 
 ### Code Validation
 
+- HTML
+
+Each custom HTML template was put through the W3C HTML validator. After some minor adjustments all came back with zero errors, and 
+
+- CSS
+
+- JavaScript
+
+- Python
+
 ### Manual Testing
 
 ## Challenges and Bugs
