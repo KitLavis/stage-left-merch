@@ -1,13 +1,15 @@
 from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.contrib import messages
-from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from .models import Artist, Testimonial
 from .forms import TestimonialForm
 
 
 def all_artists(request):
-
+    """
+    Returns all instances of the artist
+    model and displays them on the page
+    """
     artists = Artist.objects.all()
 
     context = {
@@ -18,7 +20,10 @@ def all_artists(request):
 
 
 def artist_detail(request, slug):
-
+    """
+    Returns a single instance of the user
+    model and displays all info about them
+    """
     queryset = Artist.objects.all()
     artist = get_object_or_404(queryset, name=slug)
 
@@ -30,7 +35,9 @@ def artist_detail(request, slug):
 
 
 def all_testimonials(request):
-
+    """
+    Returns all instances of the testimonial model
+    """
     queryset = Testimonial.objects.all()
     latest_testimonial = queryset.latest()
     testimonials = queryset.exclude(id=latest_testimonial.id)
@@ -45,7 +52,10 @@ def all_testimonials(request):
 
 @login_required
 def add_testimonial(request):
-
+    """
+    Allows the user to add an instance of the testimonial
+    model from the front end and saves it to the database
+    """
     if request.method == 'POST':
         form = TestimonialForm(request.POST)
         if form.is_valid():
@@ -57,13 +67,16 @@ def add_testimonial(request):
                     )
                 return redirect(reverse('testimonials'))
             form.save()
-            messages.success(request, 'Thank you for your support and continued collaboration')
+            messages.success(request,
+                             'Thank you for your support',
+                             ' and continued collaboration')
             return redirect(reverse('testimonials'))
         else:
-            messages.error(request, 'There seems to be an issue. Please ensure the form is valid.')
+            messages.error(request, 'There seems to be an issue.'
+                           ' Please ensure the form is valid.')
     else:
         form = TestimonialForm()
-        
+
     template = 'artists/add_testimonial.html'
     context = {
         'form': form,
@@ -74,6 +87,11 @@ def add_testimonial(request):
 
 @login_required
 def edit_testimonial(request, testimonial_id):
+    """
+    Allows the user to edit an instance of the
+    testimonial model via the testimonial form
+    from the front-end
+    """
 
     testimonial = get_object_or_404(Testimonial, pk=testimonial_id)
 
@@ -100,7 +118,8 @@ def edit_testimonial(request, testimonial_id):
             messages.success(request, 'Testimonial updated successfully!')
             return redirect(reverse('testimonials'))
         else:
-            messages.error(request, 'Something went wrong. Please ensure the form is valid.')
+            messages.error(request, 'Something went wrong.'
+                           ' Please ensure the form is valid.')
     else:
         form = TestimonialForm(instance=testimonial)
 
@@ -115,6 +134,10 @@ def edit_testimonial(request, testimonial_id):
 
 @login_required
 def delete_testimonial(request, testimonial_id):
+    """
+    Allows the user to delete their testimonial from
+    the front-end
+    """
 
     testimonial = get_object_or_404(Testimonial, pk=testimonial_id)
 
@@ -128,9 +151,7 @@ def delete_testimonial(request, testimonial_id):
 
     testimonial.delete()
 
-    messages.add_message(
-                    request,
-                    messages.SUCCESS,
-                    'Testimonial successfully deleted!'
-                )
+    messages.add_message(request, messages.SUCCESS,
+                         'Testimonial successfully deleted!')
+
     return redirect(reverse('testimonials'))

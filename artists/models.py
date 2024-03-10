@@ -5,6 +5,10 @@ from cloudinary.models import CloudinaryField
 
 
 class Artist(models.Model):
+    """
+    Stores a single instance of the artist
+    model i.e. creates an artist
+    """
     friendly_name = models.CharField(max_length=250,
                                      null=True,
                                      blank=True,
@@ -24,6 +28,11 @@ class Artist(models.Model):
 
 
 class Testimonial(models.Model):
+    """
+    Stores a single instance of the testimonial
+    model i.e. creates a testimonial
+    """
+
     artist = models.OneToOneField(Artist, on_delete=models.PROTECT)
     rating = models.PositiveIntegerField(
         validators=[

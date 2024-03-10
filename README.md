@@ -33,6 +33,12 @@ As mentioned in the intorductory paragraph, although the company offers more com
 
 An important feature of any online business in 2024 is search engine optimisation (SEO), as you can't sell products to people if they don't seem. Therefore a number of items were added to improve StageLeft's "online rating". The simplest and most obvious of these aspects are the keywords in the meta tags within the head element of the base HTML template. As well as these keywords, everything written at the top of a page, within header tags, or within strong tags had thought put in to them so as not to waste the oppurtunity to improve the site's SEO. The final aspect of SEO are the sitemap and robots files. The sitemap.xml file is a list of all the pages of the site that can be accessed without logging in, while the robots.txt file tells search engine crawlers where they can't crawl. Although the robots.txt file tells search engines where not to go, the presence of the file itself gives the page a higher rating as it is acknowledging that search engines can crawl your site in the first place.
 
+### Promo
+
+SEO is not the only aspect used to improve the outreach of the company, a full digital marketing strategy will also be coordinated, starting with the creation of pages on all major social media platforms, and boosted using paid advertsiements. The reason this route was decided is because the majority of music/gig promotion currently takes place on social media, so it makes sense to target the same market. Although these pages haven't been created as of yet, and no paid promotions/advertisements are currently live, a mockup of what one of these pages may look like is provided below.
+
+![Facebook mockup](docs/stageleft-fb-mockup.png)
+
 ### Design
 
 The design elements were kept as minimal as possible while still portraying the aim of the project, and as can be seen in features section, they are kept consistent throughout the majority of the site. The hero image of an audience watching a live act is used as the base on every page, while the elements overlaying this image use utilise simple black and white backgrounds with the opacity lowered slightly to allow for the underlying image to be seen.
