@@ -179,6 +179,14 @@ Once the user has submitted a valid contact form they are redirected to the cont
 
 ![Contact success](docs/checkout-success.png)
 
+- Message Table
+
+When signed in as a superuser, the user can access the customer messages from the link in the user dropdown of the navbar. Here a table displays a summary of each message. Clicking the message reference opens the message detail page so that the message can be read.
+
+![Message table](docs/message-table.png)
+
+![Message details](docs/message-detail.png)
+
 ### Future Features
 
 A number of features will be added/expanded in the future. These include:
