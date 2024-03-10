@@ -6,6 +6,7 @@ from .models import Message
 
 
 def contact(request):
+    """Returns the contact form to the page"""
 
     contact_form = ContactForm()
 
@@ -48,13 +49,13 @@ def contact(request):
 
 
 def contact_success(request):
-
+    """Returns the contact succes template"""
     return render(request, "contact/contact_success.html")
 
 
 @login_required
 def customer_messages(request):
-
+    """Returns all instances of the message modle"""
     if not request.user.is_superuser:
         messages.add_message(
             request,
@@ -75,7 +76,10 @@ def customer_messages(request):
 
 @login_required
 def message_detail(request, message_ref):
-
+    """
+    Returns all details of an instance of the
+    Message model
+    """
     if not request.user.is_superuser:
         messages.add_message(
             request,

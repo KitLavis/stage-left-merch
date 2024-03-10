@@ -3,6 +3,9 @@ from django.db import models
 
 
 class Message(models.Model):
+    """
+    Creates a single instance of the Message model
+    """
     full_name = models.CharField(max_length=50, null=False, blank=False)
     message_ref = models.CharField(
         max_length=120, blank=False, unique=True, editable=False
