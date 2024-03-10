@@ -3,7 +3,10 @@ from .models import Product
 
 
 class ProductForm(forms.ModelForm):
-
+    """
+    Allows a product to be added from
+    the front-end
+    """
     class Meta:
         model = Product
         fields = "__all__"

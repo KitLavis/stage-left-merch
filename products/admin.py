@@ -4,7 +4,10 @@ from .models import Product, Category
 
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
-
+    """
+    Registers the product model to the
+    admin panel
+    """
     prepopulated_fields = {
         "slug": (
             "sku",

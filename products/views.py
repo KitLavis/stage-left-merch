@@ -3,13 +3,15 @@ from django.core.paginator import Paginator
 from django.contrib import messages
 from django.db.models import Q
 from django.contrib.auth.decorators import login_required
+from artists.models import Artist
 from .models import Product, Category
 from .forms import ProductForm
-from artists.models import Artist
 
 
 def all_products(request):
-
+    """
+    Returns all instances of the product model
+    """
     products = Product.objects.all()
 
     query = None
@@ -51,7 +53,10 @@ def all_products(request):
 
 
 def product_detail(request, slug):
-
+    """
+    Returns all the details of a single instance
+    of the Product model
+    """
     queryset = Product.objects.all()
     product = get_object_or_404(queryset, slug=slug)
 
@@ -64,7 +69,10 @@ def product_detail(request, slug):
 
 @login_required
 def add_product(request):
-
+    """
+    Pushes the details from the product form
+    to the database to add a new product
+    """
     if not request.user.is_superuser:
         messages.add_message(
             request,
@@ -101,7 +109,10 @@ def add_product(request):
 
 @login_required
 def edit_product(request, slug):
-
+    """
+    Pushes the details from the product form
+    to the database to modify an existing product
+    """
     if not request.user.is_superuser:
         messages.add_message(
             request,
@@ -145,7 +156,7 @@ def edit_product(request, slug):
 
 @login_required
 def delete_product(request, slug):
-
+    """Removes a product from the database"""
     if not request.user.is_superuser:
         messages.add_message(
             request,

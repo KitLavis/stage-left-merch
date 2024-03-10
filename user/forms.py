@@ -3,6 +3,10 @@ from .models import UserProfile
 
 
 class ProfileForm(forms.ModelForm):
+    """
+    Allows the user to update their default
+    delivery information from the front-end
+    """
     class Meta:
         model = UserProfile
         exclude = ("user",)

@@ -1,14 +1,17 @@
 from django.shortcuts import render, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from checkout.models import Order
 from .models import UserProfile
 from .forms import ProfileForm
-from checkout.models import Order
 
 
 @login_required
 def profile(request):
-
+    """
+    Updates user's info by pushing the info to
+    the database
+    """
     profile = get_object_or_404(UserProfile, user=request.user)
 
     if request.method == "POST":
@@ -33,6 +36,9 @@ def profile(request):
 
 
 def order_history(request, order_ref):
+    """
+    Returns the order details of a previous order
+    """
     order = get_object_or_404(Order, order_ref=order_ref)
 
     template = "checkout/checkout_success.html"

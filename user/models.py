@@ -5,6 +5,9 @@ from django.dispatch import receiver
 
 
 class UserProfile(models.Model):
+    """
+    Creates a single instance of the UserProfile model
+    """
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     default_mobile_number = models.CharField(
         max_length=25, null=True, blank=True

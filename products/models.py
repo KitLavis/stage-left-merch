@@ -1,11 +1,13 @@
-import datetime
 from django.db import models
 from cloudinary.models import CloudinaryField
-from django.contrib.auth.models import User
 from artists.models import Artist
 
 
 class Category(models.Model):
+    """
+    Creates a single instance of the
+    Category model
+    """
     name = models.CharField(max_length=250)
     friendly_name = models.CharField(max_length=250, null=True, blank=True)
 
@@ -20,6 +22,10 @@ class Category(models.Model):
 
 
 class Product(models.Model):
+    """
+    Creates a single instance of the
+    Product model
+    """
     category = models.ForeignKey(
         "Category", null=True, blank=True, on_delete=models.SET_NULL
     )
