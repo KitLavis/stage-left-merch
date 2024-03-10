@@ -4,7 +4,9 @@ from django.db import models
 
 class Message(models.Model):
     full_name = models.CharField(max_length=50, null=False, blank=False)
-    message_ref = models.CharField(max_length=120, blank=False, unique=True, editable=False)
+    message_ref = models.CharField(
+        max_length=120, blank=False, unique=True, editable=False
+    )
     band_artist_name = models.CharField(max_length=250, null=True, blank=True)
     email = models.EmailField(max_length=250, null=False, blank=False)
     subject = models.CharField(max_length=250, null=False, blank=False)

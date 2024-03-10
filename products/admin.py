@@ -5,18 +5,23 @@ from .models import Product, Category
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
 
-    prepopulated_fields = {'slug': ('sku', 'name',)}
+    prepopulated_fields = {
+        "slug": (
+            "sku",
+            "name",
+        )
+    }
 
     list_display = (
-        'sku',
-        'name',
-        'category',
-        'price',
-        'featured_image',
-        'created_on',
+        "sku",
+        "name",
+        "category",
+        "price",
+        "featured_image",
+        "created_on",
     )
 
-    ordering = ('sku',)
+    ordering = ("sku",)
 
 
 admin.site.register(Category)

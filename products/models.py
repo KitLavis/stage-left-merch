@@ -10,7 +10,7 @@ class Category(models.Model):
     friendly_name = models.CharField(max_length=250, null=True, blank=True)
 
     class Meta:
-        verbose_name_plural = 'Categories'
+        verbose_name_plural = "Categories"
 
     def __str__(self):
         return self.name
@@ -20,15 +20,19 @@ class Category(models.Model):
 
 
 class Product(models.Model):
-    category = models.ForeignKey('Category', null=True, blank=True, on_delete=models.SET_NULL)
-    artist = models.ForeignKey(Artist, null=True, blank=True, on_delete=models.SET_NULL)
+    category = models.ForeignKey(
+        "Category", null=True, blank=True, on_delete=models.SET_NULL
+    )
+    artist = models.ForeignKey(
+        Artist, null=True, blank=True, on_delete=models.SET_NULL
+    )
     sku = models.CharField(max_length=250, null=True, blank=True, unique=True)
     name = models.CharField(max_length=250)
     slug = models.SlugField(max_length=200, unique=True)
     description = models.TextField()
     has_sizes = models.BooleanField(default=False, blank=True, null=True)
     price = models.DecimalField(max_digits=6, decimal_places=2)
-    featured_image = CloudinaryField('image', default='placeholder')
+    featured_image = CloudinaryField("image", default="placeholder")
     created_on = models.DateTimeField(auto_now_add=True)
 
     class Meta:
