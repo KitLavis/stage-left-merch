@@ -227,7 +227,14 @@ The deployment to Heroku is also a very involved process and goes as follows:
 
 #### HTML
 
-Each custom HTML template was put through the W3C HTML validator. After some minor adjustments all came back with zero errors.
+Each custom HTML template was put through the W3C HTML validator. Unfortunately no direct links are available for the HTML validator for each page, however there are no errors and only minor warnings regarding Mailchimp's script tags, and elements rendered by django forms.
+
+[W3C HTML Validator](https://validator.w3.org/)
+
+
+#### CSS
+
+The same was done for the CSS.
 
 - [Home](http://jigsaw.w3.org/css-validator/validator?lang=en&profile=css3svg&uri=https%3A%2F%2Fstage-left-merch-6e2378b5745e.herokuapp.com%2F&usermedium=all&vextwarning=&warning=1)
 - [Product Pages](http://jigsaw.w3.org/css-validator/validator?lang=en&profile=css3svg&uri=https%3A%2F%2Fstage-left-merch-6e2378b5745e.herokuapp.com%2Fproducts%2F&usermedium=all&vextwarning=&warning=1)
@@ -248,12 +255,16 @@ Each custom HTML template was put through the W3C HTML validator. After some min
 - [Contact Page](http://jigsaw.w3.org/css-validator/validator?lang=en&profile=css3svg&uri=https%3A%2F%2Fstage-left-merch-6e2378b5745e.herokuapp.com%2Fcontact%2F&usermedium=all&vextwarning=&warning=1)
 - [Contact Succes](http://jigsaw.w3.org/css-validator/validator?lang=en&profile=css3svg&uri=https%3A%2F%2Fstage-left-merch-6e2378b5745e.herokuapp.com%2Fcontact%2Fcontact_success%2F&usermedium=all&vextwarning=&warning=1)
 
-
-#### CSS
-
 #### JavaScript
 
+The JavaScript was validated using the [JSHint](https://jshint.com/) validation service.
+
+- stripeelements.js has one warning of 'Stripe' as an undefined variable.
+- Withe the Mailchimp script elements it warns of a number of undefined variables and unpreferable array literal notation however this script is written by Mailchimp specifically for their product so it remains as is.
+
 #### Python
+
+
 
 ### Manual Testing
 

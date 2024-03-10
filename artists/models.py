@@ -5,9 +5,15 @@ from cloudinary.models import CloudinaryField
 
 
 class Artist(models.Model):
-    friendly_name = models.CharField(max_length=250, null=True, blank=True, unique=True)
+    friendly_name = models.CharField(max_length=250,
+                                     null=True,
+                                     blank=True,
+                                     unique=True)
     name = models.SlugField(max_length=250, unique=True)
-    user = models.OneToOneField(User, null=True, blank=True, on_delete=models.PROTECT)
+    user = models.OneToOneField(User,
+                                null=True,
+                                blank=True,
+                                on_delete=models.PROTECT)
     image = CloudinaryField('image', default='placeholder')
     hometown = models.CharField(max_length=250, null=True, blank=True)
     established = models.IntegerField()
