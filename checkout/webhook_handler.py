@@ -14,7 +14,11 @@ from .models import Order, OrderLineItem
 
 
 class StripeWH_Handler:
-    """Handle Stripe webhooks"""
+    """
+    Handle Stripe webhooks
+    Original code:
+    https://github.com/Code-Institute-Solutions/boutique_ado_v1/
+    """
 
     def __init__(self, request):
         self.request = request
@@ -155,7 +159,8 @@ class StripeWH_Handler:
 
     def handle_payment_intent_payment_failed(self, event):
         """
-        Handle the payment_intent.payment_failed webhook from Stripe
+        Handle the payment_intent.payment_failed webhook
+        from Stripe
         """
         return HttpResponse(
             content=f'Webhook received: {event["type"]}',

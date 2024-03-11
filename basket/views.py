@@ -10,7 +10,11 @@ def shopping_basket(request):
 
 
 def add_to_basket(request, product_id):
-    """Add a quantity of the specified product to the basket"""
+    """
+    Add a quantity of the specified product to the basket
+    Original code:
+    https://github.com/Code-Institute-Solutions/boutique_ado_v1/
+    """
 
     quantity = int(request.POST.get("quantity"))
     redirect_url = request.POST.get("redirect_url")
@@ -43,6 +47,8 @@ def modify_basket(request, product_id):
     """
     Allows the user to modify that quantity of
     a product in the basket
+    Original code:
+    https://github.com/Code-Institute-Solutions/boutique_ado_v1/
     """
     quantity = int(request.POST.get("quantity"))
     size = None
@@ -70,7 +76,11 @@ def modify_basket(request, product_id):
 
 
 def remove_from_basket(request, product_id):
-    """Remove the item from the basket"""
+    """
+    Remove the item from the basket
+    Original code:
+    https://github.com/Code-Institute-Solutions/boutique_ado_v1/
+    """
 
     try:
         size = None

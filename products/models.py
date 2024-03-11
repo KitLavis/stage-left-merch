@@ -7,6 +7,8 @@ class Category(models.Model):
     """
     Creates a single instance of the
     Category model
+    Original code:
+    https://github.com/Code-Institute-Solutions/boutique_ado_v1/
     """
     name = models.CharField(max_length=250)
     friendly_name = models.CharField(max_length=250, null=True, blank=True)
@@ -25,6 +27,8 @@ class Product(models.Model):
     """
     Creates a single instance of the
     Product model
+    Original code:
+    https://github.com/Code-Institute-Solutions/boutique_ado_v1/
     """
     category = models.ForeignKey(
         "Category", null=True, blank=True, on_delete=models.SET_NULL
