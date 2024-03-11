@@ -15,7 +15,9 @@ ZIP: 42424
 
 ## Planning and Agile Methodology
 
-At the beginning of the planning process it was decided that an agile approach would be taken during development. This meant that effort would be focued on smaller individual pieces, rather than the puzzle as a whole, allowing for clean delivery of each section until the puzzle is complete. This compartmentalisation of the project allowed for large laborious aspects to be broken down into much smaller, manageable tasks. These tasks were derived from the 10 user stories collected before development:
+As mentioned, the aim of the project is to create a platform that works with musicians to supply their merchandise to their fans/customers. Although almost everyone listens to music, the most active members of the music community are 16-30 year olds, therefore they are the main target audience.
+
+It was decided that an agile approach would be taken during development. This meant that effort would be focused on smaller individual pieces, rather than the puzzle as a whole, allowing for clean delivery of each section until the puzzle is complete. This compartmentalisation of the project allowed for large laborious aspects to be broken down into much smaller, manageable tasks. These tasks were derived from the 10 user stories collected before development:
 
 - Create a draft product
 - Shopping basket
@@ -42,7 +44,7 @@ An important feature of any online business in 2024 is search engine optimisatio
 
 ### Promo
 
-SEO is not the only aspect used to improve the outreach of the company, a full digital marketing strategy will also be coordinated, starting with the creation of pages on all major social media platforms, and boosted using paid advertsiements. The reason this route was decided is because the majority of music/gig promotion currently takes place on social media, so it makes sense to target the same market. Although these pages haven't been created as of yet, and no paid promotions/advertisements are currently live, a mockup of what one of these pages may look like is provided below.
+SEO is not the only aspect used to improve the outreach of the company, a full digital marketing strategy will also be coordinated, starting with the creation of pages on all major social media platforms, and boosted using paid advertsiements. The reason this route was decided is because the majority of music/gig promotion currently takes place on social media, so it makes sense to target the same market, and the target audience previously stated are very active on these platforms. Although these pages haven't been created as of yet, and no paid promotions/advertisements are currently live, a mockup of what one of these pages may look like is provided below.
 
 ![Facebook mockup](docs/stageleft-fb-mockup.png)
 
