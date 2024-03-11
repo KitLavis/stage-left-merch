@@ -107,12 +107,11 @@
 {% block postloadjs %}
 <script type="text/javascript">
     $('.update-link').click(function (e) {
-        e.preventDefault(); // Prevent default link behavior
+        e.preventDefault();
         var form = $(this).prev('.update-form');
         form.submit();
     });
 
-    // Remove item and reload on click
     $('.remove-item').click(function (e) {
         var csrfToken = "{{ csrf_token }}";
         var productId = $(this).attr('id').split('remove_')[1];
