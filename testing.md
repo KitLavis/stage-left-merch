@@ -12,6 +12,7 @@ This test script can be followed in order to manually test the site for any faul
 | 06     | Add product                       | Form loads and submits and product is added to database | Pass        |
 | 07     | Edit product                      | Form loads and submits and product details are updated  | Pass        |
 | 08     | Delete product                    | Product removed from the site and the database          | Pass        |
+| 11     | Search a keyword                  | All relevant products are shown                         | Pass        |
 | 09     | Continue shopping                 | Button sends user back to the products page             | Pass        |
 |        | **Basket**                        |                                                         |             |
 | 11     | Open the basket via basket icon   | Basket loads with correct items and information present | Pass        |

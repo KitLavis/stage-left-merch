@@ -28,7 +28,7 @@ At the beginning of the planning process it was decided that an agile approach w
 - User account
 - Privacy
 
-Due to the agile method of development, as the process moved forward the goal posts often changed, so the certain aspects of the current iteration of the project may not perfectly reflect the resepctive user story. These aspects will be explained in more details in the features section further on in the documentation.
+Due to the agile method of development, as the process moved forward the goal posts often changed, so certain aspects of the current iteration of the project may not perfectly reflect the resepctive user story. These aspects will be explained in more detail in the features section further on in the documentation.
 
 For further information regarding the initial user stories, please visit the [GitHub Project](https://github.com/users/KitLavis/projects/5/views/1).
 
@@ -38,7 +38,7 @@ As mentioned in the intorductory paragraph, although the company offers more com
 
 ### SEO
 
-An important feature of any online business in 2024 is search engine optimisation (SEO), as you can't sell products to people if they don't seem. Therefore a number of items were added to improve StageLeft's "online rating". The simplest and most obvious of these aspects are the keywords in the meta tags within the head element of the base HTML template. As well as these keywords, everything written at the top of a page, within header tags, or within strong tags had thought put in to them so as not to waste the oppurtunity to improve the site's SEO. A furhter aspect of SEO are the sitemap and robots files. The sitemap.xml file is a list of all the pages of the site that can be accessed without logging in, while the robots.txt file tells search engine crawlers where they can't crawl. Although the robots.txt file tells search engines where not to go, the presence of the file itself gives the page a higher rating as it is acknowledging that search engines can crawl your site in the first place. Finally, any external link or any secure link (i.e. the checkout link) has a value of 'noopener' and/or 'nofollow' assigned to the 'rel' attribute.
+An important feature of any online business in 2024 is search engine optimisation (SEO), as you can't sell products to people if they don't seem. Therefore a number of items were added to improve StageLeft's "online rating". The simplest and most obvious of these aspects are the keywords in the meta tags within the head element of the base HTML template. As well as these keywords, everything written at the top of a page, within header tags, or within strong tags had thought put in to them so as not to waste the oppurtunity to improve the site's SEO. A furhter aspect of SEO are the sitemap and robots files. The sitemap.xml file is a list of all the pages of the site that can be accessed without logging in that search engine's can crawl, while the robots.txt file tells search engine crawlers where they can't crawl. Although the robots.txt file tells search engines where not to go, the presence of the file itself gives the page a higher rating as it is acknowledging that search engines can crawl your site in the first place. Finally, any external link or any secure link (i.e. the checkout link) has a value of 'noopener' and/or 'nofollow' assigned to the 'rel' attribute.
 
 ### Promo
 
@@ -48,7 +48,7 @@ SEO is not the only aspect used to improve the outreach of the company, a full d
 
 ### Design
 
-The design elements were kept as minimal as possible while still portraying the aim of the project, and as can be seen in features section, they are kept consistent throughout the majority of the site. The hero image of an audience watching a live act is used as the base on every page, while the elements overlaying this image use utilise simple black and white backgrounds with the opacity lowered slightly to allow for the underlying image to be seen.
+The design elements were kept as minimal as possible while still portraying the project accurately, and as can be seen in the features section, they are kept consistent throughout the majority of the site. The hero image of an audience watching a live act is used as the base on every page, while the elements overlaying this image utilise simple black and white backgrounds with the opacity lowered slightly to allow for the underlying image to be seen.
 
 Hero Image:
 
@@ -78,7 +78,7 @@ As well as the overriding design aspects, there are two features that remain con
 
 ![Header/nav bar](docs/header.png)
 
-As is seen below, the dropdown menu accessable via the user icon contains a number of links, which vary in relation to authentication status and user type. If the user is not authenticated, then register and login links are shown. If the user is a customer then logout and account management is shown. If a superuser is authenticated then the two previous options available, as well as the options to view messages and add products.
+As is seen below, the dropdown menu accessable via the user icon contains a number of links, which vary in relation to authentication status and user type. If the user is not authenticated, then register and login links are shown. If the user is a customer then logout and account management is shown. If a superuser is authenticated then the two previous options are available, as well as the options to view messages and add products.
 
 ![User dropdown](docs/user-dropdown.png)
 
@@ -98,7 +98,7 @@ The products app has three main features: product cards, the product detail page
 
 - All Products (product cards)
 
-The main feature of the all products page is the product cards that hold the basic information for each product, and a link to see further details. When there are more than 12 products present the page paginates.
+The main feature of the all products page is the product cards that hold the basic information for each product (repesenting an instance of the product model), and a link to see further details. When there are more than 12 products present the page paginates.
 
 ![Product cards](docs/all-products-page.png)
 
@@ -112,7 +112,7 @@ As is shown in the screenshot below, if a superuser is logged in, edit and delet
 
 - Add/edit product
 
-These two features are of course two seperate features, however they are described together due to their similarities. These two features are only available to superusers, and other user types attempting to access these features are redirected away. The add and edit product pages consist of the product form, which allows the superuser to add or edit and instance of the product model in the backend, from the frontend.
+These two features are of course two seperate, however they are described together due to their similarities. They are both only available to superusers, and other user types attempting to access these features are redirected away. The add and edit product pages consist of the product form, which allows the superuser to add or edit an instance of the product model in the backend, from the frontend.
 
 ![Add/edit product](docs/edit-product.png)
 
@@ -122,17 +122,17 @@ The first variation of the basket page is shown when the user's basket is empty.
 
 ![Empty basket](docs/empty-basket.png)
 
-The second variation is shown when the user has items in their basket. It consists of the a brief summary of each item, and allows for the quantity of each item to be changed, or removed completely if necessary. In the bottom right hand corner of the page, the user is shown the different totals for the session. If the order total does not reach the amount required for free postage, a message is shown letting the user know how much more they need to spend in order to get their postage for free. Finally, there are the two buttons, one sending the customer back to all products, the other moving the customer forward to the checkout app.
+The second variation is shown when the user has items in their basket. It consists of a brief summary of each item, and allows for the quantity of each item to be changed, or removed completely if necessary. In the bottom right hand corner of the page, the user is shown the different totals for the session. If the order total does not reach the amount required for free postage, a message is shown letting the user know how much more they need to spend in order to get their postage for free. Finally, there are the two buttons, one sending the customer back to all products, the other moving the customer forward to the checkout app.
 
 ![Basket page](docs/basket-page.png)
 
 ### Checkout
 
-The checkout app is arguably the most complex of the applications - due to the sensitive nature of payment proccessing - however the page itself is kept as simple as possible to allow for a better user experience.
+The checkout app is arguably the most complex of the applications - mainly due to the sensitive nature of payment proccessing - however the page itself is kept as simple as possible to allow for a better user experience.
 
 - Checkout page
 
-The checkout page is split into two coloumns; the left half holds the oder form for the customer to complete - the details entered can be saved from here if the user is authenticated - while the right half shows a basic summary of the order. From here the customer has the option to go back on modify their basket, or checkout securely with stripe via the complete order button. A warning is shown underneath the button to remind the user that they will be charged.
+The checkout page is split into two coloumns; the left half holds the order form for the customer to complete - the details entered can be saved from here if the user is authenticated - while the right half shows a basic summary of the order. From here the customer has the option to go back on modify their basket, or checkout securely with stripe via the complete order button. A warning is shown underneath the button to remind the user that they will be charged.
 
 The submission of the order form is handled twice: first through the form submit in the javascript that stripe provides, and second by a stripe webhook. This means that if the user accidentaly closes the browser before the form is properly submitted, or if something interupts submission, the order will be created instead from the webhook handler.
 
@@ -146,13 +146,13 @@ While the order is being created and the payment is being processed, the custome
 
 - Checkout success
 
-The final aspect of the checkout app is the checkout success page. Once the order and payment are processed the user is shown a brief summary of their order, they are shown a success message, and are reminded that their order details will be available at the email address provided in the order form.
+The final aspect of the checkout app is the checkout success page. Once the order and payment are processed the user is shown a brief summary of their order, a success message, and are reminded that their order details will be available at the email address provided in the order form.
 
 ![Checkout success](docs/checkout-success.png)
 
 ### Artists
 
-The artists app is comparable to the products app. There is an all artists page where a card is shown for each artist the company represents, artist detail pages where the user is given more information about the artist, and links to artist product pages, where the customer view all products related to the artist. There are however also the testimonial features which are explained in further detail beneath the following screenshots.
+The artists app is comparable to the products app. There is an all artists page where a card is shown for each artist the company represents, artist detail pages where the user is given more information about the artist, and links to artist product pages, where the customer can view all products related to the artist. There are however also the testimonial features which are explained in further detail beneath the following screenshots.
 
 ![All artists page](docs/all-artists.png)
 
@@ -162,19 +162,19 @@ The artists app is comparable to the products app. There is an all artists page 
 
 - Testimonials
 
-The testimonials page is a bootstrap carousel that slides through the reviews left by the artists that the company represents. The buttons shown on this page vary dependant on the user. If the user is a standard user that has no relation with an instance of the artist model, then they will simply be shown the testimonials. If the user has a relation to an artist instance that does not already have a relation to a testimonial, they will be shown an 'add your testimonial' button, to allow the user/artist to leave their testimonial. Finally, if the user has an artist related to their profile and they have already left their testimonial, the other instances of the testimonial model will be shown with no buttons, and their own testimonial will have edit and delete buttons overlaying it, to allow the user to access this functionality from the frontend.
+The testimonials page is a Bootstrap carousel that slides through the reviews left by the artists that the company represents. The buttons shown on this page vary dependant on the user. If the user is a standard user that has no relation with an instance of the artist model, then they will simply be shown the testimonials. If the user has a relation to an artist instance that does not already have a relation to a testimonial, they will be shown an 'add your testimonial' button, to allow the user/artist to leave their testimonial. Finally, if the user has an artist related to their profile and they have already left their testimonial, the other instances of the testimonial model will be shown with no buttons, and their own testimonial will have edit and delete buttons overlaying it, to allow the user to access this functionality from the frontend.
 
 ![Testimonials page](docs/testimonials.png)
 
 - Add/Edit Testimonial
 
-Much like the add product and edit product features, the add testimonial and edit testimonial features are described together. If the user is related to an instance of the artist model, they are able to add their testionial via this form. If they attempt to add a testimonial for a band/artist other than theirs, they are either warned that the form is invalid or redirected entirely. The same is can be said for the edit testimonial feature.
+Much like the add product and edit product features, the add testimonial and edit testimonial features are described together. If the user is related to an instance of the artist model, they are able to add their testionial via this form. If they attempt to add a testimonial for a band/artist other than theirs, they are either warned that the form is invalid or redirected entirely. The same can be said for the edit testimonial feature.
 
 ![Edit testimonial page](docs/edit-testimonial.png)
 
 ### User
 
-The user app allows the user to update or delete their delivery information which will be saved so they no longer have to enter these details at checkout. From here the user also has access to a number of Django Allauth features, that allows them to change their email address and password. On the right of the user profile page the user's order history is shown. The user can click one of the order references in order to be redirected back to a version of their checkout success page, to review previous order summaries.
+The user app allows the user to update or delete their delivery information which will be saved so that they no longer have to enter these details at checkout. From here the user also has access to a number of Django Allauth features, that allows them to change their email address and password. On the right of the user profile page the user's order history is shown. The user can click one of the order references in order to be redirected back to a version of their checkout success page, to review previous order summaries.
 
 ![User profile page](docs/user-profile.png)
 
@@ -182,7 +182,7 @@ The user app allows the user to update or delete their delivery information whic
 
 - Contact page
 
-The contact page - accessable via a link in the footer - allows the user to create an instance of the message model, allowing them to send a message to the site owner.
+The contact page - accessable via a link in the footer - allows the user to create an instance of the message model i.e. send a message to the site owner.
 
 ![Contact form](docs/contact-form.png)
 
@@ -209,6 +209,7 @@ A number of features will be added/expanded in the future. These include:
 - Currently all emails are sent to the terminal, however if/when the project goes live in a real world situation then a real emailing service will be incorporated.
 - A frontend admin panel will be added for superusers to be able to complete all CRUD operations from one place, similar to the Django admin panel.
 - Due to time constraints the Django Allauth templates have not all been styled to match the style of the project, so this would also be added.
+- At the moment users cannot delete their account themselves, they must contact the site administrator. This functionality will be added as soon as possible.
 
 ## Development and Deployment
 
@@ -222,7 +223,7 @@ The deployment to Heroku is also a very involved process and goes as follows:
 - Make sure all dependencies are stored in the requirements.txt file. This can be done with the command "pip3 freeze --local requirements.txt".
 - Create a Procfile containing the command "web: gunicorn stageleft.wsgi"
 - On Heroku create a new app.
-- In the settings set the config vars e.g. database url, the url for media storage (in our case Cloudinary), stripe keys, django keys, and the port.
+- In the settings set the config vars e.g. database url, the url for media storage (in our case Cloudinary), stripe keys, django keys, the port, and any other relevant value.
 - Add the python buildpack.
 - The project is then ready for deployment. We connected the GitHub repository and used manual deployments so that we could control which versions would be deployed, however there are alternative options available.
 
@@ -249,7 +250,7 @@ The deployment to Heroku is also a very involved process and goes as follows:
 
 #### HTML
 
-Each custom HTML template was put through the W3C HTML validator. Unfortunately no direct links are available for the HTML validator for each page, however there are no errors and only minor warnings regarding Mailchimp's script tags, and elements rendered by django forms.
+Each custom HTML template was put through the W3C HTML validator. Unfortunately no direct links are available for the HTML validator for each page, however there are no errors and only minor warnings regarding Mailchimp's script tags, and elements rendered by Django Crispyforms.
 
 [W3C HTML Validator](https://validator.w3.org/)
 
@@ -282,7 +283,7 @@ The same was done for the CSS.
 The JavaScript was validated using the [JSHint](https://jshint.com/) validation service.
 
 - stripeelements.js has one warning of 'Stripe' as an undefined variable.
-- Withe the Mailchimp script elements it warns of a number of undefined variables and unpreferable array literal notation however this script is written by Mailchimp specifically for their product so it remains as is.
+- With the Mailchimp script elements it warns of a number of undefined variables and unpreferable array literal notation however this script is written by Mailchimp specifically for their product so it remains as is.
 
 #### Python
 
@@ -299,7 +300,7 @@ The script is loosely based on Kristyna Wach's test script for [Fantastic News](
 A number of challenges and bugs arose during development. These include:
 
 - Cloudinary media storage
-    - We encountered an issue with the cloudinary uploader. Media files added via the Django, be that through the admin panel or from a form on the frontend, would upload to cloudinary with no issue. However, the media files stored in the development environment would not. This issue is ongoing. Our temporary fix was to move the two images from the media folder to the static folder, as from there they are accessable on the deployed site.
+    - We encountered an issue with the cloudinary uploader. Media files added via Django, be that through the admin panel or from a form on the frontend, would upload to cloudinary with no issue. However, the media files stored in the development environment would not. This issue is ongoing. Our temporary fix was to move the two images from the media folder to the static folder, as from there they are accessable on the deployed site.
 
 - Database Migration
     - Initially the artist model was created in the products app at an earlier stage of development, so it had to later be moved to the new artists app. Once everything was moved over there was an issue during migration, which led to new instances of the artist model not being stored in the database. As there was not much information stored in the database at the time, the quickest and easiest solution was to reset the databse on ElephantSQL, delete all previous migrations from the development environment and remigrate all the finished models.
