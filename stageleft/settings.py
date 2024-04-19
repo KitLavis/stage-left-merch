@@ -32,6 +32,7 @@ ALLOWED_HOSTS = [
     '8000-kitlavis-stageleftmerch-dfadd5f4vsn.ws-eu108.gitpod.io',
     '.herokuapp.com',
     '8000-kitlavis-stageleftmerch-dfadd5f4vsn.ws-eu108.gitpod.io/',
+    '8000-kitlavis-stageleftmerch-kq10iw71pa7.ws-eu110.gitpod.io',
     ]
 
 # Application definition
@@ -171,6 +172,11 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 MEDIA_URL = '/media/'
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+cloudinary.config(
+  	cloud_name = "duxza3pht",
+    api_key = os.environ.get('API_KEY'),
+    api_secret = os.environ.get('API_SECRET')
+)
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
@@ -181,6 +187,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 
 CSRF_TRUSTED_ORIGINS = [
     'https://8000-kitlavis-stageleftmerch-dfadd5f4vsn.ws-eu108.gitpod.io',
+    'https://8000-kitlavis-stageleftmerch-kq10iw71pa7.ws-eu110.gitpod.io',
     'https://stage-left-merch-6e2378b5745e.herokuapp.com/'
     ]
 
